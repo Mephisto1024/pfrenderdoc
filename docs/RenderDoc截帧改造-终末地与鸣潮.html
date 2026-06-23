@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RenderDoc 截帧改造技术文章离线整理版">
+  <title>RenderDoc 截帧改造：终末地与鸣潮</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17202a;
+      --muted: #64717d;
+      --line: #dfe5e9;
+      --soft: #f4f7f8;
+      --accent: #087f8c;
+      --accent-dark: #075d67;
+      --code: #111820;
+      --code-ink: #dce7ec;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fff;
+      font-family: "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.85;
+      letter-spacing: 0;
+    }
+    .masthead {
+      border-bottom: 1px solid var(--line);
+      background: var(--soft);
+    }
+    .masthead-inner {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 64px 0 48px;
+    }
+    .label {
+      margin: 0 0 14px;
+      color: var(--accent-dark);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.18;
+      font-weight: 800;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .meta a, article a {
+      color: var(--accent-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 800px);
+      gap: 72px;
+      width: min(1100px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 56px 0 96px;
+      justify-content: center;
+    }
+    .toc {
+      position: sticky;
+      top: 28px;
+      align-self: start;
+      max-height: calc(100vh - 56px);
+      overflow: auto;
+      padding-right: 18px;
+      border-right: 1px solid var(--line);
+    }
+    .toc-title {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .toc a {
+      display: block;
+      padding: 5px 0;
+      color: #41505c;
+      font-size: 13px;
+      line-height: 1.45;
+      text-decoration: none;
+    }
+    .toc a:hover { color: var(--accent-dark); }
+    .toc .toc-sub { padding-left: 14px; color: #73808a; }
+    article { min-width: 0; }
+    article > :first-child { margin-top: 0; }
+    article h2 {
+      margin: 62px 0 20px;
+      padding-top: 8px;
+      border-top: 3px solid var(--ink);
+      font-size: 29px;
+      line-height: 1.35;
+    }
+    article h3 {
+      margin: 42px 0 14px;
+      font-size: 21px;
+      line-height: 1.4;
+    }
+    article p { margin: 0 0 20px; }
+    article ul, article ol { margin: 0 0 24px; padding-left: 1.4em; }
+    article li { margin: 7px 0; }
+    article strong { font-weight: 750; }
+    article figure {
+      margin: 34px 0 42px;
+    }
+    article img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 78vh;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      object-fit: contain;
+      background: var(--soft);
+    }
+    article pre {
+      margin: 22px 0 30px;
+      padding: 20px 22px;
+      overflow-x: auto;
+      border-left: 4px solid var(--accent);
+      background: var(--code);
+      color: var(--code-ink);
+      font: 14px/1.7 Consolas, "Cascadia Code", monospace;
+      tab-size: 2;
+    }
+    article code {
+      font-family: Consolas, "Cascadia Code", monospace;
+    }
+    article p code, article li code {
+      padding: 2px 5px;
+      background: #edf2f3;
+      color: #18323a;
+      font-size: .9em;
+    }
+    article table {
+      width: 100%;
+      margin: 24px 0 34px;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    article th, article td {
+      padding: 11px 12px;
+      border: 1px solid #cfd8dd;
+      text-align: left;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+    article th { background: #eaf1f2; font-weight: 700; }
+    article tr:nth-child(even) td { background: #f8fafb; }
+    .source-link {
+      margin: 18px 0 28px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: var(--soft);
+    }
+    .source-link a { font-weight: 700; }
+    .footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--soft);
+    }
+    .footer-inner {
+      width: min(1100px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 24px 0 36px;
+      font-size: 13px;
+    }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: minmax(0, 760px); }
+      .toc { display: none; }
+    }
+    @media (max-width: 620px) {
+      body { font-size: 16px; line-height: 1.78; }
+      .masthead-inner, .layout, .footer-inner {
+        width: min(100% - 32px, 800px);
+      }
+      .masthead-inner { padding: 40px 0 34px; }
+      h1 { font-size: 34px; }
+      .layout { padding: 36px 0 68px; }
+      article h2 { margin-top: 48px; font-size: 25px; }
+      article h3 { margin-top: 34px; font-size: 20px; }
+      article pre { margin-inline: -16px; padding: 18px 16px; }
+      .table-wrap { overflow-x: auto; margin: 24px -16px 34px; padding: 0 16px; }
+      article table { min-width: 620px; margin: 0; }
+    }
+    @media print {
+      .toc { display: none; }
+      .layout { display: block; width: 100%; padding-top: 32px; }
+      .masthead-inner, .footer-inner { width: 100%; }
+      article pre { white-space: pre-wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <p class="label">技术文章 · 离线整理版</p>
+      <h1>RenderDoc 截帧改造：终末地与鸣潮</h1>
+      <div class="meta">
+        <span>作者：次次先生</span>
+        <span>编辑于 2026-03-06 20:59・重庆</span>
+        <a href="https://zhuanlan.zhihu.com/p/2013352429090014345">原文链接</a>
+      </div>
+    </div>
+  </header>
+  <main class="layout">
+    <aside class="toc" aria-label="文章目录">
+      <p class="toc-title">文章目录</p>
+      <a class="toc-main" href="#section-1">前言：</a>
+<a class="toc-main" href="#renderdoc">RenderDoc架构解析</a>
+<a class="toc-sub" href="#ace">ACE反作弊原理：</a>
+<a class="toc-main" href="#renderdoc-4">RenderDoc源码构建：</a>
+<a class="toc-sub" href="#section-5">构建系统</a>
+<a class="toc-sub" href="#vs">VS 项目文件</a>
+<a class="toc-sub" href="#api">核心 API 头文件</a>
+<a class="toc-sub" href="#section-8">进程创建与注入</a>
+<a class="toc-sub" href="#section-9">进程注入白名单</a>
+<a class="toc-sub" href="#section-10">崩溃处理器</a>
+<a class="toc-sub" href="#section-11">文件路径与注册表</a>
+<a class="toc-sub" href="#shim-dll">共享内存与 Shim DLL 名称</a>
+<a class="toc-sub" href="#qt-ui">Qt UI 层</a>
+<a class="toc-sub" href="#section-14">其他标识符</a>
+<a class="toc-sub" href="#section-15">输出文件重命名</a>
+<a class="toc-main" href="#ai">用AI来给技术点总结以下就是</a>
+    </aside>
+    <article>
+      <div><p>效果展示：</p><figure><img src="renderdoc-capture-article-assets/figure-01.jpg" alt="文章配图 1" decoding="async"></figure><figure><img src="renderdoc-capture-article-assets/figure-02.jpg" alt="文章配图 2" decoding="async"></figure><figure><img src="renderdoc-capture-article-assets/figure-03.jpg" alt="文章配图 3" decoding="async"></figure><h2 id="section-1">前言：</h2><p>《终末地》和《鸣潮》都是采用了ACE反作弊和加壳处理，所以我们修改的核心就是要针对ACE进行处理</p><p><b>因为库洛和鹰角官方有人员关注了我,所以稿件可能随时会被和谐</b></p><p><b>注:本文所提及的方案,请勿用于任何商业用途,自己学习学习就好了(日后要是惹出什么事来,别把师傅拱出去就好了)</b></p><figure><img src="renderdoc-capture-article-assets/figure-04.jpg" alt="文章配图 4" decoding="async"></figure><h2 id="renderdoc">RenderDoc<svg><path></path></svg>架构解析</h2><p>renderdocui.exe          ← UI 启动器 stub（极小，只负责找到并启动 qrendertest.exe）</p><p>    └── qrenderdoc.exe<svg><path></path></svg>   ← 真正的 Qt UI 主程序（replay 应用）</p><p>            │</p><p>            ├── renderdoc.dll<svg><path></path></svg>        ← 核心 DLL（注入目标进程，钩住 D3D/GL/Vulkan）</p><p>            ├── renderdoccmd.exe<svg><path></path></svg>     ← 命令行工具（崩溃处理、注入辅助）</p><p>            └── renderdocshim64.dll  ← 全局 Hook Shim DLL（用于全局注入模式）</p><p>关键机制：</p><ul><li>renderdocui.exe 是一个 stub，通过 wcscat_s 拼接路径找 qrenderdoc.exe</li><li>renderdoc.dll 加载到 qrenderdoc.exe 后，检查其是否导出 renderdoc__replay__marker 符号来判断自己是否在 replay 环境中（若不是则注入 D3D/GL 钩子，会导致进程导致崩溃）</li><li>注入游戏时使用 CREATE_SUSPENDED + CreateProcessW 创建挂起进程，注入 DLL 后再恢复</li></ul><h3 id="ace">ACE反作弊原理：</h3><p>测试出来ACE主要通过扫盘和扫进程来检测RenderDoc的字符串和DLL，所以我们的核心工作就是将RenderDoc的所有可检测标识符改名</p><h2 id="renderdoc-4">RenderDoc源码构建：</h2><p>RenderDoc的工具集是VS2015的v140版本，我用的是VS2022所以需要额外下载v140组件，或者是可以到源码里面手动更新平台工具集</p><div><a href="https://github.com/baldurk/renderdoc/tree/v1.x">RenderDoc v1.x 源码仓库</a></div><p>我们的核心思路就是修改RenderDoc的可识别字符和魔数特征码</p><p>在这里我用“rendertest”这个名字进行替换，你们可以替换成如何你想要的名字，比如说“TencentAACE”</p><h3 id="section-5">构建系统</h3><table><tbody><tr><th>文件</th><th>修改内容</th></tr><tr><td>CMakeLists.txt</td><td>set(RDOC_BASE_NAME "renderdoc") → "rendertest"</td></tr></tbody></table><p>RDOC_BASE_NAME 是整个 CMake 构建的基础变量，影响所有派生名称（DLL 名、可执行文件名、符号名等</p><h3 id="vs">VS 项目文件</h3><table><tbody><tr><th>文件</th><th>修改项</th><th>旧值 → 新值</th></tr><tr><td>renderdoc/renderdoc.vcxproj</td><td>RootNamespace、ProjectName</td><td>renderdoc → rendertest</td></tr><tr><td>renderdoccmd/renderdoccmd.vcxproj</td><td>RootNamespace、ProjectName</td><td>renderdoccmd → rendertestcmd</td></tr><tr><td>renderdocshim/renderdocshim.vcxproj</td><td>RootNamespace + 显式 TargetName</td><td>renderdocshim → rendertestshim32/64</td></tr><tr><td>qrenderdoc/renderdocui_stub.vcxproj</td><td>RootNamespace、ProjectName、PrimaryOutput、TargetName</td><td>renderdocui → rendertestui</td></tr><tr><td>qrenderdoc/renderdocui_stub.vcxproj</td><td>新增 UACExecutionLevel</td><td>— → RequireAdministrator</td></tr></tbody></table><p>坑点：renderdocshim.vcxproj 只改 RootNamespace 不够，必须显式设置 &lt;TargetName&gt; 才能改变输出 DLL 名；renderdocui_stub.vcxproj 同理需要显式设置 &lt;PrimaryOutput&gt; 和 &lt;TargetName&gt;</p><h3 id="api">核心 API 头文件</h3><p>renderdoc/api/replay/renderdoc_replay.h</p><div><pre><code class="language-text">// 修改前
+#define REPLAY_PROGRAM_MARKER() \
+  extern "C" RENDERDOC_EXPORT_API void RENDERDOC_CC renderdoc__replay__marker() {}
+
+// 修改后
+#define REPLAY_PROGRAM_MARKER() \
+  extern "C" RENDERDOC_EXPORT_API void RENDERDOC_CC rendertest__replay__marker() {}</code></pre></div><h3 id="section-8">进程创建与注入</h3><p>renderdoc/os/win32/win32_process.cpp（这里RenderDoc有一段硬编码，所以需要额外注意）</p><table><tbody><tr><th>位置</th><th>修改内容</th></tr><tr><td>所有 renderdoccmd.exe 引用</td><td>→ rendertestcmd.exe</td></tr><tr><td>所有 renderdocshim32/64.dll 引用</td><td>→ rendertestshim32/64.dll</td></tr></tbody></table><h3 id="section-9">进程注入白名单</h3><p>renderdoc/os/win32/sys_win32_hooks.cpp</p><div><pre><code class="language-text">// 防止 RenderDoc 注入自身，需要更新为新名称
+if(app.contains("rendertestcmd.exe") || app.contains("qrendertest.exe"))
+if(cmd.contains("rendertestcmd.exe") || cmd.contains("qrendertest.exe"))</code></pre></div><h3 id="section-10">崩溃处理器</h3><p>renderdoc/core/crash_handler.h</p><div><pre><code class="language-text">CreateEventA(NULL, TRUE, FALSE, "RENDERTEST_CRASHHANDLE");   // 内核对象名
+cmdline += "/rendertestcmd.exe\" crashhandle --pipe ";        // 可执行文件路径
+StringFormat::Fmt("\\\\.\\pipe\\RenderTestBreakpadServer%llu", ...);  // 命名管道
+FileIO::GetTempFolderFilename() + "RenderTest\\dumps\\";      // Dump 目录</code></pre></div><p>renderdoccmd/renderdoccmd_win32.cpp</p><div><pre><code class="language-text">CreateEventA(NULL, TRUE, FALSE, "RENDERTEST_CRASHHANDLE");
+wc.lpszClassName = L"rendertestcmd";
+GetModuleHandleA("rendertest.dll");   // 找核心 DLL</code></pre></div><h3 id="section-11"> 文件路径与注册表</h3><p>renderdoc/os/win32/win32_stringio.cpp</p><div><pre><code class="language-text">exe = path + "/../qrendertest.exe";            // 查找 UI 可执行文件
+RegGetValueW(HKEY_CLASSES_ROOT, L"RenderTest.RDCCapture.1\\DefaultIcon", ...);
+wsprintf(filename_start, L"RenderTest\\%ls_...", ...);
+ret += "\\rendertest\\" + filename;</code></pre></div><h3 id="shim-dll">共享内存与 Shim DLL 名称</h3><p>renderdocshim/renderdocshim.h</p><div><pre><code class="language-text">#define GLOBAL_HOOK_DATA_NAME "RenderTestGlobalHookData64"
+#define SHIM_DLL_NAME         "rendertestshim64.dll"
+// (32位同理)</code></pre></div><h3 id="qt-ui">Qt UI 层</h3><p>qrenderdoc/Code/qrenderdoc.cpp</p><div><pre><code class="language-text">QApplication::translate("qrendertest", ...);
+qInfo() &lt;&lt; "QRenderTest initialising.";
+session.configData().name = "QRenderTest";
+parser.setApplicationDescription(tr("Qt UI for RenderTest"));</code></pre></div><p>qrenderdoc/Windows/MainWindow.cpp</p><div><pre><code class="language-text">QString text = prefix + lit("RenderTest ");</code></pre></div><p>qrenderdoc/renderdocui_stub.cpp</p><div><pre><code class="language-text">wcscat_s(curFile, 511, L"qrendertest.exe");</code></pre></div><h3 id="section-14">其他标识符</h3><table><tbody><tr><th>文件</th><th>修改内容</th></tr><tr><td>renderdoc/driver/gl/wgl_platform.cpp</td><td>renderdocGLclass → rendertestGLclass</td></tr><tr><td>renderdoc/data/renderdoc.rc</td><td>FileDescription、InternalName、OriginalFilename、ProductName 全部改为 RenderTest</td></tr><tr><td>qrenderdoc/Code/pyrenderdoc/PythonContext.cpp</td><td>static wchar_t program_name[] = L"qrendertest</td></tr></tbody></table><h3 id="section-15">输出文件重命名</h3><p>在构建属性中，记得更改显式设置&lt;TargetName&gt;和&lt;PrimaryOutput&gt;</p><figure><img src="renderdoc-capture-article-assets/figure-05.jpg" alt="文章配图 5" decoding="async"></figure><h2 id="ai">用AI来给技术点总结以下就是</h2><table><tbody><tr><th>技术点</th><th>说明</th></tr><tr><td>Replay Marker 机制</td><td>DLL 通过查找宿主进程的导出符号 &lt;basename&gt;__replay__marker 判断是否为 replay 模式，不匹配则注入 GPU 钩子导致崩溃</td></tr><tr><td>CREATE_SUSPENDED 注入</td><td>RenderDoc 用挂起方式创建目标进程，注入 DLL 后再恢复，这要求 launcher 有不低于目标进程的权限</td></tr><tr><td>Named Kernel Objects</td><td>命名事件、命名管道、共享内存的名称都是进程间协议的一部分，必须一致</td></tr><tr><td>UAC Manifest</td><td>.vcxproj 的 &lt;UACExecutionLevel&gt;RequireAdministrator&lt;/UACExecutionLevel&gt; 等同于在清单中写 requestedExecutionLevel level="requireAdministrator"</td></tr><tr><td>vcxproj 输出名控制</td><td>实际输出文件名 = $(TargetName)$(TargetExt)，改 RootNamespace 不影响输出名</td></tr><tr><td>CMake RDOC_BASE_NAME<svg><path></path></svg></td><td>该变量通过预处理器宏 STRINGIZE(RDOC_BASE_NAME) 传入 C++ 代码，影响运行时字符串拼接逻辑</td></tr></tbody></table></div>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">内容与图片来自原始离线页面，本页仅重新整理阅读排版。</div>
+  </footer>
+  <script>
+    document.querySelectorAll("article table").forEach((table) => {
+      const wrap = document.createElement("div");
+      wrap.className = "table-wrap";
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    });
+  </script>
+</body>
+</html>
