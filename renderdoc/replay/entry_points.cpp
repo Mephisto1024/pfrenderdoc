@@ -333,7 +333,7 @@ extern "C" RENDERDOC_API void RENDERDOC_CC RENDERDOC_CreateBugReport(const rdcst
   if(report.empty())
   {
     report = FileIO::GetTempFolderFilename() +
-             StringFormat::sntimef(Timing::GetUTCTime(), "/renderdoc_report_%H%M%S.zip");
+             StringFormat::sntimef(Timing::GetUTCTime(), "/rendertest_report_%H%M%S.zip");
   }
 
   FileIO::Delete(report);

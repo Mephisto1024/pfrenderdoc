@@ -86,10 +86,9 @@ else()
 
     add_executable(renderdoccmd ${sources})
     
-    if(INTERNAL_SELF_CAPTURE)
-        set_target_properties(renderdoccmd PROPERTIES OUTPUT_NAME "rdocselfcmd")
-    endif()
 endif()
+
+set_target_properties(renderdoccmd PROPERTIES OUTPUT_NAME "${RDOC_BASE_NAME}cmd")
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     set_property(SOURCE renderdoccmd.cpp APPEND_STRING PROPERTY COMPILE_FLAGS " -Wno-shadow")

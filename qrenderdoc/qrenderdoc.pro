@@ -12,7 +12,8 @@ lessThan(QT_MAJOR_VERSION, 5): error("requires Qt 5.6; found $$[QT_VERSION]")
 
 equals(QT_MAJOR_VERSION, 5): lessThan(QT_MINOR_VERSION, 6): error("requires Qt 5.6; found $$[QT_VERSION]")
 
-TARGET = qrenderdoc
+isEmpty(RDOC_BASE_NAME): RDOC_BASE_NAME = rendertest
+TARGET = q$${RDOC_BASE_NAME}
 TEMPLATE = app
 
 # include path for core renderdoc API
@@ -99,7 +100,7 @@ win32 {
 	LIBS += user32.lib
 
 	# Link against the core library
-	LIBS += $$DESTDIR/renderdoc.lib
+	LIBS += $$DESTDIR/$${RDOC_BASE_NAME}.lib
 
 	# Link against the version library
 	LIBS += $$DESTDIR/version.lib
@@ -126,7 +127,7 @@ win32 {
 	OBJECTS_DIR = .obj
 
 	# Link against the core library
-	LIBS += -lrenderdoc
+	LIBS += -l$${RDOC_BASE_NAME}
 	QMAKE_LFLAGS += '-Wl,-rpath,\'\$$ORIGIN\',-rpath,\'\$$ORIGIN/../lib'$$LIB_SUFFIX'/'$$LIB_SUBFOLDER_TRAIL_SLASH'\''
 
 	# Add the SWIG files that were generated in cmake

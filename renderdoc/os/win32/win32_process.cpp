@@ -735,7 +735,7 @@ rdcpair<RDResult, uint32_t> Process::InjectIntoProcess(uint32_t pid,
 
       renderdocPath[idx] = 0;
 
-      wcscat_s(renderdocPath, L"\\Win32\\Development\\renderdoccmd.exe");
+      wcscat_s(renderdocPath, L"\\Win32\\Development\\rendertestcmd.exe");
     }
 
     if(!devLocation)
@@ -748,7 +748,7 @@ rdcpair<RDResult, uint32_t> Process::InjectIntoProcess(uint32_t pid,
 
         renderdocPath[idx] = 0;
 
-        wcscat_s(renderdocPath, L"\\Win32\\Release\\renderdoccmd.exe");
+        wcscat_s(renderdocPath, L"\\Win32\\Release\\rendertestcmd.exe");
       }
     }
 
@@ -763,7 +763,7 @@ rdcpair<RDResult, uint32_t> Process::InjectIntoProcess(uint32_t pid,
         *slash = 0;
 
       // append path
-      wcscat_s(renderdocPath, L"\\x86\\renderdoccmd.exe");
+      wcscat_s(renderdocPath, L"\\x86\\rendertestcmd.exe");
     }
 #else
     // if it looks like we're in the development environment, look for the alternate bitness in the
@@ -775,7 +775,7 @@ rdcpair<RDResult, uint32_t> Process::InjectIntoProcess(uint32_t pid,
 
       renderdocPath[idx] = 0;
 
-      wcscat_s(renderdocPath, L"\\x64\\Development\\renderdoccmd.exe");
+      wcscat_s(renderdocPath, L"\\x64\\Development\\rendertestcmd.exe");
     }
 
     if(!devLocation)
@@ -788,7 +788,7 @@ rdcpair<RDResult, uint32_t> Process::InjectIntoProcess(uint32_t pid,
 
         renderdocPath[idx] = 0;
 
-        wcscat_s(renderdocPath, L"\\x64\\Release\\renderdoccmd.exe");
+        wcscat_s(renderdocPath, L"\\x64\\Release\\rendertestcmd.exe");
       }
     }
 
@@ -808,7 +808,7 @@ rdcpair<RDResult, uint32_t> Process::InjectIntoProcess(uint32_t pid,
         *slash = 0;
 
       // append path
-      wcscat_s(renderdocPath, L"\\renderdoccmd.exe");
+      wcscat_s(renderdocPath, L"\\rendertestcmd.exe");
     }
 #endif
 
@@ -1379,7 +1379,7 @@ RDResult BackupAndChangeRegistry(GlobalHookData &hookdata, const rdcstr &shimpat
   // write it to disk but don't fail if we can't, just print it to the log and keep going.
   wchar_t reg_backup[MAX_PATH];
   GetTempPathW(MAX_PATH, reg_backup);
-  wcscat_s(reg_backup, L"RenderDoc_RestoreGlobalHook.reg");
+  wcscat_s(reg_backup, L"RenderTest_RestoreGlobalHook.reg");
 
   FILE *f = NULL;
   _wfopen_s(&f, reg_backup, L"w");
@@ -1498,7 +1498,7 @@ RDResult Process::StartGlobalHook(const rdcstr &pathmatch, const rdcstr &capture
   renderdocPath = get_dirname(renderdocPath);
 
   // the native renderdoccmd.exe is always next to the dll. Wow32 will be somewhere else
-  rdcstr cmdpathNative = renderdocPath + "\\renderdoccmd.exe";
+  rdcstr cmdpathNative = renderdocPath + "\\rendertestcmd.exe";
   rdcstr cmdpathWow32;
 
   rdcstr shimpathNative = renderdocPath;
@@ -1507,7 +1507,7 @@ RDResult Process::StartGlobalHook(const rdcstr &pathmatch, const rdcstr &capture
 #if ENABLED(RDOC_X64)
 
   // native shim is just renderdocshim64.dll
-  shimpathNative = renderdocPath + "\\renderdocshim64.dll";
+  shimpathNative = renderdocPath + "\\rendertestshim64.dll";
 
   // if it looks like we're in the development environment, look for the alternate bitness in the
   // corresponding folder
@@ -1516,8 +1516,8 @@ RDResult Process::StartGlobalHook(const rdcstr &pathmatch, const rdcstr &capture
   {
     renderdocPath.erase(devLocation, ~0U);
 
-    shimpathWow32 = renderdocPath + "\\Win32\\Development\\renderdocshim32.dll";
-    cmdpathWow32 = renderdocPath + "\\Win32\\Development\\renderdoccmd.exe";
+    shimpathWow32 = renderdocPath + "\\Win32\\Development\\rendertestshim32.dll";
+    cmdpathWow32 = renderdocPath + "\\Win32\\Development\\rendertestcmd.exe";
   }
   else
   {
@@ -1527,22 +1527,22 @@ RDResult Process::StartGlobalHook(const rdcstr &pathmatch, const rdcstr &capture
     {
       renderdocPath.erase(devLocation, ~0U);
 
-      shimpathWow32 = renderdocPath + "\\Win32\\Release\\renderdocshim32.dll";
-      cmdpathWow32 = renderdocPath + "\\Win32\\Release\\renderdoccmd.exe";
+      shimpathWow32 = renderdocPath + "\\Win32\\Release\\rendertestshim32.dll";
+      cmdpathWow32 = renderdocPath + "\\Win32\\Release\\rendertestcmd.exe";
     }
   }
 
   // if we're not in the dev environment, assume it's under a x86\ subfolder
   if(devLocation < 0)
   {
-    shimpathWow32 = renderdocPath + "\\x86\\renderdocshim32.dll";
-    cmdpathWow32 = renderdocPath + "\\x86\\renderdoccmd.exe";
+    shimpathWow32 = renderdocPath + "\\x86\\rendertestshim32.dll";
+    cmdpathWow32 = renderdocPath + "\\x86\\rendertestcmd.exe";
   }
 
 #else
 
   // nothing fancy to do here for 32-bit, just point the shim next to our dll.
-  shimpathNative = renderdocPath + "\\renderdocshim32.dll";
+  shimpathNative = renderdocPath + "\\rendertestshim32.dll";
 
 #endif
 

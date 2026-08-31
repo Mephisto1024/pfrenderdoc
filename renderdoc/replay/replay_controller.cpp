@@ -1773,7 +1773,7 @@ rdcstr ReplayController::CreateRGPProfile(WindowingData window)
     return "";
   }
 
-  rdcstr path = FileIO::GetTempFolderFilename() + "/renderdoc_rgp_capture.rgp";
+  rdcstr path = FileIO::GetTempFolderFilename() + "/rendertest_rgp_capture.rgp";
 
   FileIO::Delete(path);
 

@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6DEE3F12-F2F8-42CA-865A-578D0FD11387}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>renderdocshim</RootNamespace>
+    <RootNamespace>rendertestshim</RootNamespace>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\util\WindowsSDKTarget.props" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -74,22 +74,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <TargetName>$(ProjectName)32</TargetName>
+    <TargetName>rendertestshim32</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Development|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <TargetName>$(ProjectName)64</TargetName>
+    <TargetName>rendertestshim64</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <TargetName>$(ProjectName)32</TargetName>
+    <TargetName>rendertestshim32</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <TargetName>$(ProjectName)64</TargetName>
+    <TargetName>rendertestshim64</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Development|Win32'">
     <ClCompile>

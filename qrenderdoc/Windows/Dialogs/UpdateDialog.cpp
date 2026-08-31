@@ -229,8 +229,8 @@ void UpdateDialog::on_update_clicked()
 
       QDir dir(QDir::tempPath());
 
-      dir.mkdir(lit("RenderDocUpdate"));
-      dir.cd(lit("RenderDocUpdate"));
+      dir.mkdir(lit("RenderTestUpdate"));
+      dir.cd(lit("RenderTestUpdate"));
 
       QString path = dir.absoluteFilePath(lit("update.zip"));
 
@@ -255,8 +255,8 @@ void UpdateDialog::on_update_clicked()
 
       bool success = true;
 
-      QString dll = lit("renderdoc.dll");
-      QString cmd = lit("renderdoccmd.exe");
+      QString dll = lit("rendertest.dll");
+      QString cmd = lit("rendertestcmd.exe");
 
       QFile::remove(dir.absoluteFilePath(dll));
       QFile::remove(dir.absoluteFilePath(cmd));

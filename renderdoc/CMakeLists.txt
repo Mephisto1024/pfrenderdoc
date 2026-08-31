@@ -633,16 +633,22 @@ target_include_directories(renderdoc ${RDOC_INCLUDES})
 target_link_libraries(renderdoc ${RDOC_LIBRARIES})
 
 add_dependencies(renderdoc renderdoc_libentry)
+set_target_properties(renderdoc PROPERTIES OUTPUT_NAME "${RDOC_BASE_NAME}")
 
 if(UNIX AND NOT ANDROID AND NOT APPLE)
-    set(RDOC_LINK_FLAGS "-Wl,--undefined,force_include_libentry -Wl,--version-script,${CMAKE_CURRENT_SOURCE_DIR}/${RDOC_BASE_NAME}.version")
+    set(RDOC_VERSION_SCRIPT renderdoc.version)
+    if(INTERNAL_SELF_CAPTURE)
+        set(RDOC_VERSION_SCRIPT rdocself.version)
+    endif()
+
+    set(RDOC_LINK_FLAGS "-Wl,--undefined,force_include_libentry -Wl,--version-script,${CMAKE_CURRENT_SOURCE_DIR}/${RDOC_VERSION_SCRIPT}")
 
     if(NOT ENABLE_ASAN AND NOT ENABLE_TSAN)
         set(RDOC_LINK_FLAGS "${RDOC_LINK_FLAGS} -Wl,--no-undefined")
     endif()
 
     if(NOT RELEASE_MODE)
-        configure_file(${CMAKE_CURRENT_SOURCE_DIR}/librenderdoc.so-gdb.py ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/librenderdoc.so-gdb.py)
+        configure_file(${CMAKE_CURRENT_SOURCE_DIR}/librenderdoc.so-gdb.py ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lib${RDOC_BASE_NAME}.so-gdb.py)
     endif()
 
     set_target_properties(renderdoc PROPERTIES LINK_FLAGS "${RDOC_LINK_FLAGS}")
@@ -656,10 +662,6 @@ if(APPLE)
     set_target_properties(renderdoc PROPERTIES INSTALL_RPATH "@executable_path/../lib")
     set_target_properties(renderdoc PROPERTIES BUILD_WITH_INSTALL_RPATH TRUE)
     set_target_properties(renderdoc PROPERTIES BUILD_WITH_INSTALL_NAME_DIR TRUE)
-endif()
-
-if(INTERNAL_SELF_CAPTURE)
-    set_target_properties(renderdoc PROPERTIES OUTPUT_NAME "rdocself")
 endif()
 
 if(ANDROID)

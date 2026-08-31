@@ -288,9 +288,9 @@ rdcstr CaptureContext::TempCaptureFilename(const rdcstr &appname)
   {
     dir = QDir(QDir::tempPath());
 
-    dir.mkdir(lit("RenderDoc"));
+    dir.mkdir(lit("RenderTest"));
 
-    dir = QDir(dir.absoluteFilePath(lit("RenderDoc")));
+    dir = QDir(dir.absoluteFilePath(lit("RenderTest")));
   }
 
   return dir.absoluteFilePath(

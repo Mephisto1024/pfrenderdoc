@@ -291,7 +291,7 @@ public:
   {
     parser.add<uint32_t>("PID", 0, "The process ID of the process to inject.", true);
   }
-  virtual const char *Description() { return "Injects RenderDoc into a given running process."; }
+  virtual const char *Description() { return "Injects RenderTest into a given running process."; }
   virtual bool IsInternalOnly() { return false; }
   virtual bool IsCaptureCommand() { return true; }
   virtual bool Parse(cmdline::parser &parser, GlobalEnvironment &)
@@ -1493,8 +1493,8 @@ static int command_usage(std::string command)
               << std::endl
               << std::endl;
 
-  std::cerr << "Usage: renderdoccmd <command> [args ...]" << std::endl;
-  std::cerr << "Command line tool for capture & replay with RenderDoc." << std::endl << std::endl;
+  std::cerr << "Usage: rendertestcmd <command> [args ...]" << std::endl;
+  std::cerr << "Command line tool for capture & replay with RenderTest." << std::endl << std::endl;
 
   std::cerr << "Command can be one of:" << std::endl;
 
@@ -1519,7 +1519,7 @@ static int command_usage(std::string command)
   }
   std::cerr << std::endl;
 
-  std::cerr << "To see details of any command, see 'renderdoccmd <command> --help'" << std::endl
+  std::cerr << "To see details of any command, see 'rendertestcmd <command> --help'" << std::endl
             << std::endl;
 
   std::cerr << "For more information, see <https://renderdoc.org/>." << std::endl;
