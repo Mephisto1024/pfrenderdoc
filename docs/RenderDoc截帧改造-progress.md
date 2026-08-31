@@ -7,9 +7,9 @@
 
 ## 1. 当前状态
 
-- 当前阶段：构建系统与六个输出名称已完成静态验收，等待改造版本构建
+- 当前阶段：改造版本 x64 Release 已完成干净构建，Replay Marker 与 Manifest 已验证，等待启动验证
 - 源码改造进度：约 30%（按已完成并验证的源码改造清单估算）
-- 构建状态：原版 x64/Win32 Release 基线构建成功；尚未构建改造版本
+- 构建状态：原版 x64/Win32 Release 基线构建成功；改造版 x64 Release 构建成功，Win32 尚未构建
 - 功能验证：尚未开始
 - 阻塞项：本机未安装 VS v140 工具集；原版基线已使用 VS 2022 v143 覆盖构建
 
@@ -40,6 +40,8 @@
 | 2026-08-30 | 建立独立改造分支 | 分支 `codex/rendertest-rename`；基准提交 `97708677bcc3fdab6cdb3899d459870a591b8153` |
 | 2026-08-30 | 完成原版 Release 基线构建 | x64、Win32 均成功，0 Warning、0 Error；使用 VS 2022 v143 覆盖项目声明的 v140 |
 | 2026-08-30 | 完成构建系统与六个输出名称静态验收 | MSBuild 属性求值确认 `rendertest.dll`、`rendertestcmd.exe`、`rendertestshim32/64.dll`、`rendertestui.exe`、`qrendertest.exe`；改造版本尚未实际构建 |
+| 2026-09-01 | 完成改造版 x64 Release 干净构建 | 独立 worktree `E:\pfrenderdoc-build`；提交 `e2efe2094`；0 Warning、0 Error；五个 x64 核心输出均为新名称，无旧名核心产物 |
+| 2026-09-01 | Replay Marker 与 Manifest 验证通过 | `qrendertest.exe` 导出 `rendertest__replay__marker` 且不导出旧 Marker；`rendertestui.exe` 内嵌 Manifest 为 `requireAdministrator`、`uiAccess=false` |
 
 ## 3. 构建环境
 
@@ -97,15 +99,15 @@
 - [x] 修改 `RootNamespace`、`ProjectName`。
 - [x] 显式修改 `PrimaryOutput`、`TargetName` 为 `rendertestui`。
 - [x] 设置 `UACExecutionLevel` 为 `RequireAdministrator`。
-- [ ] 确认最终输出为 `rendertestui.exe`，并检查生成的 Manifest。
+- [x] 确认最终输出为 `rendertestui.exe`，并检查生成的 Manifest。
 
 ## 6. Replay Marker
 
 目标文件：`renderdoc/api/replay/renderdoc_replay.h`
 
-- [ ] 将导出标记由 `renderdoc__replay__marker` 调整为 `rendertest__replay__marker`。
-- [ ] 检查 DLL 端通过 `RDOC_BASE_NAME` 查找的符号名是否与导出端完全一致。
-- [ ] 使用导出表工具确认 UI 程序包含新的 Replay Marker。
+- [x] 将导出标记由 `renderdoc__replay__marker` 调整为 `rendertest__replay__marker`。
+- [x] 检查 DLL 端通过 `RDOC_BASE_NAME` 查找的符号名是否与导出端完全一致。
+- [x] 使用导出表工具确认 UI 程序包含新的 Replay Marker。
 
 验证标准：核心 DLL 在 UI/replay 进程中能够正确识别 replay 环境，不会错误安装捕获 Hook 或导致 UI 崩溃。
 
@@ -113,9 +115,9 @@
 
 目标文件：`renderdoc/os/win32/win32_process.cpp`
 
-- [ ] 将所有硬编码的 `renderdoccmd.exe` 路径同步为 `rendertestcmd.exe`。
-- [ ] 将所有硬编码的 `renderdocshim32.dll`、`renderdocshim64.dll` 路径同步为新名称。
-- [ ] 覆盖 Development、Release、Win32、x64 及安装目录等路径分支。
+- [x] 将所有硬编码的 `renderdoccmd.exe` 路径同步为 `rendertestcmd.exe`。
+- [x] 将所有硬编码的 `renderdocshim32.dll`、`renderdocshim64.dll` 路径同步为新名称。
+- [x] 覆盖 Development、Release、Win32、x64 及安装目录等路径分支。
 - [ ] 检查 `CREATE_SUSPENDED` 创建、注入和恢复流程未被命名修改破坏。
 
 验证标准：x64 与跨位数辅助路径均能找到对应的新命名文件。
@@ -124,9 +126,9 @@
 
 目标文件：`renderdoc/os/win32/sys_win32_hooks.cpp`
 
-- [ ] 将自身进程判断中的 `renderdoccmd.exe` 更新为 `rendertestcmd.exe`。
-- [ ] 将 UI 判断中的 `qrenderdoc.exe` 更新为 `qrendertest.exe`。
-- [ ] 同时核对 `app` 与 `cmd` 两个判断分支。
+- [x] 将自身进程判断中的 `renderdoccmd.exe` 更新为 `rendertestcmd.exe`。
+- [x] 将 UI 判断中的 `qrenderdoc.exe` 更新为 `qrendertest.exe`。
+- [x] 同时核对 `app` 与 `cmd` 两个判断分支。
 
 验证标准：新命名的命令行工具和 UI 不会被当作普通目标再次注入。
 
@@ -134,11 +136,11 @@
 
 目标文件：`renderdoc/core/crash_handler.h`、`renderdoccmd/renderdoccmd_win32.cpp`
 
-- [ ] 统一修改命名事件，例如 `RENDERTEST_CRASHHANDLE`。
-- [ ] 修改 Crash Handler 启动路径中的命令行程序名。
-- [ ] 修改 Dump 目录为新的产品目录。
-- [ ] 修改核心模块查找名称为 `rendertest.dll`。
-- [ ] 检查创建端与监听端使用完全一致的事件名和通信参数。
+- [x] 统一修改命名事件，例如 `RENDERTEST_CRASHHANDLE`。
+- [x] 修改 Crash Handler 启动路径中的命令行程序名。
+- [x] 修改 Dump 目录为新的产品目录。
+- [x] 修改核心模块查找名称为 `rendertest.dll`。
+- [x] 检查创建端与监听端使用完全一致的事件名和通信参数。
 
 验证标准：人工触发受控测试崩溃后，处理进程可以启动并生成 Dump。
 
@@ -146,8 +148,8 @@
 
 目标文件：`renderdoc/os/win32/win32_stringio.cpp`
 
-- [ ] 修改 UI 可执行文件查找路径为 `qrendertest.exe`。
-- [ ] 修改配置、临时文件或注册表使用的产品目录名。
+- [x] 修改 UI 可执行文件查找路径为 `qrendertest.exe`。
+- [x] 修改配置、临时文件或注册表使用的产品目录名。
 - [ ] 搜索同类路径拼接逻辑，确认没有遗漏的原始硬编码名称。
 
 验证标准：配置读写、日志、临时文件和 UI 启动均落到新命名路径。
@@ -156,10 +158,10 @@
 
 目标文件：`renderdocshim/renderdocshim.h` 及相关调用端
 
-- [ ] 修改 `SHIM_DLL_NAME` 的 32 位与 64 位名称。
-- [ ] 修改全局 Hook 共享内存名称，例如 `RenderTestGlobalHookData32/64`。
+- [x] 修改 `SHIM_DLL_NAME` 的 32 位与 64 位名称。
+- [x] 修改全局 Hook 共享内存名称，例如 `RenderTestGlobalHookData32/64`。
 - [ ] 搜索命名管道、命名事件、共享内存等 IPC 标识符。
-- [ ] 确保 IPC 的创建端和打开端同步修改。
+- [x] 确保 IPC 的创建端和打开端同步修改。
 
 验证标准：32 位和 64 位 Shim 均可读取正确的共享配置，且不存在双方名称不一致。
 
@@ -173,18 +175,18 @@
 
 任务：
 
-- [ ] 修改 Qt 翻译上下文及应用描述中的产品名称。
-- [ ] 修改主窗口标题中的显示名称。
-- [ ] 将 Stub 查找的 UI 主程序更新为 `qrendertest.exe`。
+- [x] 修改 Qt 翻译上下文及应用描述中的产品名称。
+- [x] 修改主窗口标题中的显示名称。
+- [x] 将 Stub 查找的 UI 主程序更新为 `qrendertest.exe`。
 - [ ] 检查 About、错误消息、日志和命令行帮助中的旧名称。
 
 验证标准：`rendertestui.exe` 能找到并启动 `qrendertest.exe`，UI 正常显示且不崩溃。
 
 ## 13. 其他可识别标识
 
-- [ ] `renderdoc/driver/gl/wgl_platform.cpp`：修改窗口类名 `renderdocGLclass`。
-- [ ] `renderdoc/data/renderdoc.rc`：修改 `FileDescription`、`InternalName`、`OriginalFilename`、`ProductName`。
-- [ ] `qrenderdoc/Code/pyrenderdoc/PythonContext.cpp`：修改 Python program name。
+- [x] `renderdoc/driver/gl/wgl_platform.cpp`：修改窗口类名 `renderdocGLclass`。
+- [x] `renderdoc/data/renderdoc.rc`：修改 `FileDescription`、`InternalName`、`OriginalFilename`、`ProductName`。
+- [x] `qrenderdoc/Code/pyrenderdoc/PythonContext.cpp`：修改 Python program name。
 - [ ] 检查版本资源、图标资源、PDB 名称及安装包元数据。
 - [ ] 全仓库搜索大小写不同的 `renderdoc`、`qrenderdoc`、`rdoc` 标识，并逐项判断是否需要修改。
 
@@ -192,10 +194,10 @@
 
 ## 14. 输出文件核对
 
-- [ ] 确认核心 DLL：`rendertest.dll`。
-- [ ] 确认 UI Stub：`rendertestui.exe`。
-- [ ] 确认 Qt UI：`qrendertest.exe`。
-- [ ] 确认命令行工具：`rendertestcmd.exe`。
+- [x] 确认核心 DLL：`rendertest.dll`。
+- [x] 确认 UI Stub：`rendertestui.exe`。
+- [x] 确认 Qt UI：`qrendertest.exe`。
+- [x] 确认命令行工具：`rendertestcmd.exe`。
 - [ ] 确认 Shim：`rendertestshim32.dll`、`rendertestshim64.dll`。
 - [ ] 确认所有程序的导入表、模块查找和相对路径均引用新文件名。
 - [ ] 确认构建目录中没有因旧产物残留而产生“误通过”。
@@ -204,7 +206,7 @@
 
 ## 15. 构建与功能验证
 
-- [ ] 完整清理后构建 x64 Release。
+- [x] 完整清理后构建 x64 Release。
 - [ ] 完整清理后构建 Win32 Release。
 - [ ] UI Stub 启动测试。
 - [ ] Qt UI 独立启动测试。
@@ -233,6 +235,7 @@
 |---|---|---|---|---|---|---|
 | 2026-08-30 | `97708677bcc3fdab6cdb3899d459870a591b8153` | VS 2022 17.14.32 / v143 / SDK 10.0.22621.0 | x64 / Release | 成功，0 Warning、0 Error | `build-logs/baseline-release-x64.log` | 原版基线；命令行覆盖项目声明的 v140 |
 | 2026-08-30 | `97708677bcc3fdab6cdb3899d459870a591b8153` | VS 2022 17.14.32 / v143 / SDK 10.0.22621.0 | Win32 / Release | 成功，0 Warning、0 Error | `build-logs/baseline-release-x86.log` | 原版基线；命令行覆盖项目声明的 v140 |
+| 2026-09-01 | `e2efe209477dd768f77ab21bb1f8b26b2d8baa9c` | VS 2022 17.14.32 / v143 / SDK 10.0.22621.0 | x64 / Release | 成功，0 Warning、0 Error | `E:\pfrenderdoc-build\build-logs\rendertest-release-x64.log` | 独立 worktree 干净构建；耗时 00:03:50.55 |
 
 ## 18. 测试记录模板
 
@@ -248,7 +251,7 @@
 | 编号 | 状态 | 问题/决策 | 影响 | 处理方案 |
 |---|---|---|---|---|
 | 1 | 待决策 | 本机未安装 v140；是否正式采用 v143 工具集 | 影响项目兼容性和构建环境 | 原版基线已使用 v143 成功构建；改造版本构建前确认是否继续使用命令行覆盖或修改项目配置 |
-| 2 | 待构建验证 | `qrendertest.exe` 输出名已在 VS、qmake 与 CMake 路径中统一 | 影响 Stub 启动和自身注入排除 | 静态检查已通过，等待改造版本构建及启动验证 |
+| 2 | 待启动验证 | `qrendertest.exe` 输出名已在 VS、qmake 与 CMake 路径中统一 | 影响 Stub 启动和自身注入排除 | x64 干净构建、输出名、Replay Marker 与 Manifest 已验证，等待 Stub/UI 启动验证 |
 
 ## 20. 使用边界
 
