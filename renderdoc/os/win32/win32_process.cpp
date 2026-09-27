@@ -566,6 +566,8 @@ static PROCESS_INFORMATION RunProcess(const rdcstr &app, const rdcstr &workingDi
     CloseHandle(pi.hProcess);
     CloseHandle(pi.hThread);
     RDCEraseEl(pi);
+    // Preserve the creation error across logging and handle cleanup for the caller.
+    SetLastError(err);
   }
 
   return pi;
@@ -1158,27 +1160,75 @@ rdcpair<RDResult, uint32_t> Process::LaunchAndInjectIntoProcess(
 
   if(pi.dwProcessId == 0)
   {
+    DWORD launchError = GetLastError();
     RDResult result;
-    SET_ERROR_RESULT(result, ResultCode::InjectionFailed, "Failed to launch process.");
+    SET_ERROR_RESULT(result, ResultCode::InjectionFailed,
+                     "Failed to launch process (Windows error %lu).", launchError);
     return {result, 0};
   }
 
+  RDCLOG("Capture launch: created PID %lu, main thread %lu", pi.dwProcessId, pi.dwThreadId);
+  RDCLOG("Capture launch: starting DLL injection into PID %lu", pi.dwProcessId);
   rdcpair<RDResult, uint32_t> ret = InjectIntoProcess(pi.dwProcessId, {}, capturefile, opts, false);
+  RDCLOG("Capture launch: injection completed for PID %lu, result %s, target control ID %u: %s",
+         pi.dwProcessId, ToStr(ret.first.code).c_str(), ret.second, ret.first.message.c_str());
 
-  CloseHandle(pi.hProcess);
-  ResumeThread(pi.hThread);
-  ResumeThread(pi.hThread);
+  // Preserve the existing resume sequence and record each previous suspend count.
+  for(int attempt = 0; attempt < 2; attempt++)
+  {
+    DWORD suspendCount = ResumeThread(pi.hThread);
+    if(suspendCount == DWORD(-1))
+    {
+      DWORD resumeError = GetLastError();
+      RDCWARN("Capture launch: ResumeThread attempt %d failed for PID %lu (Windows error %lu)",
+              attempt + 1, pi.dwProcessId, resumeError);
+    }
+    else
+    {
+      RDCLOG("Capture launch: ResumeThread attempt %d for PID %lu, previous suspend count %lu",
+             attempt + 1, pi.dwProcessId, suspendCount);
+    }
+  }
+
+  CloseHandle(pi.hThread);
 
   if(ret.second == 0 || ret.first != ResultCode::Succeeded)
   {
-    CloseHandle(pi.hThread);
+    DWORD exitCode = 0;
+    if(GetExitCodeProcess(pi.hProcess, &exitCode))
+      RDCLOG("Capture launch: PID %lu status after injection failure: 0x%08lx", pi.dwProcessId,
+             exitCode);
+    CloseHandle(pi.hProcess);
     return ret;
   }
 
   if(waitForExit)
-    WaitForSingleObject(pi.hThread, INFINITE);
+  {
+    RDCLOG("Capture launch: waiting for PID %lu to exit", pi.dwProcessId);
+    DWORD waitResult = WaitForSingleObject(pi.hProcess, INFINITE);
+    if(waitResult == WAIT_OBJECT_0)
+    {
+      DWORD exitCode = 0;
+      if(GetExitCodeProcess(pi.hProcess, &exitCode))
+        RDCLOG("Capture launch: PID %lu exited with code 0x%08lx (%lu)", pi.dwProcessId,
+               exitCode, exitCode);
+      else
+      {
+        DWORD exitError = GetLastError();
+        RDCWARN("Capture launch: GetExitCodeProcess failed for PID %lu (Windows error %lu)",
+                pi.dwProcessId, exitError);
+      }
+    }
+    else
+    {
+      DWORD waitError = GetLastError();
+      SET_ERROR_RESULT(ret.first, ResultCode::InternalError,
+                       "Failed waiting for PID %lu (wait result %lu, Windows error %lu).",
+                       pi.dwProcessId, waitResult, waitError);
+    }
+  }
 
-  CloseHandle(pi.hThread);
+  CloseHandle(pi.hProcess);
 
   return ret;
 }

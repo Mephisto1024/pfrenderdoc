@@ -41,6 +41,25 @@ class D3D11Hook : LibraryHook
 public:
   void RegisterHooks()
   {
+    // Bisection switch: see the matching note in dxgi_hooks.cpp. RDC_NO_D3D_HOOKS turns off both
+    // groups at once (the original coarse switch, kept so earlier results stay reproducible);
+    // RDC_NO_D3D11_HOOKS turns off only this group, which is what tells the two IAT patch sets -
+    // and the two wrapper sets - apart.
+    char noD3DEnv[16] = {0};
+    char noD3D11Env[16] = {0};
+    const bool skipBoth = GetEnvironmentVariableA("RDC_NO_D3D_HOOKS", noD3DEnv, sizeof(noD3DEnv)) > 0 &&
+                          noD3DEnv[0] == '1';
+    const bool skipThis = GetEnvironmentVariableA("RDC_NO_D3D11_HOOKS", noD3D11Env,
+                                                  sizeof(noD3D11Env)) > 0 &&
+                          noD3D11Env[0] == '1';
+
+    if(skipBoth || skipThis)
+    {
+      RDCLOG("Registering D3D11 hooks - SKIPPED (%s=1)",
+             skipBoth ? "RDC_NO_D3D_HOOKS" : "RDC_NO_D3D11_HOOKS");
+      return;
+    }
+
     RDCLOG("Registering D3D11 hooks");
 
     WrappedIDXGISwapChain4::RegisterD3DDeviceCallback(GetD3D11DeviceIfAlloc);
@@ -154,15 +173,41 @@ private:
 
     RDCDEBUG("Called real createdevice...");
 
-    bool suppress = false;
+    const bool optOutRequested =
+        (Flags & D3D11_CREATE_DEVICE_PREVENT_ALTERING_LAYER_SETTINGS_FROM_REGISTRY) != 0;
 
-    suppress = (Flags & D3D11_CREATE_DEVICE_PREVENT_ALTERING_LAYER_SETTINGS_FROM_REGISTRY) != 0;
-
-    if(suppress)
+    // Local override. This flag is only a request about layer settings, but upstream RenderDoc
+    // treats it as "the application asked not to be hooked" and returns without wrapping the
+    // device, which makes capture impossible for such titles. Keep the signal in the log for
+    // diagnostics, but do not let it skip the wrapping below.
+    if(optOutRequested)
     {
-      RDCLOG("Application requested not to be hooked.");
+      RDCLOG(
+          "Application requested not to be hooked via "
+          "D3D11_CREATE_DEVICE_PREVENT_ALTERING_LAYER_SETTINGS_FROM_REGISTRY - ignoring and "
+          "hooking anyway.");
     }
-    else if(SUCCEEDED(ret) && ppDevice)
+
+    // Bisection switch: hooks stay installed (the target's imports are still patched) but the
+    // device is handed back untouched.
+    char noWrapEnv[16] = {0};
+    const bool noWrap = GetEnvironmentVariableA("RDC_NO_WRAP", noWrapEnv, sizeof(noWrapEnv)) > 0 &&
+                        noWrapEnv[0] == '1';
+
+    if(noWrap)
+    {
+      RDCLOG("Device wrapping SKIPPED (RDC_NO_WRAP=1) - import hooks stay installed");
+
+      // The real call above is made with ppImmediateContext = NULL, so the unwrapped path has to
+      // fetch it here - otherwise the caller receives a NULL context and crashes in its own code.
+      if(SUCCEEDED(ret) && ppDevice && *ppDevice && ppImmediateContext)
+        (*ppDevice)->GetImmediateContext(ppImmediateContext);
+
+      EndRecurse();
+      return ret;
+    }
+
+    if(SUCCEEDED(ret) && ppDevice)
     {
       RDCDEBUG("succeeded and hooking.");
 

@@ -81,6 +81,16 @@ public:
 
   void RegisterHooks()
   {
+    // Bisection switch: these are IAT patches in kernel32/advapi32/ws2_32 of the target. If the
+    // anti-cheat scans import tables, this is the loudest thing we do that capture does not need.
+    char noWin32Env[16] = {0};
+    if(GetEnvironmentVariableA("RDC_NO_WIN32_HOOKS", noWin32Env, sizeof(noWin32Env)) > 0 &&
+       noWin32Env[0] == '1')
+    {
+      RDCLOG("Registering Win32 system hooks - SKIPPED (RDC_NO_WIN32_HOOKS=1)");
+      return;
+    }
+
     RDCLOG("Registering Win32 system hooks");
 
     // register libraries that we care about. We don't need a callback when they are loaded

@@ -247,6 +247,29 @@ class DXGIHook : LibraryHook
 public:
   void RegisterHooks()
   {
+    // Bisection switches: DXGI/D3D hooking is what replaces the target's device and swap chain
+    // objects. Disabling it also disables capture - used only to find what the anti-cheat reacts
+    // to. RDC_NO_D3D_HOOKS turns off both groups at once (the original coarse switch, kept so
+    // earlier results stay reproducible); RDC_NO_DXGI_HOOKS turns off only this group.
+    //
+    // This group is the interesting one: the target creates its swap chain via CreateDXGIFactory +
+    // IDXGIFactory::CreateSwapChain, and mhypbase.dll imports CreateDXGIFactory itself - so this
+    // is the group whose IAT patch lands inside the anti-cheat module.
+    char noD3DEnv[16] = {0};
+    char noDXGIEnv[16] = {0};
+    const bool skipBoth = GetEnvironmentVariableA("RDC_NO_D3D_HOOKS", noD3DEnv, sizeof(noD3DEnv)) > 0 &&
+                          noD3DEnv[0] == '1';
+    const bool skipThis = GetEnvironmentVariableA("RDC_NO_DXGI_HOOKS", noDXGIEnv,
+                                                  sizeof(noDXGIEnv)) > 0 &&
+                          noDXGIEnv[0] == '1';
+
+    if(skipBoth || skipThis)
+    {
+      RDCLOG("Registering DXGI hooks - SKIPPED (%s=1)",
+             skipBoth ? "RDC_NO_D3D_HOOKS" : "RDC_NO_DXGI_HOOKS");
+      return;
+    }
+
     RDCLOG("Registering DXGI hooks");
 
     LibraryHooks::RegisterLibraryHook("dxgi.dll", NULL);
@@ -276,10 +299,18 @@ private:
       *ppFactory = NULL;
     HRESULT ret = dxgihooks.CreateDXGIFactory()(riid, ppFactory);
 
-    if(SUCCEEDED(ret))
+    if(SUCCEEDED(ret) && !NoWrapRequested())
       RefCountDXGIObject::HandleWrap("CreateDXGIFactory", riid, ppFactory);
 
     return ret;
+  }
+
+  static bool NoWrapRequested()
+  {
+    // Bisection switch: keep the IAT hooks but stop replacing the target's objects, to tell
+    // "our import patches are detected" apart from "our wrapper objects are detected".
+    char env[16] = {0};
+    return GetEnvironmentVariableA("RDC_NO_WRAP", env, sizeof(env)) > 0 && env[0] == '1';
   }
 
   static HRESULT WINAPI CreateDXGIFactory1_hook(__in REFIID riid, __out void **ppFactory)
@@ -288,7 +319,7 @@ private:
       *ppFactory = NULL;
     HRESULT ret = dxgihooks.CreateDXGIFactory1()(riid, ppFactory);
 
-    if(SUCCEEDED(ret))
+    if(SUCCEEDED(ret) && !NoWrapRequested())
       RefCountDXGIObject::HandleWrap("CreateDXGIFactory1", riid, ppFactory);
 
     return ret;
@@ -300,7 +331,7 @@ private:
       *ppFactory = NULL;
     HRESULT ret = dxgihooks.CreateDXGIFactory2()(Flags, riid, ppFactory);
 
-    if(SUCCEEDED(ret))
+    if(SUCCEEDED(ret) && !NoWrapRequested())
       RefCountDXGIObject::HandleWrap("CreateDXGIFactory2", riid, ppFactory);
 
     return ret;

@@ -181,6 +181,7 @@ private:
   std::string workingDir;
   std::string cmdLine;
   std::string logFile;
+  std::string diagnosticLog;
   bool wait_for_exit = false;
 
 public:
@@ -188,6 +189,9 @@ public:
   virtual void AddOptions(cmdline::parser &parser)
   {
     parser.set_footer("<executable> [program arguments]");
+    parser.add<std::string>("diagnostic-log", 0,
+                            "Save a diagnostic log after launch returns. Use --wait-for-exit to "
+                            "include process termination.", false);
     parser.stop_at_rest(true);
   }
   virtual const char *Description() { return "Launches the given executable to capture."; }
@@ -210,6 +214,7 @@ public:
     executable = rest[0];
     workingDir = parser.get<std::string>("working-dir");
     logFile = parser.get<std::string>("capture-file");
+    diagnosticLog = parser.get<std::string>("diagnostic-log");
 
     for(size_t i = 1; i < rest.size(); i++)
     {
@@ -226,6 +231,21 @@ public:
 
   virtual int Execute(const CaptureOptions &opts)
   {
+    FILE *diagnosticFile = NULL;
+    if(!diagnosticLog.empty())
+    {
+      diagnosticFile = fopen(diagnosticLog.c_str(), "wb");
+      if(!diagnosticFile)
+      {
+        std::cerr << "Cannot open diagnostic log: " << diagnosticLog << std::endl;
+        return 1;
+      }
+      std::cout << "Diagnostic log will be saved to: " << diagnosticLog << std::endl;
+      if(!wait_for_exit)
+        std::cout << "Use --wait-for-exit to include the target's exit code." << std::endl;
+    }
+
+    std::cout << "Live diagnostic log: " << RENDERDOC_GetLogFile() << std::endl;
     std::cout << "Launching '" << executable << "'";
 
     if(!cmdLine.empty())
@@ -237,6 +257,21 @@ public:
 
     ExecuteResult res = RENDERDOC_ExecuteAndInject(
         conv(executable), conv(workingDir), conv(cmdLine), env, conv(logFile), opts, wait_for_exit);
+
+    if(diagnosticFile)
+    {
+      rdcstr contents;
+      RENDERDOC_GetLogFileContents(0, contents);
+      bool saved = fwrite(contents.c_str(), 1, contents.size(), diagnosticFile) == contents.size();
+      if(fclose(diagnosticFile) != 0)
+        saved = false;
+      if(!saved)
+      {
+        std::cerr << "Failed to save diagnostic log: " << diagnosticLog << std::endl;
+        return 1;
+      }
+      std::cout << "Saved diagnostic log: " << diagnosticLog << std::endl;
+    }
 
     if(res.result.code != ResultCode::Succeeded)
     {
@@ -251,7 +286,8 @@ public:
     }
     else
     {
-      std::cerr << "Launched as ID " << res.ident << std::endl;
+      std::cerr << "Launched with target control ID " << res.ident << " (not a PID or exit code)"
+                << std::endl;
     }
 
     return res.ident;
