@@ -18,7 +18,7 @@ D:\miHoYo Launcher\games\Genshin Impact Game\YuanShen.exe
 - **硬杀成因已证实**：来自把 `mhypbase.dll` 自己的 `CreateDXGIFactory` 导入项改指向 `rendertest.dll`。跳过该模块的 IAT 改写后 AV 完全消失；与设备/交换链包装无关。
 - **交换链来源已查清**：目标走 `CreateDXGIFactory*` + `IDXGIFactory::CreateSwapChain`，全树从不使用 `D3D11CreateDeviceAndSwapChain`。
 - **自动截帧已打通并验证**：`RDC_AUTO_CAPTURE_FRAME`（帧号）+ `RDC_AUTO_CAPTURE_DELAY_MS`（墙钟）两路，不需要手速；`RDC_AUTO_CAPTURE_DELAY_MS=20000 45000 65000` 一轮即拿到 5 份帧，其中 3 份是游戏内画面。
-- **GUI 路径同样可用，且无需改代码**：`rendertestui.exe`/`qrendertest.exe` 与 CLI 走同一套注入代码，差别只在开关传递；用 `run-rendertestui.ps1` 自提权并带上 `RDC_SKIP_IAT_MODULE=mhypbase.dll` 即可。详见下文"GUI 路径"。
+- **GUI 路径已验证可用，且无需改代码**：`rendertestui.exe`/`qrendertest.exe` 与 CLI 走同一套注入代码，差别只在开关传递；用户已于 01:06–01:26 用 `run-rendertestui.ps1` 实跑成功，产出 3 份游戏内帧。详见下文"GUI 路径"。
 - **剩余唯一瓶颈**：第二层"温和退出"（无 AV、无 WER、`exit 0`），实测在 79–130 s 之间浮动。它只决定窗口长度，不影响能否截帧。
 - **崩溃取证手段齐备**：进程内 raw dump（`selfdump_*.firstchance.raw.txt`）可稳定拿到反作弊工作线程在 ntdll 写 NULL 的一手异常，用于判断某配置是否仍触发硬杀。
 - **注意**：`result.txt` 里的 Application Error 段落可能捞到 10 分钟内**上一轮**的旧事件，判断某轮是否被杀应看 `selfdump_<该轮PID>.crash.txt` 与诊断日志退出码。
@@ -484,6 +484,15 @@ GUI 路径的四个注意事项：
 4. **不要用"注入到已运行进程"**：那条路径的环境变量是在 DLL 加载**之后**才由 `INTERNAL_ApplyEnvMods` 写入目标（`win32_process.cpp:247-250`），而 hook 注册发生在 DllMain、更早，因此 `RDC_SKIP_IAT_MODULE` 不会生效。只能走"启动并注入"。
 
 GUI 自带的触发手段（无需环境变量）：F12 / PrintScreen，以及 Live Capture 窗口的 **Queue Capture**（按帧号，`LiveCapture.cpp:283`）。按帧号不稳（前段约 1400–1800 fps、进游戏后约 340 fps），按时间或手动更可控。
+
+**验证（2026-09-28 01:06–01:26，由用户实跑）**：走"包装脚本"这条路，端到端成功。
+
+- `run-rendertestui.log` 记录：01:06:35 非提权实例启动 → 01:06:36 请求提权 → 01:06:37 提权实例启动（`admin=True`）→ 启动 `rendertestui.exe` → UI 进程存在。
+- 用户在 GUI 中启动目标并保存了 3 份帧：`C:\Users\Mephisto\Pictures\rdc\yuanshen\ssr02.rdc`（425.6 MB，01:24:23）、`ssr03.rdc`（293.3 MB，01:23:45）、`ssr04.rdc`（444.9 MB，01:26:07）。体积与游戏内帧量级一致。
+- `UI.config` 中 `RecentCaptureSettings` **仍为空**，说明没有在 GUI 对话框里填环境变量，开关完全靠包装脚本注入的环境继承——这也说明"对话框路线"尚未实测，两条路是等价的。
+- 期间新增的 9 个 `selfdump_*.crash.txt` **全部只有 `handlers installed` 一行，没有新的 AV**。
+
+一个差点误判的坑，记录备查：**selfdump 日志是按 PID 命名的追加文件**，PID 会被回收复用，因此新日志可能被追加到旧文件尾部，让旧内容看起来像本轮发生的。本次 `selfdump_29304.crash.txt` 中那段 `in-ntdll=1` 的 AV 就是 23:39 那轮的遗留（其首行为旧格式、不含 `redirect-null-write=`，而本轮新增的那行在文件**末尾**）。判断某轮是否被杀，必须看**行的时间顺序与格式**，不能只看文件里有没有 AV 字样。
 
 ## 下一步实施方案：`d3d11.dll` 代理交付（**已降级为备用路线**）
 
