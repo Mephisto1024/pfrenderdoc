@@ -49,3 +49,5 @@ qrenderdoc/3rdparty/pyside
 plugins-*/
 __pycache__
 /util/renderdoc-mcp/.venv/
+/dumps/
+/run-rendertestui.log
