@@ -24,7 +24,7 @@
 # 740). This script elevates itself, so launching it is the only elevated step needed.
 #
 # Usage (from a normal shell - the script elevates itself):
-#   powershell -NoProfile -ExecutionPolicy Bypass -File E:\pfrenderdoc\run-rendertestui.ps1
+#   powershell -NoProfile -ExecutionPolicy Bypass -File .\run-rendertestui.ps1
 #   ... -AutoCaptureDelayMs ''          no automatic capture; press F12 yourself
 #   ... -AutoCaptureDelayMs '45000 65000 80000'   more chances to land in-game
 #   ... -SkipIatModule ''               back to stock behaviour (expect the hard kill again)
@@ -46,8 +46,8 @@ param(
     # Optional frame-number triggers (counted from the first Present of the wrapped device).
     [string]$AutoCaptureFrame = '',
     # Where the injected DLL drops self-dump artifacts. Empty leaves it to the DLL's default.
-    [string]$SelfDumpDir = 'E:\pfrenderdoc\dumps',
-    [string]$UiExe = 'E:\pfrenderdoc\x64\Release\rendertestui.exe'
+    [string]$SelfDumpDir = (Join-Path $PSScriptRoot 'dumps'),
+    [string]$UiExe = (Join-Path $PSScriptRoot 'x64\Release\rendertestui.exe')
 )
 
 $ErrorActionPreference = 'Stop'
