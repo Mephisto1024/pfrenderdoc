@@ -103,7 +103,7 @@ error X4000: variable 'uiDest' used without having been completely initialized
 | 输入不是合法着色器（并预置了一份上次残留的 `.hlsl`） | 退出码 1，stdout **0 字节**（没把残留结果当成本次结果返回），stderr 报明确错误 |
 | 不给参数 | 退出码 1，stderr 报错 |
 
-测试用的输入就是本仓库的 `../../eid9236/pixel.dxbc`，输出与 `pixel_decompiled.hlsl` 同源。
+测试用的输入就是本仓库的 `../../ssr-water-ps/pixel.dxbc`，输出与 `pixel_decompiled.hlsl` 同源。
 
 ## 注意点
 
