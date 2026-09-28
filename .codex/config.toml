@@ -1,5 +1,14 @@
+mcp_optional_startup_grace_ms = 10000
+
 [mcp_servers.rendertest_capture]
 command = "uv"
 args = ["run", "--project", "util/renderdoc-mcp", "--locked", "--python", "3.12", "renderdoc-mcp"]
 startup_timeout_sec = 120
 tool_timeout_sec = 120
+default_tools_approval_mode = "writes"
+
+[mcp_servers.rendertest_capture.env]
+PYTHONIOENCODING = "utf-8"
+
+[mcp_servers.rendertest_capture.tools.open_capture]
+approval_mode = "prompt"

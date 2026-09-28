@@ -19,7 +19,7 @@ mcp = FastMCP(
 bridge = RenderDocBridge(host=settings.renderdoc_host, port=settings.renderdoc_port)
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_capture_status() -> dict:
     """
     Check if a capture is currently loaded in RenderDoc.
@@ -28,7 +28,7 @@ def get_capture_status() -> dict:
     return bridge.call("get_capture_status")
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_draw_calls(
     include_children: bool = True,
     marker_filter: str | None = None,
@@ -69,7 +69,7 @@ def get_draw_calls(
     return bridge.call("get_draw_calls", params)
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_frame_summary() -> dict:
     """
     Get a summary of the current capture frame.
@@ -84,7 +84,7 @@ def get_frame_summary() -> dict:
     return bridge.call("get_frame_summary")
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def find_draws_by_shader(
     shader_name: str,
     stage: Literal["vertex", "hull", "domain", "geometry", "pixel", "compute"] | None = None,
@@ -104,7 +104,7 @@ def find_draws_by_shader(
     return bridge.call("find_draws_by_shader", params)
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def find_draws_by_texture(texture_name: str) -> dict:
     """
     Find all draw calls using a texture with the given name (partial match).
@@ -118,7 +118,7 @@ def find_draws_by_texture(texture_name: str) -> dict:
     return bridge.call("find_draws_by_texture", {"texture_name": texture_name})
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def find_draws_by_resource(resource_id: str) -> dict:
     """
     Find all draw calls using a specific resource ID (exact match).
@@ -132,7 +132,7 @@ def find_draws_by_resource(resource_id: str) -> dict:
     return bridge.call("find_draws_by_resource", {"resource_id": resource_id})
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_draw_call_details(event_id: int) -> dict:
     """
     Get detailed information about a specific draw call.
@@ -145,7 +145,7 @@ def get_draw_call_details(event_id: int) -> dict:
     return bridge.call("get_draw_call_details", {"event_id": event_id})
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_action_timings(
     event_ids: list[int] | None = None,
     marker_filter: str | None = None,
@@ -179,7 +179,7 @@ def get_action_timings(
     return bridge.call("get_action_timings", params)
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_shader_info(
     event_id: int,
     stage: Literal["vertex", "hull", "domain", "geometry", "pixel", "compute"],
@@ -196,7 +196,7 @@ def get_shader_info(
     return bridge.call("get_shader_info", {"event_id": event_id, "stage": stage})
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_buffer_contents(
     resource_id: str,
     offset: int = 0,
@@ -218,7 +218,7 @@ def get_buffer_contents(
     )
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_texture_info(resource_id: str) -> dict:
     """
     Get metadata about a texture resource.
@@ -231,7 +231,7 @@ def get_texture_info(resource_id: str) -> dict:
     return bridge.call("get_texture_info", {"resource_id": resource_id})
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_texture_data(
     resource_id: str,
     mip: int = 0,
@@ -260,7 +260,7 @@ def get_texture_data(
     return bridge.call("get_texture_data", params)
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def get_pipeline_state(event_id: int) -> dict:
     """
     Get the full graphics pipeline state at a specific event.
@@ -280,7 +280,7 @@ def get_pipeline_state(event_id: int) -> dict:
     return bridge.call("get_pipeline_state", {"event_id": event_id})
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True})
 def list_captures(directory: str) -> dict:
     """
     List all RenderDoc capture files (.rdc) in the specified directory.

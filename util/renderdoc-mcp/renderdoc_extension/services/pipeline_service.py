@@ -309,7 +309,7 @@ class PipelineService:
             if not reflection:
                 return cbuffers
 
-            for cb in reflection.constantBlocks:
+            for i, cb in enumerate(reflection.constantBlocks):
                 slot = cb.bindPoint if hasattr(cb, 'bindPoint') else cb.fixedBindNumber
                 cb_info = {
                     "slot": slot,
@@ -318,6 +318,11 @@ class PipelineService:
                     "variable_count": len(cb.variables) if cb.variables else 0,
                     "variables": [],
                 }
+                descriptor = pipe.GetConstantBlock(stage, i, 0).descriptor
+                if descriptor.resource != rd.ResourceId.Null():
+                    cb_info["resource_id"] = str(descriptor.resource)
+                    cb_info["byte_offset"] = descriptor.byteOffset
+                    cb_info["bound_byte_size"] = descriptor.byteSize
                 if cb.variables:
                     for var in cb.variables:
                         cb_info["variables"].append({
@@ -377,17 +382,20 @@ class PipelineService:
             }
 
             try:
-                bind = pipe.GetConstantBuffer(stage, i, 0)
-                if bind.resourceId != rd.ResourceId.Null():
+                descriptor = pipe.GetConstantBlock(stage, i, 0).descriptor
+                if descriptor.resource != rd.ResourceId.Null():
+                    cb_info["resource_id"] = str(descriptor.resource)
+                    cb_info["byte_offset"] = descriptor.byteOffset
+                    cb_info["byte_size"] = descriptor.byteSize
                     variables = controller.GetCBufferVariableContents(
                         pipe.GetGraphicsPipelineObject(),
                         reflection.resourceId,
                         stage,
                         reflection.entryPoint,
                         i,
-                        bind.resourceId,
-                        bind.byteOffset,
-                        bind.byteSize,
+                        descriptor.resource,
+                        descriptor.byteOffset,
+                        descriptor.byteSize,
                     )
                     cb_info["variables"] = Serializers.serialize_variables(variables)
             except Exception as e:
