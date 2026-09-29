@@ -1,0 +1,10 @@
+float4 main(
+  noperspective float4 SV_Position : SV_Position
+) : SV_Target {
+  float4 SV_Target;
+  SV_Target.x = 1.0f;
+  SV_Target.y = 1.0f;
+  SV_Target.z = 1.0f;
+  SV_Target.w = 1.0f;
+  return SV_Target;
+}

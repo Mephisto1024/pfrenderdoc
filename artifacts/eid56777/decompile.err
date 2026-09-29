@@ -1,0 +1,3 @@
+dxil-decompiler: disassembling with C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\dxc.exe
+dxil-decompiler: default structuring failed: Unexpected goto
+dxil-decompiler: decompiled with do-while structuring

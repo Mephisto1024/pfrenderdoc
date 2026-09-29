@@ -44,7 +44,11 @@ RenderDoc 自带“自定义着色器处理工具”机制（实现见 `qrenderd
 
 ## 安装方式二：直接改配置
 
-先退出 RenderDoc，再编辑 `%APPDATA%\qrenderdoc\UI.config`，在 `ShaderProcessors` 数组里加一条：
+先退出 RenderDoc，再编辑 `%APPDATA%\qrendertest\UI.config`，在 `ShaderProcessors` 数组里加一条：
+
+> 路径提示：配置目录取自 **exe 的名字**，当前构建的 GUI 是 `qrendertest.exe`，所以是
+> `qrendertest`。改名前的旧构建用 `%APPDATA%\qrenderdoc\`；那里面即使有 `UI.config`
+> 也是**过期文件**，改了不会生效。启动器 `run-rendertestui.ps1` 读的也是 `qrendertest`。
 
 ```json
 {

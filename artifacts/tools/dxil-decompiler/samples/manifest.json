@@ -1,0 +1,194 @@
+[
+  {
+    "capture": "ds2_tar.rdc",
+    "eid": 18496,
+    "stage": "compute",
+    "sha256": "374482f27505efd51be3166052de6d590515241a361005648a8d8db624d08871",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\ds2_tar_eid18496_compute_374482f27505.dxil",
+    "bytes": 12704
+  },
+  {
+    "capture": "ds2_tar.rdc",
+    "eid": 18708,
+    "stage": "compute",
+    "sha256": "78215866b3130b4be2c078ddddc71c41b4efbe890903a1fc26b7f6ea51861a81",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\ds2_tar_eid18708_compute_78215866b313.dxil",
+    "bytes": 14596
+  },
+  {
+    "capture": "ds2_tar.rdc",
+    "eid": 38219,
+    "stage": "compute",
+    "sha256": "b1f40df759dcd474f38ed764c23d9e2b892740986900f9e19295aa0ac0940f91",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\ds2_tar_eid38219_compute_b1f40df759dc.dxil",
+    "bytes": 60180
+  },
+  {
+    "capture": "ds2_tar.rdc",
+    "eid": 38379,
+    "stage": "pixel",
+    "sha256": "24ceb7605f355f2fefb777817f42a30dc477bfc055269cdf2e8aba35f1fc484a",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\ds2_tar_eid38379_pixel_24ceb7605f35.dxil",
+    "bytes": 1816
+  },
+  {
+    "capture": "ds2_tar.rdc",
+    "eid": 38379,
+    "stage": "vertex",
+    "sha256": "7b0218cefb2c58c952362fade440d24e144ca6041c281951e58a6660a22e9dfb",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\ds2_tar_eid38379_vertex_7b0218cefb2c.dxil",
+    "bytes": 4128
+  },
+  {
+    "capture": "ds2_tar.rdc",
+    "eid": 38478,
+    "stage": "compute",
+    "sha256": "ce73bd1ab44c1cfacac0253e274c9909681880879507aa50ea30607d997e3e3a",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\ds2_tar_eid38478_compute_ce73bd1ab44c.dxil",
+    "bytes": 3796
+  },
+  {
+    "capture": "ds2_tar.rdc",
+    "eid": 38753,
+    "stage": "compute",
+    "sha256": "74156ed91fd6bd078bb00b55154e50bf31dfa3dbfc2172ec83281ee186ed45b4",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\ds2_tar_eid38753_compute_74156ed91fd6.dxil",
+    "bytes": 4020
+  },
+  {
+    "capture": "ds2_tar.rdc",
+    "eid": 38899,
+    "stage": "pixel",
+    "sha256": "596e1fc945c3e065600b11fc641137de7f0efd3500bd050f0ef1cb78c58a43d3",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\ds2_tar_eid38899_pixel_596e1fc945c3.dxil",
+    "bytes": 1732
+  },
+  {
+    "capture": "er_died.rdc",
+    "eid": 37558,
+    "stage": "pixel",
+    "sha256": "d006e9538796c80f298c36201e24ced25f659d48944a22c71e595cda55926bf7",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\er_died_eid37558_pixel_d006e9538796.dxil",
+    "bytes": 6765
+  },
+  {
+    "capture": "er_died.rdc",
+    "eid": 37558,
+    "stage": "vertex",
+    "sha256": "125dcce91fc94f1d467c187d19e535c4b858e1a10e4ee709bfbc4912960d2292",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\er_died_eid37558_vertex_125dcce91fc9.dxil",
+    "bytes": 11220
+  },
+  {
+    "capture": "er_died.rdc",
+    "eid": 37660,
+    "stage": "vertex",
+    "sha256": "b549c86840ddc2de9e37c33421fbcc47f327fb7bb58e6826890da3b96c7adb85",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\er_died_eid37660_vertex_b549c86840dd.dxil",
+    "bytes": 10837
+  },
+  {
+    "capture": "er_died.rdc",
+    "eid": 37858,
+    "stage": "vertex",
+    "sha256": "8112783779b7530961bfdc918f038f1ce0cfc36f4bbd856cdaff2d3014b20971",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\er_died_eid37858_vertex_8112783779b7.dxil",
+    "bytes": 11505
+  },
+  {
+    "capture": "er_died.rdc",
+    "eid": 37935,
+    "stage": "vertex",
+    "sha256": "8bd40a0d56e332655159562bd3851793d543dd202185bb013fb63aa549002129",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\er_died_eid37935_vertex_8bd40a0d56e3.dxil",
+    "bytes": 11638
+  },
+  {
+    "capture": "er_died.rdc",
+    "eid": 38012,
+    "stage": "pixel",
+    "sha256": "d5b18abf24a5110071c7999fc48686b0980309bc9765df9ee11e65e8f4130b25",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\er_died_eid38012_pixel_d5b18abf24a5.dxil",
+    "bytes": 7315
+  },
+  {
+    "capture": "er_died.rdc",
+    "eid": 38012,
+    "stage": "vertex",
+    "sha256": "9a7dd8ee38eef8ae3da07775048af1d7f944fd585f7e99936b8f0f9037a768f7",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\er_died_eid38012_vertex_9a7dd8ee38ee.dxil",
+    "bytes": 6044
+  },
+  {
+    "capture": "er_died.rdc",
+    "eid": 38100,
+    "stage": "vertex",
+    "sha256": "63c8cdafe4269bca6814864c46fb41053cf1e00fc8317aed3f300774e5c34f38",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\er_died_eid38100_vertex_63c8cdafe426.dxil",
+    "bytes": 11669
+  },
+  {
+    "capture": "wuwa_thin.rdc",
+    "eid": 55,
+    "stage": "pixel",
+    "sha256": "1acfaa42ead9cdd882ea91bad15500103128106fea3ac2e334e84d0a14fffaf7",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\wuwa_thin_eid55_pixel_1acfaa42ead9.dxil",
+    "bytes": 1688
+  },
+  {
+    "capture": "wuwa_thin.rdc",
+    "eid": 55,
+    "stage": "vertex",
+    "sha256": "4dad81439aeaa6c94e3c9e1d5997f87ef2c63b494a4a9b5acb1f17092587294c",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\wuwa_thin_eid55_vertex_4dad81439aea.dxil",
+    "bytes": 7485
+  },
+  {
+    "capture": "wuwa_thin.rdc",
+    "eid": 118,
+    "stage": "pixel",
+    "sha256": "8439aa2d45a1cd43cdfca330213b73a24988540dd8a518fee9af20e28d648a6d",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\wuwa_thin_eid118_pixel_8439aa2d45a1.dxil",
+    "bytes": 250
+  },
+  {
+    "capture": "wuwa_thin.rdc",
+    "eid": 118,
+    "stage": "vertex",
+    "sha256": "6ddda6f21812f3e0865d6ec765560cc43a5b7ee1ea08af6b66b0be0d2a67230f",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\wuwa_thin_eid118_vertex_6ddda6f21812.dxil",
+    "bytes": 16907
+  },
+  {
+    "capture": "wuwa_thin.rdc",
+    "eid": 173,
+    "stage": "pixel",
+    "sha256": "01cea084fc0b7edeea17395819743d9bef69234693f1e539a30a308a4df40040",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\wuwa_thin_eid173_pixel_01cea084fc0b.dxil",
+    "bytes": 250
+  },
+  {
+    "capture": "wuwa_thin.rdc",
+    "eid": 234,
+    "stage": "pixel",
+    "sha256": "4bb42b7b17100d006ac044113c1a127883a90d856ccea4424676dcbb3d50b856",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\wuwa_thin_eid234_pixel_4bb42b7b1710.dxil",
+    "bytes": 120
+  },
+  {
+    "capture": "wuwa_thin.rdc",
+    "eid": 234,
+    "stage": "vertex",
+    "sha256": "efe22b2e21fc1870da08194fb7eb7822b575c5bd720a9f2fb1d4136cab98b421",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\wuwa_thin_eid234_vertex_efe22b2e21fc.dxil",
+    "bytes": 3171
+  },
+  {
+    "capture": "wuwa_thin.rdc",
+    "eid": 275,
+    "stage": "pixel",
+    "sha256": "a1bde6fdc05da2a60c5f79afe558227a95d26447ac153a96773e1f23574fead3",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples\\wuwa_thin_eid275_pixel_a1bde6fdc05d.dxil",
+    "bytes": 330
+  }
+]

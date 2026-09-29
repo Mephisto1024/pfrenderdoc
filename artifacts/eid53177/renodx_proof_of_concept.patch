@@ -1,0 +1,103 @@
+diff --git a/src/utils/shader_decompiler_dxc.hpp b/src/utils/shader_decompiler_dxc.hpp
+index 471c937..938f541 100644
+--- a/src/utils/shader_decompiler_dxc.hpp
++++ b/src/utils/shader_decompiler_dxc.hpp
+@@ -1799,14 +1799,34 @@ class Decompiler {
+           assignment_value = name;
+           use_comment = true;
+           // decompiled = std::format("// {} _{} = {};", hint, variable, name);
++        } else if (functionName == "@dx.op.createHandleFromHeap") {
++          auto [opNumber, index, samplerHeap, nonUniformIndex] = StringViewSplit<4>(functionParamsString, param_regex, 2);
++          preprocess_state.resource_binding_variables[std::string(variable)] = {
++              .name = std::format("{}[{}]", samplerHeap == "true" ? "SamplerDescriptorHeap" : "ResourceDescriptorHeap", ParseUint(index)),
++              .range_index = 0,
++              .resource_class = samplerHeap == "true" ? "heap_sampler" : "heap_resource",
++          };
++          use_comment = true;
+         } else if (functionName == "@dx.op.annotateHandle") {
+           // %4 = call %dx.types.Handle @dx.op.annotateHandle(i32 216, %dx.types.Handle %3, %dx.types.ResourceProperties { i32 13, i32 644 })  ; AnnotateHandle(res,props)  resource: CBuffer
+           auto [opNumber, res, props] = StringViewSplit<3>(functionParamsString, param_regex, 2);
+           auto ref = std::string{res.substr(1)};
+-          preprocess_state.resource_binding_variables[std::string(variable)] = preprocess_state.resource_binding_variables.at(ref);
+-          assignment_type = "auto";
+-          assignment_value = std::format("_{}", ref);
+-          use_comment = true;
++          const auto& binding = preprocess_state.resource_binding_variables.at(ref);
++          if (binding.resource_class == "heap_resource" || binding.resource_class == "heap_sampler") {
++            assignment_type = binding.resource_class == "heap_sampler" ? "SamplerState" : "Texture2D<float3>";
++            assignment_value = binding.name;
++            preprocess_state.resource_binding_variables[std::string(variable)] = {
++                .name = std::format("_{}", variable),
++                .range_index = 0,
++                .resource_class = binding.resource_class,
++            };
++            use_comment = false;
++          } else {
++            preprocess_state.resource_binding_variables[std::string(variable)] = binding;
++            assignment_type = "auto";
++            assignment_value = std::format("_{}", ref);
++            use_comment = true;
++          }
+           // decompiled = std::format("// _{} = _{};", variable, ref);
+         } else if (functionName == "@dx.op.loadInput.f32") {
+           //   @dx.op.loadInput.f32(i32 4, i32 3, i32 0, i8 0, i32 undef)  ; LoadInput(inputSigId,rowIndex,colIndex,gsVertexAxis)
+@@ -2059,10 +2079,9 @@ class Decompiler {
+ 
+           auto [srv_name, srv_range_index, srv_resource_class] = preprocess_state.resource_binding_variables.at(ref_resource);
+           assert(srv_resource_class == "0");
+-          auto srv_resource = preprocess_state.srv_resources[srv_range_index];
++          auto srv_data_type = srv_resource_class == "heap_resource" ? "float3" : preprocess_state.srv_resources[srv_range_index].data_type;
+           auto [sampler_name, sampler_range_index, sampler_resource_class] = preprocess_state.resource_binding_variables.at(ref_sampler);
+-          auto sampler_resource = preprocess_state.sampler_resources[sampler_range_index];
+-          assignment_type = srv_resource.data_type;
++          assignment_type = srv_data_type;
+           if (offset == "0" || offset == "int2(0, 0)" || offset == "int3(0, 0, 0)") {
+             assignment_value = std::format("{}.Sample({}, {})", srv_name, sampler_name, coords);
+             // decompiled = std::format("{} _{} = {}.Sample({}, {});", srv_resource.data_type, variable, srv_name, sampler_name, coords);
+@@ -2102,10 +2121,9 @@ class Decompiler {
+           }
+ 
+           auto [srv_name, srv_range_index, srv_resource_class] = preprocess_state.resource_binding_variables.at(ref_resource);
+-          auto srv_resource = preprocess_state.srv_resources[srv_range_index];
++          auto srv_data_type = srv_resource_class == "heap_resource" ? "float3" : preprocess_state.srv_resources[srv_range_index].data_type;
+           auto [sampler_name, sampler_range_index, sampler_resource_class] = preprocess_state.resource_binding_variables.at(ref_sampler);
+-          auto sampler_resource = preprocess_state.sampler_resources[sampler_range_index];
+-          assignment_type = srv_resource.data_type;
++          assignment_type = srv_data_type;
+           if (offset == "" || offset == "0" || offset == "int2(0, 0)" || offset == "int3(0, 0, 0)") {
+             assignment_value = std::format("{}.SampleLevel({}, {}, {})", srv_name,
+                                            sampler_name, coords, ParseFloat(LOD));
+@@ -2363,11 +2381,9 @@ class Decompiler {
+           }
+ 
+           auto [srv_name, srv_range_index, srv_resource_class] = preprocess_state.resource_binding_variables.at(ref_resource);
+-          auto srv_resource = preprocess_state.srv_resources[srv_range_index];
+           auto [sampler_name, sampler_range_index, sampler_resource_class] = preprocess_state.resource_binding_variables.at(ref_sampler);
+-          auto sampler_resource = preprocess_state.sampler_resources[sampler_range_index];
+ 
+-          assignment_type = srv_resource.data_type;
++          assignment_type = srv_resource_class == "heap_resource" ? "float3" : preprocess_state.srv_resources[srv_range_index].data_type;
+           assignment_value = std::format("{}.SampleBias({}, {}, {}, {})",
+                                          srv_name,
+                                          sampler_name, coords, ParseFloat(bias), offset);
+@@ -3378,7 +3394,7 @@ class Decompiler {
+         } else {
+           value = std::format("{}", ParseInt(value0));
+         }
+-      } else if (functionName == "@dx.op.storeOutput.f32") {
++      } else if (functionName == "@dx.op.storeOutput.f32" || functionName == "@dx.op.storeOutput.i32") {
+         // call void @dx.op.storeOutput.f32(i32 5, i32 0, i32 0, i8 0, float %2772)  ; StoreOutput(outputSigId,rowIndex,colIndex,value)
+         auto [opNumber, outputSigId, rowIndex, colIndex, value] = StringViewSplit<5>(functionParamsString, param_regex, 2);
+         int output_signature_index;
+@@ -3391,9 +3407,9 @@ class Decompiler {
+           if (ParseIndex(colIndex) != "x") {
+             throw std::runtime_error("Unexpected index.");
+           }
+-          decompiled = std::format("{} = {};", signature.VariableString(), ParseFloat(value));
++          decompiled = std::format("{} = {};", signature.VariableString(), functionName == "@dx.op.storeOutput.i32" ? ParseInt(value) : ParseFloat(value));
+         } else {
+-          decompiled = std::format("{}.{} = {};", signature.VariableString(), ParseIndex(colIndex), ParseFloat(value));
++          decompiled = std::format("{}.{} = {};", signature.VariableString(), ParseIndex(colIndex), functionName == "@dx.op.storeOutput.i32" ? ParseInt(value) : ParseFloat(value));
+         }
+       } else if (functionName == "@dx.op.textureStore.f32") {
+         //   call void @dx.op.textureStore.f32(i32 67, %dx.types.Handle %558, i32 %16, i32 %17, i32 undef, float %555, float %556, float %557, float 1.000000e+00, i8 15)  ; TextureStore(srv,coord0,coord1,coord2,value0,value1,value2,value3,mask)

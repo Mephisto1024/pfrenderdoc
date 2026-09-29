@@ -1,0 +1,298 @@
+;
+; Note: shader requires additional functionality:
+;       Resource descriptor heap indexing
+;       Sampler descriptor heap indexing
+;
+;
+; Input signature:
+;
+; Name                 Index   Mask Register SysValue  Format   Used
+; -------------------- ----- ------ -------- -------- ------- ------
+; STAGE_IO                 0   x           0     NONE    uint       
+; STAGE_IO                 1   xyz         1     NONE   float       
+; STAGE_IO                 2   xy          2     NONE   float   xy  
+; STAGE_IO                 4     zw        2     NONE   float       
+; STAGE_IO                 3   xyzw        3     NONE   float       
+; STAGE_IO                 5   xy          4     NONE   float       
+; STAGE_IO                 6     zw        4     NONE   float       
+; STAGE_IO                 7   xy          5     NONE   float       
+; STAGE_IO                 8   xyz         6     NONE   float       
+; SV_Position              0   xyzw        7      POS   float   xy  
+;
+;
+; Output signature:
+;
+; Name                 Index   Mask Register SysValue  Format   Used
+; -------------------- ----- ------ -------- -------- ------- ------
+; SV_Target                0   x           0   TARGET    uint   x   
+;
+; shader debug name: Pixel_c1946ec2d9448556658fd6f67a06d756.pdb
+; shader hash: 3882c3a6d605afd1a4e69ea062ade917
+;
+; Pipeline Runtime Information: 
+;
+;PSVRuntimeInfo:
+; Pixel Shader
+; DepthOutput=0
+; SampleFrequency=0
+; MinimumExpectedWaveLaneCount: 0
+; MaximumExpectedWaveLaneCount: 4294967295
+; UsesViewID: false
+; SigInputElements: 10
+; SigOutputElements: 1
+; SigPatchConstOrPrimElements: 0
+; SigInputVectors: 8
+; SigOutputVectors[0]: 1
+; SigOutputVectors[1]: 0
+; SigOutputVectors[2]: 0
+; SigOutputVectors[3]: 0
+; EntryFunctionName: main
+;
+;
+; Input signature:
+;
+; Name                 Index             InterpMode DynIdx
+; -------------------- ----- ---------------------- ------
+; STAGE_IO                 0        nointerpolation       
+; STAGE_IO                 1                 linear       
+; STAGE_IO                 2                 linear       
+; STAGE_IO                 3                 linear       
+; STAGE_IO                 4                 linear       
+; STAGE_IO                 5                 linear       
+; STAGE_IO                 6                 linear       
+; STAGE_IO                 7                 linear       
+; STAGE_IO                 8                 linear       
+; SV_Position              0          noperspective       
+;
+; Output signature:
+;
+; Name                 Index             InterpMode DynIdx
+; -------------------- ----- ---------------------- ------
+; SV_Target                0                              
+;
+; Buffer Definitions:
+;
+; cbuffer 
+; {
+;
+;   [372 x i8] (type annotation not present)
+;
+; }
+;
+; cbuffer 
+; {
+;
+;   [1196 x i8] (type annotation not present)
+;
+; }
+;
+; cbuffer 
+; {
+;
+;   [672 x i8] (type annotation not present)
+;
+; }
+;
+;
+; Resource Bindings:
+;
+; Name                                 Type  Format         Dim      ID      HLSL Bind  Count
+; ------------------------------ ---------- ------- ----------- ------- -------------- ------
+;                                   cbuffer      NA          NA     CB0     cb0,space1     1
+;                                   cbuffer      NA          NA     CB1     cb0,space3     1
+;                                   cbuffer      NA          NA     CB2     cb0,space7     1
+;
+;
+; ViewId state:
+;
+; Number of inputs: 32, outputs: 1
+; Outputs dependent on ViewId: {  }
+; Inputs contributing to computation of Outputs:
+;
+target datalayout = "e-m:e-p:32:32-i1:32-i8:32-i16:32-i32:32-i64:64-f16:32-f32:32-f64:64-n8:16:32:64"
+target triple = "dxil-ms-dx"
+
+%dx.types.Handle = type { i8* }
+%dx.types.ResBind = type { i32, i32, i32, i8 }
+%dx.types.ResourceProperties = type { i32, i32 }
+%dx.types.CBufRet.f32 = type { float, float, float, float }
+%dx.types.CBufRet.i32 = type { i32, i32, i32, i32 }
+%dx.types.ResRet.f32 = type { float, float, float, float, i32 }
+%hostlayout.Scratch_PerFrame = type { %hostlayout.struct.Scratch_PerFrame_Constants }
+%hostlayout.struct.Scratch_PerFrame_Constants = type { %struct.GlobalConstants, %struct.ShaderDebugConstants, %hostlayout.struct.OffscreenParams_Constant }
+%struct.GlobalConstants = type { <4 x float>, <4 x float>, <4 x float>, <3 x float>, float, <4 x float>, float, float, float, float, float, float, float, float, float, i32, float, float, i32, i32, i32, i32, <4 x float>, i32, float, float, i32 }
+%struct.ShaderDebugConstants = type { <3 x float>, float, <3 x float>, float, <3 x float>, float, <3 x float>, float, float, float, float, float, float, float, float, float, float, float, float, float, i32, i32, i32, i32 }
+%hostlayout.struct.OffscreenParams_Constant = type { [4 x <4 x float>], float }
+%hostlayout.Scratch_PerView = type { %hostlayout.struct.Scratch_PerView_Constants }
+%hostlayout.struct.Scratch_PerView_Constants = type { %hostlayout.struct.ViewConstants }
+%hostlayout.struct.ViewConstants = type { [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], [4 x <4 x float>], <4 x float>, <4 x float>, <2 x float>, <2 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <3 x float>, float, <4 x float>, float, float, float, float, <4 x float>, <3 x float>, float, %struct.GlobalRenderVariablesSRT, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, <4 x float>, float, i32, float }
+%struct.GlobalRenderVariablesSRT = type { float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float }
+%ShaderInstance_PerBatch = type { %struct.ShaderInstance_PerBatch_Constants }
+%struct.ShaderInstance_PerBatch_Constants = type { %struct.StaticPerBatch_Constant }
+%struct.StaticPerBatch_Constant = type { i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, i32, float, float, float, float, float, float, float, float, float, float, float, float, i32, i32, i32, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float }
+
+define void @main() {
+  %1 = call %dx.types.Handle @dx.op.createHandleFromBinding(i32 217, %dx.types.ResBind { i32 0, i32 0, i32 7, i8 2 }, i32 0, i1 false)  ; CreateHandleFromBinding(bind,index,nonUniformIndex)
+  %2 = call %dx.types.Handle @dx.op.createHandleFromBinding(i32 217, %dx.types.ResBind { i32 0, i32 0, i32 3, i8 2 }, i32 0, i1 false)  ; CreateHandleFromBinding(bind,index,nonUniformIndex)
+  %3 = call %dx.types.Handle @dx.op.createHandleFromBinding(i32 217, %dx.types.ResBind { i32 0, i32 0, i32 1, i8 2 }, i32 0, i1 false)  ; CreateHandleFromBinding(bind,index,nonUniformIndex)
+  %4 = call %dx.types.Handle @dx.op.annotateHandle(i32 216, %dx.types.Handle %1, %dx.types.ResourceProperties { i32 13, i32 672 })  ; AnnotateHandle(res,props)  resource: CBuffer
+  %5 = call %dx.types.Handle @dx.op.annotateHandle(i32 216, %dx.types.Handle %2, %dx.types.ResourceProperties { i32 13, i32 1196 })  ; AnnotateHandle(res,props)  resource: CBuffer
+  %6 = call %dx.types.Handle @dx.op.annotateHandle(i32 216, %dx.types.Handle %3, %dx.types.ResourceProperties { i32 13, i32 372 })  ; AnnotateHandle(res,props)  resource: CBuffer
+  %7 = call float @dx.op.loadInput.f32(i32 4, i32 9, i32 0, i8 0, i32 undef)  ; LoadInput(inputSigId,rowIndex,colIndex,gsVertexAxis)
+  %8 = call float @dx.op.loadInput.f32(i32 4, i32 9, i32 0, i8 1, i32 undef)  ; LoadInput(inputSigId,rowIndex,colIndex,gsVertexAxis)
+  %9 = call float @dx.op.loadInput.f32(i32 4, i32 2, i32 0, i8 0, i32 undef)  ; LoadInput(inputSigId,rowIndex,colIndex,gsVertexAxis)
+  %10 = call float @dx.op.loadInput.f32(i32 4, i32 2, i32 0, i8 1, i32 undef)  ; LoadInput(inputSigId,rowIndex,colIndex,gsVertexAxis)
+  %11 = call %dx.types.CBufRet.f32 @dx.op.cbufferLoadLegacy.f32(i32 59, %dx.types.Handle %6, i32 10)  ; CBufferLoadLegacy(handle,regIndex)
+  %12 = extractvalue %dx.types.CBufRet.f32 %11, 1
+  %13 = call %dx.types.Handle @dx.op.createHandleFromHeap(i32 218, i32 122, i1 true, i1 false)  ; CreateHandleFromHeap(index,samplerHeap,nonUniformIndex)
+  %14 = call %dx.types.Handle @dx.op.annotateHandle(i32 216, %dx.types.Handle %13, %dx.types.ResourceProperties { i32 14, i32 0 })  ; AnnotateHandle(res,props)  resource: SamplerState
+  %15 = call %dx.types.CBufRet.i32 @dx.op.cbufferLoadLegacy.i32(i32 59, %dx.types.Handle %4, i32 4)  ; CBufferLoadLegacy(handle,regIndex)
+  %16 = extractvalue %dx.types.CBufRet.i32 %15, 2
+  %17 = call %dx.types.Handle @dx.op.createHandleFromHeap(i32 218, i32 %16, i1 false, i1 false)  ; CreateHandleFromHeap(index,samplerHeap,nonUniformIndex)
+  %18 = call %dx.types.Handle @dx.op.annotateHandle(i32 216, %dx.types.Handle %17, %dx.types.ResourceProperties { i32 2, i32 1033 })  ; AnnotateHandle(res,props)  resource: Texture2D<4xF32>
+  %19 = fadd fast float %12, -5.000000e-01
+  %20 = call %dx.types.ResRet.f32 @dx.op.sampleBias.f32(i32 61, %dx.types.Handle %18, %dx.types.Handle %14, float %9, float %10, float undef, float undef, i32 0, i32 0, i32 undef, float %19, float undef)  ; SampleBias(srv,sampler,coord0,coord1,coord2,coord3,offset0,offset1,offset2,bias,clamp)
+  %21 = extractvalue %dx.types.ResRet.f32 %20, 0
+  %22 = call %dx.types.CBufRet.f32 @dx.op.cbufferLoadLegacy.f32(i32 59, %dx.types.Handle %5, i32 45)  ; CBufferLoadLegacy(handle,regIndex)
+  %23 = extractvalue %dx.types.CBufRet.f32 %22, 0
+  %24 = extractvalue %dx.types.CBufRet.f32 %22, 1
+  %25 = extractvalue %dx.types.CBufRet.f32 %22, 2
+  %26 = extractvalue %dx.types.CBufRet.f32 %22, 3
+  %27 = fmul fast float %23, %7
+  %28 = fmul fast float %24, %8
+  %29 = fadd fast float %27, %25
+  %30 = fadd fast float %28, %26
+  %31 = fptosi float %29 to i32
+  %32 = fptosi float %30 to i32
+  %33 = shl i32 %31, 8
+  %34 = shl i32 %32, 8
+  %35 = xor i32 %33, %31
+  %36 = xor i32 %34, %32
+  %37 = and i32 %35, 16711935
+  %38 = and i32 %36, 16711935
+  %39 = shl nuw nsw i32 %37, 4
+  %40 = shl nuw nsw i32 %38, 4
+  %41 = or i32 %39, %37
+  %42 = or i32 %40, %38
+  %43 = and i32 %41, 252645135
+  %44 = and i32 %42, 252645135
+  %45 = shl nuw nsw i32 %43, 2
+  %46 = shl nuw nsw i32 %44, 2
+  %47 = or i32 %45, %43
+  %48 = or i32 %46, %44
+  %49 = and i32 %47, 858993459
+  %50 = and i32 %48, 858993459
+  %51 = shl nuw nsw i32 %49, 1
+  %52 = shl nuw nsw i32 %50, 1
+  %53 = or i32 %51, %49
+  %54 = or i32 %52, %50
+  %55 = and i32 %53, 1431655765
+  %56 = and i32 %54, 1431655765
+  %57 = xor i32 %55, %56
+  %58 = shl nuw i32 %55, 1
+  %59 = or i32 %57, %58
+  %60 = call i32 @dx.op.unary.i32(i32 30, i32 %59)  ; Bfrev(value)
+  %61 = lshr i32 %60, 26
+  %62 = uitofp i32 %61 to float
+  %63 = fmul fast float %62, 1.562500e-02
+  %64 = call %dx.types.CBufRet.f32 @dx.op.cbufferLoadLegacy.f32(i32 59, %dx.types.Handle %4, i32 22)  ; CBufferLoadLegacy(handle,regIndex)
+  %65 = extractvalue %dx.types.CBufRet.f32 %64, 0
+  %66 = fmul fast float %21, 0x3FF0D79440000000
+  %67 = call float @dx.op.unary.f32(i32 7, float %66)  ; Saturate(value)
+  %68 = fcmp fast oge float %63, %65
+  %69 = fcmp fast oge float %63, %67
+  %70 = or i1 %69, %68
+  br i1 %70, label %71, label %72
+
+; <label>:71                                      ; preds = %0
+  call void @dx.op.discard(i32 82, i1 true)  ; Discard(condition)
+  br label %72
+
+; <label>:72                                      ; preds = %71, %0
+  call void @dx.op.storeOutput.i32(i32 5, i32 0, i32 0, i8 0, i32 0)  ; StoreOutput(outputSigId,rowIndex,colIndex,value)
+  ret void
+}
+
+; Function Attrs: nounwind readnone
+declare float @dx.op.loadInput.f32(i32, i32, i32, i8, i32) #0
+
+; Function Attrs: nounwind
+declare void @dx.op.storeOutput.i32(i32, i32, i32, i8, i32) #1
+
+; Function Attrs: nounwind
+declare void @dx.op.discard(i32, i1) #1
+
+; Function Attrs: nounwind readnone
+declare %dx.types.Handle @dx.op.createHandleFromHeap(i32, i32, i1, i1) #0
+
+; Function Attrs: nounwind readnone
+declare float @dx.op.unary.f32(i32, float) #0
+
+; Function Attrs: nounwind readonly
+declare %dx.types.ResRet.f32 @dx.op.sampleBias.f32(i32, %dx.types.Handle, %dx.types.Handle, float, float, float, float, i32, i32, i32, float, float) #2
+
+; Function Attrs: nounwind readnone
+declare i32 @dx.op.unary.i32(i32, i32) #0
+
+; Function Attrs: nounwind readonly
+declare %dx.types.CBufRet.f32 @dx.op.cbufferLoadLegacy.f32(i32, %dx.types.Handle, i32) #2
+
+; Function Attrs: nounwind readonly
+declare %dx.types.CBufRet.i32 @dx.op.cbufferLoadLegacy.i32(i32, %dx.types.Handle, i32) #2
+
+; Function Attrs: nounwind readnone
+declare %dx.types.Handle @dx.op.annotateHandle(i32, %dx.types.Handle, %dx.types.ResourceProperties) #0
+
+; Function Attrs: nounwind readnone
+declare %dx.types.Handle @dx.op.createHandleFromBinding(i32, %dx.types.ResBind, i32, i1) #0
+
+attributes #0 = { nounwind readnone }
+attributes #1 = { nounwind }
+attributes #2 = { nounwind readonly }
+
+!llvm.ident = !{!0}
+!dx.version = !{!1}
+!dx.valver = !{!2}
+!dx.shaderModel = !{!3}
+!dx.resources = !{!4}
+!dx.viewIdState = !{!9}
+!dx.entryPoints = !{!10}
+
+!0 = !{!"dxcoob 1.8.2502.8 (b4711839e)"}
+!1 = !{i32 1, i32 6}
+!2 = !{i32 1, i32 8}
+!3 = !{!"ps", i32 6, i32 6}
+!4 = !{null, null, !5, null}
+!5 = !{!6, !7, !8}
+!6 = !{i32 0, %hostlayout.Scratch_PerFrame* undef, !"", i32 1, i32 0, i32 1, i32 372, null}
+!7 = !{i32 1, %hostlayout.Scratch_PerView* undef, !"", i32 3, i32 0, i32 1, i32 1196, null}
+!8 = !{i32 2, %ShaderInstance_PerBatch* undef, !"", i32 7, i32 0, i32 1, i32 672, null}
+!9 = !{[34 x i32] [i32 32, i32 1, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0, i32 0]}
+!10 = !{void ()* @main, !"main", !11, !4, !36}
+!11 = !{!12, !33, null}
+!12 = !{!13, !15, !17, !20, !22, !24, !26, !28, !30, !32}
+!13 = !{i32 0, !"STAGE_IO", i8 5, i8 0, !14, i8 1, i32 1, i8 1, i32 0, i8 0, null}
+!14 = !{i32 0}
+!15 = !{i32 1, !"STAGE_IO", i8 9, i8 0, !16, i8 2, i32 1, i8 3, i32 1, i8 0, null}
+!16 = !{i32 1}
+!17 = !{i32 2, !"STAGE_IO", i8 9, i8 0, !18, i8 2, i32 1, i8 2, i32 2, i8 0, !19}
+!18 = !{i32 2}
+!19 = !{i32 3, i32 3}
+!20 = !{i32 3, !"STAGE_IO", i8 9, i8 0, !21, i8 2, i32 1, i8 4, i32 3, i8 0, null}
+!21 = !{i32 3}
+!22 = !{i32 4, !"STAGE_IO", i8 9, i8 0, !23, i8 2, i32 1, i8 2, i32 2, i8 2, null}
+!23 = !{i32 4}
+!24 = !{i32 5, !"STAGE_IO", i8 9, i8 0, !25, i8 2, i32 1, i8 2, i32 4, i8 0, null}
+!25 = !{i32 5}
+!26 = !{i32 6, !"STAGE_IO", i8 9, i8 0, !27, i8 2, i32 1, i8 2, i32 4, i8 2, null}
+!27 = !{i32 6}
+!28 = !{i32 7, !"STAGE_IO", i8 9, i8 0, !29, i8 2, i32 1, i8 2, i32 5, i8 0, null}
+!29 = !{i32 7}
+!30 = !{i32 8, !"STAGE_IO", i8 9, i8 0, !31, i8 2, i32 1, i8 3, i32 6, i8 0, null}
+!31 = !{i32 8}
+!32 = !{i32 9, !"SV_Position", i8 9, i8 3, !14, i8 4, i32 1, i8 4, i32 7, i8 0, !19}
+!33 = !{!34}
+!34 = !{i32 0, !"SV_Target", i8 5, i8 16, !14, i8 0, i32 1, i8 1, i32 0, i8 0, !35}
+!35 = !{i32 3, i32 1}
+!36 = !{i32 0, i64 3221225728}
+

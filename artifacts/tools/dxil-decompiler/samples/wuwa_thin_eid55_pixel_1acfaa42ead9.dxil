@@ -1,0 +1,72 @@
+#version 450
+layout (early_fragment_tests) in;
+uniform vec4 pc0_h[1];
+uniform vec4 pc1_m[1];
+uniform sampler2D ps0;
+uniform sampler2D ps1;
+layout(location = 2) in vec4 in_COLOR0;
+layout(location = 3) in vec4 in_TEXCOORD0;
+layout(location = 0) out vec4 out_Target0;
+void main(){
+  float f0;
+  (f0 = pc0_h[0].x);
+  vec4 v1;
+  vec4 v2;
+  (v2.xyzw = in_COLOR0);
+  vec4 v3;
+  (v3.xyz = v2.xyz);
+  (v3.w = v2.w);
+  vec4 v4;
+  vec4 v5;
+  vec4 v6;
+  (v6.xyzw = v3);
+  (v5.xyzw = v6);
+  if ((pc1_m[0].x < 0.5))
+  {
+    vec3 v7;
+    (v7.xyz = (v3.xyz * v3.xyz));
+    (v5.xyz = v7);
+  }
+  vec4 v8;
+  (v8.xyzw = v5);
+  (v4.xyzw = v8);
+  vec4 v9;
+  (v9.xyzw = texture(ps1, in_TEXCOORD0.xy, f0));
+  float h10;
+  (h10 = max(v9.x, v9.y));
+  vec3 v11;
+  (v11.xyz = (v4.xyz * vec3(ceil(h10))));
+  float h12;
+  float h13;
+  (h13 = ceil(in_TEXCOORD0.z));
+  (h12 = h13);
+  vec4 v14;
+  (v14.xyzw = texture(ps0, (in_TEXCOORD0.zw + vec2(-1.0, -1.0)), f0));
+  vec4 v15;
+  (v15.xyz = (vec3(h12) * v14.xyz));
+  (v15.w = (h12 * v14.w));
+  vec4 v16;
+  vec4 v17;
+  vec4 v18;
+  (v18.xyzw = v15);
+  (v17.xyzw = v18);
+  if ((pc1_m[0].x > 0.5))
+  {
+    vec3 v19;
+    (v19.xyz = max(((vec3(1.0549999, 1.0549999, 1.0549999) * pow(max(v15.xyz, vec3(0.0, 0.0, 0.0)), vec3(0.41666669, 0.41666669, 0.41666669))) + vec3(-0.055, -0.055, -0.055)), vec3(0.0, 0.0, 0.0)));
+    (v17.xyz = v19);
+  }
+  vec4 v20;
+  (v20.xyzw = v17);
+  (v16.xyzw = v20);
+  vec3 v21;
+  (v21.xyz = max((v11 + v16.xyz), vec3(0.0, 0.0, 0.0)));
+  vec4 v22;
+  (v22.xyz = v21);
+  (v22.w = clamp((v4.w * (h10 + v16.w)), 0.0, 1.0));
+  (v1.xyzw = v22);
+  (v1.xyz = (-min((-v21), vec3(0.0, 0.0, 0.0))));
+  vec4 v23;
+  (v23.xyzw = v1);
+  (out_Target0.xyzw = v23);
+}

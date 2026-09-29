@@ -1,0 +1,7 @@
+D:\pfrenderdoc\artifacts\eid56777\eid56777_pixel.hlsl:1061:35: warning: ambiguous type for bit shift; use a type suffix on literal values, like 'L' or 'U', or a cast [-Wambig-lit-shift]
+                    uint _945 = 1 << _944;
+                                  ^
+D:\pfrenderdoc\artifacts\eid56777\eid56777_pixel.hlsl:1516:44: warning: ambiguous type for bit shift; use a type suffix on literal values, like 'L' or 'U', or a cast [-Wambig-lit-shift]
+                            uint _1395 = 1 << _1394;
+                                           ^
+

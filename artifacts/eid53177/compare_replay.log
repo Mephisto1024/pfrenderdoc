@@ -1,0 +1,41 @@
+﻿Target 0: 1920x1080 format R8G8B8A8_SRGB
+Original target 0: 8294400 bytes SHA256 b50d69a24e9bca7e331e10c84273114dde5d7e6f73d81d4656e2501d032aa3af
+Target 1: 1920x1080 format R11G11B10_FLOAT
+Original target 1: 8294400 bytes SHA256 4dfcdd122a1dc4798681c8674f8d2a7e7083e241b2d6195033a6049f2df39923
+Target 2: 1920x1080 format R16G16_UNORM
+Original target 2: 8294400 bytes SHA256 b58762cdd82d30fa01f6e853b1b1044ab9f56215473b33d6f4c9f1d6598a88b1
+Target 3: 1920x1080 format R16G16_FLOAT
+Original target 3: 8294400 bytes SHA256 78902a6176157b983e8801d05e3e31ee63b22887fadd7fd94e3bb9120e85d309
+Target 4: 1920x1080 format R8G8B8A8_UNORM
+Original target 4: 8294400 bytes SHA256 31d67ada71687fc6bcffe9baa1a8582a5ed89d9334829511a40ddff8b29feaab
+Target 5: 1920x1080 format R16G16_FLOAT
+Original target 5: 8294400 bytes SHA256 8149e31c505ad6443ec91885d69254dec2f7e2bbb105a10b959e74300df29f47
+Target 6: 1920x1080 format R11G11B10_FLOAT
+Original target 6: 8294400 bytes SHA256 788ae0147bdf979a6575938ca2d7d4403788588f7be2010f03776c968fd1ab49
+Target 0 written by this event: 15067 bytes changed
+Target 1 written by this event: 0 bytes changed
+Target 2 written by this event: 49679 bytes changed
+Target 3 written by this event: 17172 bytes changed
+Target 4 written by this event: 49113 bytes changed
+Target 5 written by this event: 44989 bytes changed
+Target 6 written by this event: 0 bytes changed
+BuildTargetShader: 
+Replaced target 0: 8294400 bytes SHA256 b50d69a24e9bca7e331e10c84273114dde5d7e6f73d81d4656e2501d032aa3af
+  MATCH: target 0 is byte-identical
+Replaced target 1: 8294400 bytes SHA256 4dfcdd122a1dc4798681c8674f8d2a7e7083e241b2d6195033a6049f2df39923
+  SKIPPED: this event does not write target 1, so an identical comparison would prove nothing
+Replaced target 2: 8294400 bytes SHA256 c0a80242a1a32038b8436bccfcb5c6c98de1a9544fad4dafa5b58d729967e773
+  MISMATCH: target 2 differs in 82 of 4147200 channels
+    worst channel: pixel 1420007 channel 0, delta 0.000244
+    0 channel(s) differ by > 1/255 (visible in 8-bit), 82 differ by less (rounding)
+Replaced target 3: 8294400 bytes SHA256 78902a6176157b983e8801d05e3e31ee63b22887fadd7fd94e3bb9120e85d309
+  MATCH: target 3 is byte-identical
+Replaced target 4: 8294400 bytes SHA256 31d67ada71687fc6bcffe9baa1a8582a5ed89d9334829511a40ddff8b29feaab
+  MATCH: target 4 is byte-identical
+Replaced target 5: 8294400 bytes SHA256 461c2adc63159b9bd5918115bc47e054cbfa27c91b140035739d686700e6f60a
+  MISMATCH: target 5 differs in 1646 of 4147200 channels
+    worst channel: pixel 1352772 channel 1, delta 0.000001
+    0 channel(s) differ by > 1/255 (visible in 8-bit), 1646 differ by less (rounding)
+Replaced target 6: 8294400 bytes SHA256 788ae0147bdf979a6575938ca2d7d4403788588f7be2010f03776c968fd1ab49
+  SKIPPED: this event does not write target 6, so an identical comparison would prove nothing
+RESULT: 2 of 5 comparable targets differ

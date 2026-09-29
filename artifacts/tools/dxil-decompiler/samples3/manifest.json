@@ -1,0 +1,162 @@
+[
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 19939,
+    "stage": "compute",
+    "sha256": "374482f27505efd51be3166052de6d590515241a361005648a8d8db624d08871",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid19939_compute_374482f27505.dxil",
+    "bytes": 12704
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 35464,
+    "stage": "pixel",
+    "sha256": "24ceb7605f355f2fefb777817f42a30dc477bfc055269cdf2e8aba35f1fc484a",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid35464_pixel_24ceb7605f35.dxil",
+    "bytes": 1816
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 35464,
+    "stage": "vertex",
+    "sha256": "7b0218cefb2c58c952362fade440d24e144ca6041c281951e58a6660a22e9dfb",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid35464_vertex_7b0218cefb2c.dxil",
+    "bytes": 4128
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 35971,
+    "stage": "pixel",
+    "sha256": "7796bfdc93183f70a82f7d8c71e279d88da9b36e33b1b00de33af28fe18d585a",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid35971_pixel_7796bfdc9318.dxil",
+    "bytes": 1584
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 35971,
+    "stage": "vertex",
+    "sha256": "d3ec273d66a2c871c1e7aee1361df6b438a86eb3ced65ca69e0d63c73e718507",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid35971_vertex_d3ec273d66a2.dxil",
+    "bytes": 3204
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 36741,
+    "stage": "pixel",
+    "sha256": "0af075518f3bb016f55300fbeb5ed32e8e92b8456b9f91d08386a81eceba48fb",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid36741_pixel_0af075518f3b.dxil",
+    "bytes": 4404
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 36741,
+    "stage": "vertex",
+    "sha256": "2b625d84967838a2b3ba1b2ada2c2ebfd81424c2660cc0a5e9a809231f0144b8",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid36741_vertex_2b625d849678.dxil",
+    "bytes": 5692
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 37477,
+    "stage": "compute",
+    "sha256": "2fc299a0f10a9d4a916419fb699c75c198269a310a291b3e18cb8c2e69b21ccb",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid37477_compute_2fc299a0f10a.dxil",
+    "bytes": 13304
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 38195,
+    "stage": "pixel",
+    "sha256": "72bfbee2d28b297d2b54baec48a5a953c551a897c3a6abc26e4f0a08e3a016e9",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid38195_pixel_72bfbee2d28b.dxil",
+    "bytes": 10168
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 38195,
+    "stage": "vertex",
+    "sha256": "29eb117cf98e211df983e9d2a060ee4646e23fe75ca50232782ba1262f3057f4",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid38195_vertex_29eb117cf98e.dxil",
+    "bytes": 15132
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 38848,
+    "stage": "pixel",
+    "sha256": "c4c115dcd095bb85eaa9f94ece8b6320527fa9105fe5a68741569ed0b1a6e0dd",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid38848_pixel_c4c115dcd095.dxil",
+    "bytes": 10640
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 38848,
+    "stage": "vertex",
+    "sha256": "76b48ef10d91d5170fa79518020257b08f168c7973daf0363306655b4ce44ff0",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid38848_vertex_76b48ef10d91.dxil",
+    "bytes": 14956
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 39480,
+    "stage": "pixel",
+    "sha256": "37d3f63f92877ebc3b8011fc3ccce9b80d3179b99d636ff8bdce1bd4e3ebd1ab",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid39480_pixel_37d3f63f9287.dxil",
+    "bytes": 10632
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 40120,
+    "stage": "pixel",
+    "sha256": "cf5e48fbcb9b8a3d97b35ee595037137386ac0ad3bced231bf829ecd171d7379",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid40120_pixel_cf5e48fbcb9b.dxil",
+    "bytes": 12584
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 40120,
+    "stage": "vertex",
+    "sha256": "0bf96aba891a24052695993c16ca1d0ee67a601d0b93590507cac9fdf7713935",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid40120_vertex_0bf96aba891a.dxil",
+    "bytes": 8352
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 40751,
+    "stage": "pixel",
+    "sha256": "7fdc8c8a0621a4be569528b4ba0a7daaea158164cca22ef6be796e047f0b8413",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid40751_pixel_7fdc8c8a0621.dxil",
+    "bytes": 10172
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 41688,
+    "stage": "pixel",
+    "sha256": "9b5dbe662e59fccd0dbc597cebcfd259d7e3b7db26a99f8d4cdd3c3bc168fb1f",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid41688_pixel_9b5dbe662e59.dxil",
+    "bytes": 14172
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 41688,
+    "stage": "vertex",
+    "sha256": "80c9a6a61331eb8bb236548bfd332816b0a25f33535f0584b462acea1fc9eff1",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid41688_vertex_80c9a6a61331.dxil",
+    "bytes": 5316
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 42620,
+    "stage": "pixel",
+    "sha256": "9277b67aa76c029e8dcdb7c1811fe70ac45fbd3d3475053edfc5e765a30649fe",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid42620_pixel_9277b67aa76c.dxil",
+    "bytes": 15852
+  },
+  {
+    "capture": "ds2_river.rdc",
+    "eid": 42620,
+    "stage": "vertex",
+    "sha256": "198eaa3f164fceb278857aab01f2e59c17fa95f8c27bb05b49800e015789ab57",
+    "path": "D:\\pfrenderdoc\\artifacts\\tools\\dxil-decompiler\\samples3\\ds2_river_eid42620_vertex_198eaa3f164f.dxil",
+    "bytes": 9312
+  }
+]

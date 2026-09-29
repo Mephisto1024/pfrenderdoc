@@ -1,0 +1,23 @@
+﻿Target 0: 1920x1080 format R11G11B10_FLOAT
+Original target 0: 8294400 bytes SHA256 ba403f98b491c478bee05acb46e87e82fc6e4e73be638e840f791d0120e85f52
+Target 1: 1920x1080 format R8G8_UNORM
+Original target 1: 4147200 bytes SHA256 06b2c5a0c01e515d009c0bfbe0e61fafb105a54da5ec621104915cd5949849e8
+Target 2: 1920x1080 format R16_FLOAT
+Original target 2: 4147200 bytes SHA256 05caec7bedfdd3f71e970728bb965c506c031460b8bbf29e6326a1069c850c62
+Target 3: 1920x1080 format R11G11B10_FLOAT
+Original target 3: 8294400 bytes SHA256 788ae0147bdf979a6575938ca2d7d4403788588f7be2010f03776c968fd1ab49
+Target 0 written by this event: 7136043 bytes changed
+Target 1 written by this event: 0 bytes changed
+Target 2 written by this event: 3118603 bytes changed
+Target 3 written by this event: 0 bytes changed
+Target 0: BASELINE NOT REPRODUCIBLE - reading it twice in the same session gave different bytes, so this target cannot be compared
+BuildTargetShader: 
+Replaced target 0: 8294400 bytes SHA256 8a84d1ba09aedb082fd407ea3fa33f973cd96ffa05a3f32056e2f3c6d41403e6
+  SKIPPED: target 0's own baseline is not reproducible
+Replaced target 1: 4147200 bytes SHA256 06b2c5a0c01e515d009c0bfbe0e61fafb105a54da5ec621104915cd5949849e8
+  SKIPPED: this event does not write target 1, so an identical comparison would prove nothing
+Replaced target 2: 4147200 bytes SHA256 05caec7bedfdd3f71e970728bb965c506c031460b8bbf29e6326a1069c850c62
+  MATCH: target 2 is byte-identical
+Replaced target 3: 8294400 bytes SHA256 788ae0147bdf979a6575938ca2d7d4403788588f7be2010f03776c968fd1ab49
+  SKIPPED: this event does not write target 3, so an identical comparison would prove nothing
+RESULT: 0 of 1 comparable targets differ (1 unstable baseline(s) skipped, 0 unwritten target(s) changed)

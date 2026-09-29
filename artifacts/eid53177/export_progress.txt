@@ -1,0 +1,8 @@
+script entered
+replay initialized
+capture handle created
+OpenFile: <Result: 'Success'>
+OpenCapture: <Result: 'Success'>
+SetFrameEvent complete
+wrote vertex: 12308 bytes
+wrote pixel: 9640 bytes

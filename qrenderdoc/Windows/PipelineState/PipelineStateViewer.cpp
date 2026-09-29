@@ -1017,8 +1017,17 @@ IShaderViewer *PipelineStateViewer::EditDecompiledSource(const ShaderProcessingT
 
   ShaderCompileFlags flags;
 
+  // The edited shader is recompiled with these flags, so the original profile has to survive.
+  // A D3D shader carries it in @cmdline (-T ps_6_6); dropping it makes the D3D12 replay fall back
+  // to a Shader Model 5 profile, which selects fxc instead of dxc - and fxc cannot parse Shader
+  // Model 6 source at all. Only forward it when the tool produced HLSL that is compiled back to
+  // DXBC/DXIL, so SPIR-V flows that decompile to GLSL are unaffected.
+  const bool keep_cmdline = tool.output == ShaderEncoding::HLSL &&
+                            (shaderDetails->encoding == ShaderEncoding::DXBC ||
+                             shaderDetails->encoding == ShaderEncoding::DXIL);
+
   for(const ShaderCompileFlag &flag : shaderDetails->debugInfo.compileFlags.flags)
-    if(flag.name == "@spirver")
+    if(flag.name == "@spirver" || (keep_cmdline && flag.name == "@cmdline"))
       flags.flags.push_back(flag);
 
   IShaderViewer *sv = EditShader(id, shaderDetails->stage, shaderDetails->entryPoint, flags,
@@ -1497,7 +1506,9 @@ bool PipelineStateViewer::SaveShaderFile(const ShaderReflection *shader)
     case ShaderEncoding::OpenGLSPIRV: filter = tr("SPIR-V files (*.spv)"); break;
     case ShaderEncoding::SPIRVAsm:
     case ShaderEncoding::OpenGLSPIRVAsm: filter = tr("SPIR-V assembly files (*.spvasm)"); break;
-    case ShaderEncoding::DXIL: filter = tr("DXIL Shader files (*.dxbc)"); break;
+    // DXIL ships inside a DXBC container, so *.dxbc is still offered, but *.dxil is listed first
+    // to make it the default suffix. getDefaultSuffixesFromFilter() takes only the first pattern.
+    case ShaderEncoding::DXIL: filter = tr("DXIL Shader files (*.dxil *.dxbc)"); break;
     case ShaderEncoding::Slang: filter = tr("Slang Shader files (*.slang)"); break;
     case ShaderEncoding::Unknown:
     case ShaderEncoding::Count: filter = tr("All files (*.*)"); break;

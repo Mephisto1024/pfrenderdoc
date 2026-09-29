@@ -1,0 +1,14 @@
+#version 450
+uniform vec4 pc0_h[1];
+uniform sampler2D ps0;
+layout(location = 3) in vec4 in_TEXCOORD0;
+layout(location = 0) out vec4 out_Target0;
+void main(){
+  float h0;
+  (h0 = texture(ps0, in_TEXCOORD0.xy, pc0_h[0].x).w);
+  if (((h0 + -0.33329999) < 0.0))
+  {
+    discard;
+  }
+  (out_Target0.xyzw = vec4(0.0, 0.0, 0.0, 0.0));
+}
