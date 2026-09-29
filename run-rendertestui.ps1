@@ -24,13 +24,14 @@
 # 740). This script elevates itself, so launching it is the only elevated step needed.
 #
 # Usage (from a normal shell - the script elevates itself):
-#   powershell -NoProfile -ExecutionPolicy Bypass -File .\run-rendertestui.ps1
+#   double-click run-rendertestui.cmd
+#   or use that .cmd file from a command prompt to pass the options below
 #   ... -AutoCaptureDelayMs ''          no automatic capture; press F12 yourself
 #   ... -AutoCaptureDelayMs '45000 65000 80000'   more chances to land in-game
 #   ... -SkipIatModule ''               back to stock behaviour (expect the hard kill again)
 #
-# After it starts: set Executable/Working Directory in the GUI's launch dialog (already remembered
-# as YuanShen.exe in the game folder), press Launch, then either wait for the automatic capture or
+# After it starts: set Executable/Working Directory in the GUI's launch dialog on each computer,
+# press Launch, then either wait for the automatic capture or
 # press F12 / use Live Capture's "Queue Capture".
 #
 # NOTE: keep this file ASCII-only. Windows PowerShell reads BOM-less files as ANSI and would
@@ -46,21 +47,55 @@ param(
     # Optional frame-number triggers (counted from the first Present of the wrapped device).
     [string]$AutoCaptureFrame = '',
     # Where the injected DLL drops self-dump artifacts. Empty leaves it to the DLL's default.
-    [string]$SelfDumpDir = (Join-Path $PSScriptRoot 'dumps'),
-    [string]$UiExe = (Join-Path $PSScriptRoot 'x64\Release\rendertestui.exe')
+    [string]$SelfDumpDir = '',
+    [string]$UiExe = ''
 )
 
 $ErrorActionPreference = 'Stop'
 $ProgressPreference    = 'SilentlyContinue'
+$ScriptDir = Split-Path -Parent $PSCommandPath
+if (-not $PSBoundParameters.ContainsKey('SelfDumpDir')) {
+    $SelfDumpDir = Join-Path $ScriptDir 'dumps'
+}
+if (-not $PSBoundParameters.ContainsKey('UiExe')) {
+    $UiExe = Join-Path $ScriptDir 'x64\Release\rendertestui.exe'
+}
 
 # A tiny append-only log, because the elevated instance runs in its own console window: without
 # this there is no way to tell afterwards whether it even reached the launch step.
-$LogFile = Join-Path (Split-Path -Parent $PSCommandPath) 'run-rendertestui.log'
+$LogFile = Join-Path $ScriptDir 'run-rendertestui.log'
 function Write-RunLog([string]$msg)
 {
     try {
         Add-Content -Path $LogFile -Encoding UTF8 -Value ("{0}  {1}" -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'), $msg)
     } catch { }
+}
+
+# The UI stub looks for qrendertest.exe beside itself and may exit silently if it is missing.
+# Check the files needed by this build before showing a UAC prompt.
+if (-not [Environment]::Is64BitOperatingSystem) {
+    throw 'This build requires 64-bit Windows.'
+}
+if ([string]::IsNullOrWhiteSpace($UiExe)) {
+    throw 'UiExe must name the GUI executable.'
+}
+$UiExe = [System.IO.Path]::GetFullPath($UiExe)
+$UiDir = Split-Path -Parent $UiExe
+$requiredFiles = @(
+    $UiExe,
+    (Join-Path $UiDir 'qrendertest.exe'),
+    (Join-Path $UiDir 'rendertest.dll'),
+    (Join-Path $UiDir 'Qt5Core.dll'),
+    (Join-Path $UiDir 'Qt5Gui.dll'),
+    (Join-Path $UiDir 'Qt5Widgets.dll'),
+    (Join-Path $UiDir 'qtplugins\platforms\qwindows.dll')
+)
+foreach ($file in $requiredFiles) {
+    if (-not (Test-Path -LiteralPath $file -PathType Leaf)) {
+        $message = "Required program file not found: $file. Copy the complete x64\Release folder with the launcher."
+        Write-RunLog $message
+        throw $message
+    }
 }
 
 # ---------------- self-elevate ----------------
@@ -97,10 +132,6 @@ if (-not $isAdmin) {
 }
 
 Write-Host '[*] Elevated. Preparing the GUI environment.' -ForegroundColor Green
-
-if (-not (Test-Path $UiExe)) {
-    throw "UI not found: $UiExe"
-}
 
 # ---------------- environment the target will inherit ----------------
 # The GUI process inherits this environment, and with an empty Environment Variables box in its
@@ -169,7 +200,7 @@ if (Get-Process YuanShen -ErrorAction SilentlyContinue) {
 Write-Host ("[*] Starting {0}" -f $UiExe) -ForegroundColor Green
 Write-RunLog ("launching UI: {0}" -f $UiExe)
 try {
-    Start-Process -FilePath $UiExe | Out-Null
+    Start-Process -FilePath $UiExe -WorkingDirectory $UiDir | Out-Null
     Write-RunLog "UI process started"
 } catch {
     Write-RunLog ("UI launch FAILED: {0}" -f $_.Exception.Message)
