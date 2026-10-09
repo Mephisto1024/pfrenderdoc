@@ -1,0 +1,253 @@
+
+TimeCreated : 2026/10/10 0:50:10
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 6098e5c4-6d11-4226-b013-5407e558203c
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:50:08
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 93acfea6-e20c-4c3d-8d2c-9cf883d5a032
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:50:07
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 5996bbe0-346b-483c-bf91-791a3519a4f6
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:50:05
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: ea6133c0-9e61-45a1-805f-f14853795d34
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:50:04
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 96f6c6a8-72f5-450d-b16e-7b258499b314
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:50:02
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: b9cbe520-a2d8-4825-a187-48d9e7f9be27
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:50:01
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: a0d041b2-bed7-4916-9236-64e0a0e3cde8
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:59
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 1c68783c-5b19-4d44-b085-cb36df4c4ea2
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:58
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 417af471-da67-4f7f-ae8b-596998f4d82b
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:56
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 7fadf237-23cc-41b0-99a9-8deef37e3aeb
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:55
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 7e49ba07-3767-4acf-9648-0e4608253251
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:53
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: c9dd0e2c-6e05-4c23-81d8-07860aaaf875
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:52
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 7b7ede40-7d93-4837-9885-11ac30db7921
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:50
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: bbd396da-923d-4e81-899c-360495e5fce0
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:48
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 77609287-0727-47e5-8a98-bb0ece65e7fd
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:43
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 4f108ebd-4cc4-4b0a-9ee6-0cb01d96856f
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:42
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 4c0bc690-89ae-4438-b915-1fd137151923
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+
+TimeCreated : 2026/10/10 0:49:40
+Id          : 1000
+Message     : Faulting application name: Endfield.exe, version: 2021.3.34.0, time stamp: 0x6a858db7
+              Faulting module name: MSVCP140.dll, version: 14.29.30139.0, time stamp: 0x61b17c25
+              Exception code: 0xc0000005
+              Fault offset: 0x0000000000013020
+              Faulting process id: 0x8ED0
+              Faulting application start time: 0x1DD580E299FA2E6
+              Faulting application path: D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+              Faulting module path: D:\Hypergryph Launcher\games\Arknights Endfield\MSVCP140.dll
+              Report Id: 8f387dfb-abb9-4869-889e-1d1056ffd2df
+              Faulting package full name: 
+              Faulting package-relative application ID: 
+

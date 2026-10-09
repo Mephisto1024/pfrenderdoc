@@ -1,0 +1,308 @@
+RDOC 001040: [00:52:59]             core.cpp( 719) - Log     - RenderDoc v1.45 Windows 64-bit Release (NO_GIT_COMMIT_HASH_DEFINED_AT_BUILD_TIME) loaded in replay application
+RDOC 001040: [00:52:59]         settings.cpp( 471) - Log     - Loading config from C:\Users\Mephisto\AppData\Roaming\rendertest\renderdoc.conf
+RDOC 001040: [00:52:59]             core.cpp( 843) - Log     - Replay application 'E:\pfrenderdoc\x64\Endfield-v142\rendertestcmd.exe' launched
+RDOC 001040: [00:52:59]    win32_process.cpp( 526) - Log     - Running process D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+RDOC 001040: [00:52:59]    win32_process.cpp(1170) - Log     - Capture launch: created PID 38320, main thread 13648
+RDOC 001040: [00:52:59]    win32_process.cpp(1171) - Log     - Capture launch: starting DLL injection into PID 38320
+RDOC 001040: [00:52:59]    win32_process.cpp( 612) - Log     - Injecting renderdoc into process 38320
+RDOC 038320: [00:52:59]             core.cpp( 719) - Log     - RenderDoc v1.45 Windows 64-bit Release (NO_GIT_COMMIT_HASH_DEFINED_AT_BUILD_TIME) capturing application
+RDOC 038320: [00:52:59]         settings.cpp( 471) - Log     - Loading config from C:\Users\Mephisto\AppData\Roaming\rendertest\renderdoc.conf
+RDOC 038320: [00:52:59]   win32_libentry.cpp( 794) - Log     - Capture DLL: Initialise complete, PID 38320, loading into D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+RDOC 038320: [00:52:59]   win32_libentry.cpp( 814) - Log     - Capture DLL: RegisterHooks begin
+RDOC 038320: [00:52:59]  sys_win32_hooks.cpp(  94) - Log     - Registering Win32 system hooks
+RDOC 038320: [00:52:59]      d3d11_hooks.cpp(  63) - Log     - Registering D3D11 hooks
+RDOC 038320: [00:52:59]       d3d9_hooks.cpp(  40) - Log     - Registering D3D9 hooks
+RDOC 038320: [00:52:59]        amd_hooks.cpp( 154) - Log     - Registering AMD hooks
+RDOC 038320: [00:52:59]      nvapi_hooks.cpp( 145) - Log     - Registering nvidia hooks
+RDOC 038320: [00:52:59]      d3d12_hooks.cpp( 555) - Log     - Registering D3D12 hooks
+RDOC 038320: [00:52:59]       dxgi_hooks.cpp( 273) - Log     - Registering DXGI hooks
+RDOC 038320: [00:52:59]        egl_hooks.cpp(1088) - Log     - Registering EGL hooks
+RDOC 038320: [00:52:59]         gl_hooks.cpp( 285) - Log     - Registering OpenGL hooks
+RDOC 038320: [00:52:59]        wgl_hooks.cpp( 658) - Log     - Registering WGL hooks
+RDOC 038320: [00:52:59]         vk_layer.cpp( 110) - Log     - Registering Vulkan hooks
+RDOC 038320: [00:52:59]   win32_libentry.cpp( 816) - Log     - Capture DLL: RegisterHooks complete
+RDOC 038320: [00:52:59]   win32_libentry.cpp( 705) - Log     - Auto capture: 3 wall-clock trigger(s) armed, last at 90000 ms
+RDOC 001040: [00:52:59]    win32_process.cpp(1174) - Log     - Capture launch: injection completed for PID 38320, result Success, target control ID 38920: 
+RDOC 001040: [00:52:59]    win32_process.cpp(1189) - Log     - Capture launch: ResumeThread attempt 1 for PID 38320, previous suspend count 1
+RDOC 001040: [00:52:59]    win32_process.cpp(1189) - Log     - Capture launch: ResumeThread attempt 2 for PID 38320, previous suspend count 0
+RDOC 001040: [00:52:59]    win32_process.cpp(1207) - Log     - Capture launch: waiting for PID 38320 to exit
+RDOC 038320: [00:53:04]             core.cpp(2310) - Log     - Adding Vulkan device frame capturer for 0x0000000009385C90
+RDOC 038320: [00:53:04]  vk_device_funcs.cpp( 959) - Log     - Initialised capture layer in Vulkan instance.
+RDOC 038320: [00:53:04]  vk_device_funcs.cpp(1544) - Log     - physical device 0: NVIDIA GeForce RTX 4070 (ver 617.14 patch 0x0) - 10de:2786
+RDOC 038320: [00:53:04]             core.cpp(2327) - Log     - Removing device frame capturer for 0x0000000009385C90
+RDOC 038320: [00:53:06]      nvapi_hooks.cpp( 526) - Log     - Initialised nvapi, version NVidia Complete Version 1.10
+RDOC 038320: [00:53:06]      nvapi_hooks.cpp( 628) - Warning - NvAPI disabled: Returning NULL for nvapi_QueryInterface(NvAPI_EnumPhysicalGPUs)
+RDOC 038320: [00:53:06]      nvapi_hooks.cpp( 628) - Warning - NvAPI disabled: Returning NULL for nvapi_QueryInterface(NvAPI_EnumPhysicalGPUs)
+RDOC 038320: [00:53:06]      nvapi_hooks.cpp( 628) - Warning - NvAPI disabled: Returning NULL for nvapi_QueryInterface(NvAPI_EnumPhysicalGPUs)
+RDOC 038320: [00:53:06]      nvapi_hooks.cpp( 628) - Warning - NvAPI disabled: Returning NULL for nvapi_QueryInterface(NvAPI_EnumPhysicalGPUs)
+RDOC 038320: [00:53:06]      nvapi_hooks.cpp( 628) - Warning - NvAPI disabled: Returning NULL for nvapi_QueryInterface(NvAPI_EnumPhysicalGPUs)
+RDOC 038320: [00:53:07]      nvapi_hooks.cpp( 526) - Log     - Initialised nvapi, version NVidia Complete Version 1.10
+RDOC 038320: [00:53:07]      nvapi_hooks.cpp( 628) - Warning - NvAPI disabled: Returning NULL for nvapi_QueryInterface(NvAPI_EnumPhysicalGPUs)
+RDOC 038320: [00:53:07]             core.cpp(2310) - Log     - Adding Vulkan device frame capturer for 0x000000007EB00050
+RDOC 038320: [00:53:07]  vk_device_funcs.cpp( 959) - Log     - Initialised capture layer in Vulkan instance.
+RDOC 038320: [00:53:07]  vk_device_funcs.cpp(1544) - Log     - physical device 0: NVIDIA GeForce RTX 4070 (ver 617.14 patch 0x0) - 10de:2786
+RDOC 038320: [00:53:07]      nvapi_hooks.cpp( 526) - Log     - Initialised nvapi, version NVidia Complete Version 1.10
+RDOC 038320: [00:53:07]      nvapi_hooks.cpp( 628) - Warning - NvAPI disabled: Returning NULL for nvapi_QueryInterface(NvAPI_SYS_GetDriverAndBranchVersion)
+RDOC 038320: [00:53:07]             core.cpp(2327) - Log     - Removing device frame capturer for 0x000000007EB00050
+RDOC 038320: [00:53:07]             core.cpp(2310) - Log     - Adding Vulkan device frame capturer for 0x000000007F40D450
+RDOC 038320: [00:53:07]  vk_device_funcs.cpp( 959) - Log     - Initialised capture layer in Vulkan instance.
+RDOC 038320: [00:53:07]  vk_device_funcs.cpp(1544) - Log     - physical device 0: NVIDIA GeForce RTX 4070 (ver 617.14 patch 0x0) - 10de:2786
+RDOC 038320: [00:53:07]      nvapi_hooks.cpp( 628) - Warning - NvAPI disabled: Returning NULL for nvapi_QueryInterface(NvAPI_SYS_GetDriverAndBranchVersion)
+RDOC 038320: [00:53:07]             core.cpp(2327) - Log     - Removing device frame capturer for 0x000000007F40D450
+RDOC 038320: [00:53:07]             core.cpp(2310) - Log     - Adding Vulkan device frame capturer for 0x0000000122876160
+RDOC 038320: [00:53:07]  vk_device_funcs.cpp( 959) - Log     - Initialised capture layer in Vulkan instance.
+RDOC 038320: [00:53:07]  vk_device_funcs.cpp(1544) - Log     - physical device 0: NVIDIA GeForce RTX 4070 (ver 617.14 patch 0x0) - 10de:2786
+RDOC 038320: [00:53:08]  vk_device_funcs.cpp(4955) - Log     - Created capture device from physical device 0
+RDOC 038320: [00:53:08]        vk_memory.cpp( 170) - Log     -   Memory type 0: VkMemoryPropertyFlagBits(0) in heap 1 (VkMemoryHeapFlagBits(0)) (15.9 GB) []
+RDOC 038320: [00:53:08]        vk_memory.cpp( 170) - Log     -   Memory type 1: VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT in heap 0 (VK_MEMORY_HEAP_DEVICE_LOCAL_BIT) (11.7 GB) [GPULocal]
+RDOC 038320: [00:53:08]        vk_memory.cpp( 170) - Log     -   Memory type 2: VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT in heap 1 (VkMemoryHeapFlagBits(0)) (15.9 GB) [upload]
+RDOC 038320: [00:53:08]        vk_memory.cpp( 170) - Log     -   Memory type 3: VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT | VK_MEMORY_PROPERTY_HOST_CACHED_BIT in heap 1 (VkMemoryHeapFlagBits(0)) (15.9 GB) [readback]
+RDOC 038320: [00:53:08]        vk_memory.cpp( 170) - Log     -   Memory type 4: VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT | VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT in heap 0 (VK_MEMORY_HEAP_DEVICE_LOCAL_BIT) (11.7 GB) []
+RDOC 038320: [00:53:10]          vk_core.cpp(5078) - Log     - RegisterSurface() window 00000000000A12C2
+RDOC 038320: [00:53:10]             core.cpp(2346) - Log     - Adding Vulkan frame capturer for 0x0000000122876160 / 0x00000000000A12C2
+RDOC 038320: [00:53:12]     d3d12_device.cpp( 800) - Log     - New D3D12 device created: nVidia / NVIDIA GeForce RTX 4070 32.0.16.1714
+RDOC 038320: [00:53:12]             core.cpp(2310) - Log     - Adding D3D12 device frame capturer for 0x000000000059F4A0
+RDOC 038320: [00:53:12] d3d12_device_wrap.cpp(2393) - Log     - Checking feature support for D3D12_FEATURE_FEATURE_LEVELS
+RDOC 038320: [00:53:12]             core.cpp(2327) - Log     - Removing device frame capturer for 0x000000000059F4A0
+RDOC 038320: [00:53:16]        wgl_hooks.cpp(  63) - Log     - Disabling WGL hooks for EGL
+RDOC 038320: [00:53:16]      dxgi_common.cpp(1688) - Warning - Querying IDXGIAdapter for unsupported/undocumented interface: IDXGIAdapterInternal2
+RDOC 038320: [00:53:16]        gl_driver.cpp(1226) - Log     - Core context 000000040551FF10 created with attribs, sharing with context 0000000000000000
+RDOC 038320: [00:53:16]     egl_platform.cpp(  92) - Warning - Creating cloned context failed (3006). Trying again with queried old EGL client version: 2
+RDOC 038320: [00:53:16]        gl_driver.cpp(1238) - Log     - Created new sharegroup 000000000877C330
+RDOC 038320: [00:53:16]             core.cpp(2310) - Log     - Adding OpenGLES device frame capturer for 0x000000040551FF10
+RDOC 038320: [00:53:16]        gl_common.cpp( 423) - Log     - Refreshing extension status based on OpenGL 2.0
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3701) - Log     - Emulating glTransformFeedbackBufferBase
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3702) - Log     - Emulating glTransformFeedbackBufferRange
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3703) - Log     - Emulating glClearNamedFramebufferiv
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3704) - Log     - Emulating glClearNamedFramebufferuiv
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3705) - Log     - Emulating glClearNamedFramebufferfv
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3706) - Log     - Emulating glClearNamedFramebufferfi
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3707) - Log     - Emulating glBlitNamedFramebuffer
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3708) - Log     - Emulating glVertexArrayElementBuffer
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3709) - Log     - Emulating glVertexArrayVertexBuffers
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3749) - Log     - Emulating ARB_copy_image
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3756) - Log     - Emulating ARB_clear_buffer_object
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3771) - Log     - Emulating ARB_internalformat_query2
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3780) - Log     - Emulating ARB_separate_shader_objects
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3851) - Log     - Emulating ARB_program_interface_query
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3912) - Log     - Emulating GLES 3.x functions
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3919) - Log     - Emulating GLES 3.1 functions
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3927) - Log     - Emulating GLES 3.2 functions
+RDOC 038320: [00:53:16]      gl_emulated.cpp(3957) - Log     - Emulating EXT_direct_state_access
+RDOC 038320: [00:53:16]      gl_emulated.cpp(4044) - Log     - Emulating ARB_direct_state_access
+RDOC 038320: [00:53:16]        gl_driver.cpp(1423) - Log     - Activating new GL context: Google Inc. / ANGLE (NVIDIA GeForce RTX 4070 Direct3D11 vs_5_0 ps_5_0) / OpenGL ES 2.0 (ANGLE 2.1.0.57ea533f79a7)
+RDOC 038320: [00:53:16]        gl_common.cpp( 516) - Log     - Vendor checks for 0 (Google Inc. / ANGLE (NVIDIA GeForce RTX 4070 Direct3D11 vs_5_0 ps_5_0) / OpenGL ES 2.0 (ANGLE 2.1.0.57ea533f79a7))
+RDOC 038320: [00:53:16]        gl_common.cpp( 517) - Log     - Detected vendor: None
+RDOC 038320: [00:53:16]     egl_platform.cpp(  92) - Warning - Creating cloned context failed (3006). Trying again with queried old EGL client version: 2
+RDOC 038320: [00:53:16]        gl_common.cpp( 855) - Warning - Reading from the depth buffer using glReadPixels is not supported (GL_NV_read_depth)
+RDOC 038320: [00:53:16]        gl_common.cpp( 859) - Warning - Reading from the stencil buffer using glReadPixels is not supported (GL_NV_read_stencil)
+RDOC 038320: [00:53:16]        gl_common.cpp( 863) - Warning - Reading from the packed depth-stencil buffers using glReadPixels is not supported (GL_NV_read_depth_stencil)
+RDOC 038320: [00:53:18]        gl_driver.cpp(1226) - Log     - Core context 00000003730F8520 created with attribs, sharing with context 0000000000000000
+RDOC 038320: [00:53:18]        gl_driver.cpp(1238) - Log     - Created new sharegroup 0000000405C935B0
+RDOC 038320: [00:53:18]             core.cpp(2310) - Log     - Adding OpenGLES device frame capturer for 0x00000003730F8520
+RDOC 038320: [00:53:18]        gl_common.cpp( 423) - Log     - Refreshing extension status based on OpenGL ES 3.0
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3749) - Log     - Emulating ARB_copy_image
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3756) - Log     - Emulating ARB_clear_buffer_object
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3771) - Log     - Emulating ARB_internalformat_query2
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3780) - Log     - Emulating ARB_separate_shader_objects
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3851) - Log     - Emulating ARB_program_interface_query
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3912) - Log     - Emulating GLES 3.x functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3919) - Log     - Emulating GLES 3.1 functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3927) - Log     - Emulating GLES 3.2 functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3957) - Log     - Emulating EXT_direct_state_access
+RDOC 038320: [00:53:18]      gl_emulated.cpp(4044) - Log     - Emulating ARB_direct_state_access
+RDOC 038320: [00:53:18]        gl_driver.cpp(1423) - Log     - Activating new GL context: Google Inc. / ANGLE (NVIDIA GeForce RTX 4070 Direct3D11 vs_5_0 ps_5_0) / OpenGL ES 3.0 (ANGLE 2.1.0.57ea533f79a7)
+RDOC 038320: [00:53:18]        gl_driver.cpp(1113) - Log     - Deleting context 00000003730F8520
+RDOC 038320: [00:53:18]             core.cpp(2327) - Log     - Removing device frame capturer for 0x00000003730F8520
+RDOC 038320: [00:53:18]        gl_driver.cpp(1137) - Log     - Deleting shader group 0000000405C935B0
+RDOC 038320: [00:53:18]        gl_driver.cpp(1226) - Log     - Core context 00000003730F8520 created with attribs, sharing with context 0000000000000000
+RDOC 038320: [00:53:18]     egl_platform.cpp(  92) - Warning - Creating cloned context failed (3006). Trying again with queried old EGL client version: 2
+RDOC 038320: [00:53:18]        gl_driver.cpp(1238) - Log     - Created new sharegroup 0000000405C93870
+RDOC 038320: [00:53:18]             core.cpp(2310) - Log     - Adding OpenGLES device frame capturer for 0x00000003730F8520
+RDOC 038320: [00:53:18]        gl_common.cpp( 423) - Log     - Refreshing extension status based on OpenGL ES 2.0
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3749) - Log     - Emulating ARB_copy_image
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3756) - Log     - Emulating ARB_clear_buffer_object
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3771) - Log     - Emulating ARB_internalformat_query2
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3780) - Log     - Emulating ARB_separate_shader_objects
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3851) - Log     - Emulating ARB_program_interface_query
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3912) - Log     - Emulating GLES 3.x functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3919) - Log     - Emulating GLES 3.1 functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3927) - Log     - Emulating GLES 3.2 functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3957) - Log     - Emulating EXT_direct_state_access
+RDOC 038320: [00:53:18]      gl_emulated.cpp(4044) - Log     - Emulating ARB_direct_state_access
+RDOC 038320: [00:53:18]        gl_driver.cpp(1423) - Log     - Activating new GL context: Google Inc. / ANGLE (NVIDIA GeForce RTX 4070 Direct3D11 vs_5_0 ps_5_0) / OpenGL ES 2.0 (ANGLE 2.1.0.57ea533f79a7)
+RDOC 038320: [00:53:18]        gl_driver.cpp(1113) - Log     - Deleting context 00000003730F8520
+RDOC 038320: [00:53:18]        gl_driver.cpp(1137) - Log     - Deleting shader group 0000000405C93870
+RDOC 038320: [00:53:18]        gl_driver.cpp(1226) - Log     - Core context 0000000413620220 created with attribs, sharing with context 000000040551FF10
+RDOC 038320: [00:53:18]        gl_driver.cpp(1244) - Log     - Reusing old sharegroup 000000000877C330
+RDOC 038320: [00:53:18]             core.cpp(2310) - Log     - Adding OpenGLES device frame capturer for 0x0000000413620220
+RDOC 038320: [00:53:18]        gl_common.cpp( 423) - Log     - Refreshing extension status based on OpenGL ES 2.0
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3749) - Log     - Emulating ARB_copy_image
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3756) - Log     - Emulating ARB_clear_buffer_object
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3771) - Log     - Emulating ARB_internalformat_query2
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3780) - Log     - Emulating ARB_separate_shader_objects
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3851) - Log     - Emulating ARB_program_interface_query
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3912) - Log     - Emulating GLES 3.x functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3919) - Log     - Emulating GLES 3.1 functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3927) - Log     - Emulating GLES 3.2 functions
+RDOC 038320: [00:53:18]      gl_emulated.cpp(3957) - Log     - Emulating EXT_direct_state_access
+RDOC 038320: [00:53:18]      gl_emulated.cpp(4044) - Log     - Emulating ARB_direct_state_access
+RDOC 038320: [00:53:18]        gl_driver.cpp(1423) - Log     - Activating new GL context: Google Inc. / ANGLE (NVIDIA GeForce RTX 4070 Direct3D11 vs_5_0 ps_5_0) / OpenGL ES 2.0 (ANGLE 2.1.0.57ea533f79a7)
+RDOC 038320: [00:53:29]   win32_libentry.cpp( 635) - Log     - Auto capture: TriggerCapture(1) at 30000 ms after injection
+RDOC 038320: [00:53:29]          vk_core.cpp(2687) - Log     - Starting capture
+RDOC 038320: [00:53:29]   resource_manager.h(1452) - Log     - Preparing up to 777 potentially dirty resources
+RDOC 038320: [00:53:30]   resource_manager.h(1509) - Log     - Prepared 422 dirty resources, postponed 355, skipped 0
+RDOC 038320: [00:53:30]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::7386 after it has been postponed.
+RDOC 038320: [00:53:30]         vk_debug.cpp(2724) - Log     - Allocating readback window of 8413184 bytes
+RDOC 038320: [00:53:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::244 (0 -> 8413184)
+RDOC 038320: [00:53:30]         vk_debug.cpp(2724) - Log     - Allocating readback window of 16777216 bytes
+RDOC 038320: [00:53:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::277 (0 -> 16777216)
+RDOC 038320: [00:53:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::475 (0 -> 4194304)
+RDOC 038320: [00:53:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::1180 (0 -> 1048576)
+RDOC 038320: [00:53:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::7424 (0 -> 4406400)
+RDOC 038320: [00:53:30]          vk_core.cpp(2840) - Log     - Finished capture, Frame 633
+RDOC 038320: [00:53:30]   resource_manager.h(1521) - Log     - Checking 776 resources with initial contents against 461 referenced resources
+RDOC 038320: [00:53:30]   resource_manager.h(1628) - Log     - Serialised 80 resources, skipped 368 unreferenced
+RDOC 038320: [00:53:30]          rdcfile.cpp(1247) - Log     - Finishing write to section 1 (renderdoc/internal/framecapture). Compressed from 580596800 bytes to 230118246 (39.63 %)
+RDOC 038320: [00:53:30]          vk_core.cpp(3273) - Log     - Captured Vulkan frame with 553.700256 MB capture section in 0.382352 seconds
+RDOC 038320: [00:53:30]             core.cpp(2218) - Log     - Written to disk: E:\pfrenderdoc\artifacts\endfield-diagnosis-20261010-004059\elevated-v142-correct-layer\Endfield_frame633.rdc
+RDOC 038320: [00:53:54]          vk_core.cpp(2687) - Log     - Starting capture
+RDOC 038320: [00:53:54]   resource_manager.h(1452) - Log     - Preparing up to 12581 potentially dirty resources
+RDOC 038320: [00:53:54]   resource_manager.h(1509) - Log     - Prepared 5319 dirty resources, postponed 7261, skipped 0
+RDOC 038320: [00:53:54]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::8985 after it has been postponed.
+RDOC 038320: [00:53:54]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::8979 after it has been postponed.
+RDOC 038320: [00:53:54]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::45352 after it has been postponed.
+RDOC 038320: [00:53:54]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::8982 after it has been postponed.
+RDOC 038320: [00:53:54]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::8976 after it has been postponed.
+RDOC 038320: [00:53:54]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::244 (0 -> 8413184)
+RDOC 038320: [00:53:54]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::277 (0 -> 16777216)
+RDOC 038320: [00:53:54]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::382 (0 -> 4194304)
+RDOC 038320: [00:53:54]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::1180 (0 -> 1048576)
+RDOC 038320: [00:53:54]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::9713 (0 -> 16777216)
+RDOC 038320: [00:53:54]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::10333 (0 -> 16777216)
+RDOC 038320: [00:53:54]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::11121 (0 -> 16777216)
+RDOC 038320: [00:53:54]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::11775 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::12567 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::13506 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::14203 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::17059 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::17697 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::18460 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::19783 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::22029 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::22651 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::23335 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::23835 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::24506 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::26322 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::27193 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::27641 (0 -> 16777216)
+RDOC 038320: [00:53:55]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::29887 (0 -> 33554432)
+RDOC 038320: [00:53:55]          vk_core.cpp(2840) - Log     - Finished capture, Frame 1452
+RDOC 038320: [00:53:55]   resource_manager.h(1521) - Log     - Checking 12579 resources with initial contents against 2196 referenced resources
+RDOC 038320: [00:53:56]   resource_manager.h(1628) - Log     - Serialised 906 resources, skipped 4706 unreferenced
+RDOC 038320: [00:53:56]          rdcfile.cpp(1247) - Log     - Finishing write to section 1 (renderdoc/internal/framecapture). Compressed from 2526340544 bytes to 1624109547 (64.29 %)
+RDOC 038320: [00:53:56]          vk_core.cpp(3273) - Log     - Captured Vulkan frame with 2409.306091 MB capture section in 2.094241 seconds
+RDOC 038320: [00:53:56]             core.cpp(2218) - Log     - Written to disk: E:\pfrenderdoc\artifacts\endfield-diagnosis-20261010-004059\elevated-v142-correct-layer\Endfield_frame1452.rdc
+RDOC 038320: [00:53:59]   win32_libentry.cpp( 635) - Log     - Auto capture: TriggerCapture(1) at 60000 ms after injection
+RDOC 038320: [00:53:59]          vk_core.cpp(2687) - Log     - Starting capture
+RDOC 038320: [00:53:59]   resource_manager.h(1452) - Log     - Preparing up to 12856 potentially dirty resources
+RDOC 038320: [00:54:00]   resource_manager.h(1509) - Log     - Prepared 5607 dirty resources, postponed 7247, skipped 0
+RDOC 038320: [00:54:00]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::18309 after it has been postponed.
+RDOC 038320: [00:54:00]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::47548 after it has been postponed.
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::244 (0 -> 8413184)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::277 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::548 (0 -> 4194304)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::1180 (0 -> 1048576)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::9713 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::10333 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::11121 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::11775 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::12567 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::14203 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::17697 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::18460 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::19783 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::22029 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::22651 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::23335 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::23835 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::24506 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::26322 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::27193 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::27641 (0 -> 16777216)
+RDOC 038320: [00:54:00]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::29887 (0 -> 33554432)
+RDOC 038320: [00:54:00]          vk_core.cpp(2840) - Log     - Finished capture, Frame 1635
+RDOC 038320: [00:54:00]   resource_manager.h(1521) - Log     - Checking 12852 resources with initial contents against 2148 referenced resources
+RDOC 038320: [00:54:01]   resource_manager.h(1628) - Log     - Serialised 806 resources, skipped 5109 unreferenced
+RDOC 038320: [00:54:01]          rdcfile.cpp(1247) - Log     - Finishing write to section 1 (renderdoc/internal/framecapture). Compressed from 2635881088 bytes to 1645756028 (62.44 %)
+RDOC 038320: [00:54:01]          vk_core.cpp(3273) - Log     - Captured Vulkan frame with 2513.772095 MB capture section in 1.767437 seconds
+RDOC 038320: [00:54:01]             core.cpp(2218) - Log     - Written to disk: E:\pfrenderdoc\artifacts\endfield-diagnosis-20261010-004059\elevated-v142-correct-layer\Endfield_frame1635.rdc
+RDOC 038320: [00:54:06]          vk_core.cpp(2687) - Log     - Starting capture
+RDOC 038320: [00:54:06]   resource_manager.h(1452) - Log     - Preparing up to 12904 potentially dirty resources
+RDOC 038320: [00:54:06]   resource_manager.h(1509) - Log     - Prepared 5833 dirty resources, postponed 7069, skipped 0
+RDOC 038320: [00:54:06]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::49781 after it has been postponed.
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::244 (0 -> 8413184)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::277 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::382 (0 -> 4194304)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::1180 (0 -> 1048576)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::9713 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::10333 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::11121 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::11775 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::12567 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::14203 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::17697 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::18460 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::19783 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::22029 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::22651 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::23335 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::23835 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::24506 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::26322 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::27193 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::27641 (0 -> 16777216)
+RDOC 038320: [00:54:06]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::29887 (0 -> 33554432)
+RDOC 038320: [00:54:06]          vk_core.cpp(2840) - Log     - Finished capture, Frame 1920
+RDOC 038320: [00:54:07]   resource_manager.h(1521) - Log     - Checking 12901 resources with initial contents against 2018 referenced resources
+RDOC 038320: [00:54:08]   resource_manager.h(1628) - Log     - Serialised 735 resources, skipped 5387 unreferenced
+RDOC 038320: [00:54:08]          rdcfile.cpp(1247) - Log     - Finishing write to section 1 (renderdoc/internal/framecapture). Compressed from 2508768448 bytes to 1587884728 (63.29 %)
+RDOC 038320: [00:54:08]          vk_core.cpp(3273) - Log     - Captured Vulkan frame with 2392.548035 MB capture section in 1.723493 seconds
+RDOC 038320: [00:54:08]             core.cpp(2218) - Log     - Written to disk: E:\pfrenderdoc\artifacts\endfield-diagnosis-20261010-004059\elevated-v142-correct-layer\Endfield_frame1920.rdc
+RDOC 038320: [00:54:29]   win32_libentry.cpp( 635) - Log     - Auto capture: TriggerCapture(1) at 90000 ms after injection
+RDOC 038320: [00:54:29]          vk_core.cpp(2687) - Log     - Starting capture
+RDOC 038320: [00:54:29]   resource_manager.h(1452) - Log     - Preparing up to 13147 potentially dirty resources
+RDOC 038320: [00:54:30]   resource_manager.h(1509) - Log     - Prepared 6073 dirty resources, postponed 7072, skipped 0
+RDOC 038320: [00:54:30]   resource_manager.h(1128) - Log     - Preparing resource ResourceId::58225 after it has been postponed.
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::244 (0 -> 8413184)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::277 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::475 (0 -> 4194304)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::9713 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::10333 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::11121 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::11775 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::12567 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::13506 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::14203 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::17059 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::17697 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::18460 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::19783 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::22029 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::22651 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::23335 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::23835 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::24506 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::26322 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::27193 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::27641 (0 -> 16777216)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::29887 (0 -> 33554432)
+RDOC 038320: [00:54:30]   vk_queue_funcs.cpp(1370) - Log     - Persistent map flush forced for ResourceId::52380 (0 -> 1048576)
+RDOC 038320: [00:54:30]          vk_core.cpp(2840) - Log     - Finished capture, Frame 3201
+RDOC 038320: [00:54:30]   resource_manager.h(1521) - Log     - Checking 13143 resources with initial contents against 2217 referenced resources
+RDOC 038320: [00:54:32]   resource_manager.h(1628) - Log     - Serialised 901 resources, skipped 5478 unreferenced
+RDOC 038320: [00:54:33]          rdcfile.cpp(1247) - Log     - Finishing write to section 1 (renderdoc/internal/framecapture). Compressed from 2564750656 bytes to 1661998362 (64.80 %)
+RDOC 038320: [00:54:33]          vk_core.cpp(3273) - Log     - Captured Vulkan frame with 2445.936829 MB capture section in 3.340145 seconds
+RDOC 038320: [00:54:33]             core.cpp(2218) - Log     - Written to disk: E:\pfrenderdoc\artifacts\endfield-diagnosis-20261010-004059\elevated-v142-correct-layer\Endfield_frame3201.rdc
+RDOC 001040: [01:02:28]    win32_process.cpp(1214) - Log     - Capture launch: PID 38320 exited with code 0x00000000 (0)

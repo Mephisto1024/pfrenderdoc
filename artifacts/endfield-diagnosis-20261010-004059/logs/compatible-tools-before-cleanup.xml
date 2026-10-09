@@ -1,0 +1,198 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Selected.System.IO.FileInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\_ctypes.pyd</S>
+      <I64 N="Length">130712</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:36.7301254Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="1">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\d3dcompiler_47.dll</S>
+      <I64 N="Length">4741488</I64>
+      <DT N="LastWriteTimeUtc">2026-01-26T22:18:40Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="2">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\dbghelp.dll</S>
+      <I64 N="Length">1413072</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.786139Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="3">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\python36.dll</S>
+      <I64 N="Length">3610776</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:36.7458874Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="4">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\python36.zip</S>
+      <I64 N="Length">2288904</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:36.7276737Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="5">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\qrendertest.exe</S>
+      <I64 N="Length">13385216</I64>
+      <DT N="LastWriteTimeUtc">2026-10-09T16:49:59.8553202Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="6">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\Qt5Core.dll</S>
+      <I64 N="Length">5789696</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.4089632Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="7">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\Qt5Gui.dll</S>
+      <I64 N="Length">6052864</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.4291922Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="8">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\Qt5Network.dll</S>
+      <I64 N="Length">1218560</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.4342176Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="9">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\Qt5Svg.dll</S>
+      <I64 N="Length">328192</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.4363637Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="10">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\Qt5Widgets.dll</S>
+      <I64 N="Length">5535232</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.4587485Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="11">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\renderdoc_app.h</S>
+      <I64 N="Length">37355</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.8720367Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="12">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\rendertest.dll</S>
+      <I64 N="Length">24583168</I64>
+      <DT N="LastWriteTimeUtc">2026-10-09T16:48:43.4493642Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="13">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\rendertest.json</S>
+      <I64 N="Length">1628</I64>
+      <DT N="LastWriteTimeUtc">2026-10-09T16:46:15.972196Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="14">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\rendertestcmd.exe</S>
+      <I64 N="Length">509440</I64>
+      <DT N="LastWriteTimeUtc">2026-10-09T16:49:12.9606073Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="15">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\rendertestshim64.dll</S>
+      <I64 N="Length">4608</I64>
+      <DT N="LastWriteTimeUtc">2026-10-09T16:45:38.8322472Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="16">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\rendertestui.exe</S>
+      <I64 N="Length">296448</I64>
+      <DT N="LastWriteTimeUtc">2026-10-09T16:45:38.9600871Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="17">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\symsrv.dll</S>
+      <I64 N="Length">127944</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.7866406Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="18">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\symsrv.yes</S>
+      <I64 N="Length">1</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.7866406Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="19">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\pymodules\d3dcompiler_47.dll</S>
+      <I64 N="Length">4741488</I64>
+      <DT N="LastWriteTimeUtc">2026-01-26T22:18:40Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="20">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\pymodules\qrenderdoc.pyd</S>
+      <I64 N="Length">7620096</I64>
+      <DT N="LastWriteTimeUtc">2026-10-09T16:50:00.6813439Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="21">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\pymodules\renderdoc.pyd</S>
+      <I64 N="Length">5518336</I64>
+      <DT N="LastWriteTimeUtc">2026-10-09T16:49:24.8810704Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="22">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\qtplugins\imageformats\qsvg.dll</S>
+      <I64 N="Length">26112</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.5672885Z</DT>
+    </MS>
+  </Obj>
+  <Obj RefId="23">
+    <TNRef RefId="0" />
+    <MS>
+      <S N="FullName">E:\pfrenderdoc\x64\Endfield-v142\qtplugins\platforms\qwindows.dll</S>
+      <I64 N="Length">1341952</I64>
+      <DT N="LastWriteTimeUtc">2026-06-23T13:18:37.572745Z</DT>
+    </MS>
+  </Obj>
+</Objs>

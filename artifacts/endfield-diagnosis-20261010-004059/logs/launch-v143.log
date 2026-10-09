@@ -1,0 +1,13 @@
+RDOC 058540: [00:41:53]             core.cpp( 719) - Log     - RenderDoc v1.45 Windows 64-bit Release (9e3e8a37210410b75c007e9c63565848648266cf) loaded in replay application
+RDOC 058540: [00:41:53]         settings.cpp( 471) - Log     - Loading config from C:\Users\Mephisto\AppData\Roaming\rendertest\renderdoc.conf
+RDOC 058540: [00:41:53]             core.cpp( 843) - Log     - Replay application 'E:\pfrenderdoc\x64\Release\rendertestcmd.exe' launched
+RDOC 058540: [00:41:53]    win32_process.cpp( 526) - Log     - Running process D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+RDOC 058540: [00:41:53]    win32_process.cpp(1170) - Log     - Capture launch: created PID 57888, main thread 66824
+RDOC 058540: [00:41:53]    win32_process.cpp(1171) - Log     - Capture launch: starting DLL injection into PID 57888
+RDOC 058540: [00:41:53]    win32_process.cpp( 612) - Log     - Injecting renderdoc into process 57888
+RDOC 058540: [00:41:55]    win32_process.cpp( 389) - Error   - Couldn't find module 'rendertest.dll' among 21 modules
+RDOC 058540: [00:41:55]    win32_process.cpp( 989) - Error   - Failed to inject rendertest.dll into process. Check that the process did not crash or exit early in initialisation, e.g. if the working directory is incorrectly set.
+RDOC 058540: [00:41:55]    win32_process.cpp(1174) - Log     - Capture launch: injection completed for PID 57888, result RenderDoc injection failed, target control ID 0: Failed to inject rendertest.dll into process. Check that the process did not crash or exit early in initialisation, e.g. if the working directory is incorrectly set.
+RDOC 058540: [00:41:55]    win32_process.cpp(1189) - Log     - Capture launch: ResumeThread attempt 1 for PID 57888, previous suspend count 1
+RDOC 058540: [00:41:55]    win32_process.cpp(1189) - Log     - Capture launch: ResumeThread attempt 2 for PID 57888, previous suspend count 0
+RDOC 058540: [00:41:55]    win32_process.cpp(1200) - Log     - Capture launch: PID 57888 status after injection failure: 0x00000103

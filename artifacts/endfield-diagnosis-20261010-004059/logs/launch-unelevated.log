@@ -1,0 +1,6 @@
+RDOC 019608: [00:40:59]             core.cpp( 719) - Log     - RenderDoc v1.45 Windows 64-bit Release (9e3e8a37210410b75c007e9c63565848648266cf) loaded in replay application
+RDOC 019608: [00:40:59]         settings.cpp( 471) - Log     - Loading config from C:\Users\Mephisto\AppData\Roaming\rendertest\renderdoc.conf
+RDOC 019608: [00:40:59]             core.cpp( 843) - Log     - Replay application 'E:\pfrenderdoc\x64\Release\rendertestcmd.exe' launched
+RDOC 019608: [00:40:59]    win32_process.cpp( 526) - Log     - Running process D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+RDOC 019608: [00:40:59]    win32_process.cpp( 565) - Warning - Process D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe could not be loaded (error 740).
+RDOC 019608: [00:40:59]    win32_process.cpp(1166) - Error   - Failed to launch process (Windows error 740).

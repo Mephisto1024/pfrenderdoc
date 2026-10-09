@@ -44,3 +44,6 @@
 # Specific files that should be left alone
 renderdoccmd/resource.h binary
 renderdoc/data/resource.h binary
+
+# Preserve diagnostic evidence exactly, including native encodings and whitespace.
+artifacts/endfield-diagnosis-*/logs/** -text -whitespace

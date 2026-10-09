@@ -1,0 +1,30 @@
+RDOC 043468: [00:49:34]             core.cpp( 719) - Log     - RenderDoc v1.45 Windows 64-bit Release (NO_GIT_COMMIT_HASH_DEFINED_AT_BUILD_TIME) loaded in replay application
+RDOC 043468: [00:49:34]         settings.cpp( 471) - Log     - Loading config from C:\Users\Mephisto\AppData\Roaming\rendertest\renderdoc.conf
+RDOC 043468: [00:49:34]             core.cpp( 843) - Log     - Replay application 'E:\pfrenderdoc\artifacts\endfield-v142-source\x64\Release\rendertestcmd.exe' launched
+RDOC 043468: [00:49:34]    win32_process.cpp( 526) - Log     - Running process D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+RDOC 043468: [00:49:34]    win32_process.cpp(1170) - Log     - Capture launch: created PID 36560, main thread 40848
+RDOC 043468: [00:49:34]    win32_process.cpp(1171) - Log     - Capture launch: starting DLL injection into PID 36560
+RDOC 043468: [00:49:34]    win32_process.cpp( 612) - Log     - Injecting renderdoc into process 36560
+RDOC 036560: [00:49:34]             core.cpp( 719) - Log     - RenderDoc v1.45 Windows 64-bit Release (NO_GIT_COMMIT_HASH_DEFINED_AT_BUILD_TIME) capturing application
+RDOC 036560: [00:49:34]         settings.cpp( 471) - Log     - Loading config from C:\Users\Mephisto\AppData\Roaming\rendertest\renderdoc.conf
+RDOC 036560: [00:49:34]   win32_libentry.cpp( 794) - Log     - Capture DLL: Initialise complete, PID 36560, loading into D:\Hypergryph Launcher\games\Arknights Endfield\Endfield.exe
+RDOC 036560: [00:49:34]   win32_libentry.cpp( 814) - Log     - Capture DLL: RegisterHooks begin
+RDOC 036560: [00:49:34]  sys_win32_hooks.cpp(  94) - Log     - Registering Win32 system hooks
+RDOC 036560: [00:49:34]      d3d11_hooks.cpp(  63) - Log     - Registering D3D11 hooks
+RDOC 036560: [00:49:34]       d3d9_hooks.cpp(  40) - Log     - Registering D3D9 hooks
+RDOC 036560: [00:49:34]        amd_hooks.cpp( 154) - Log     - Registering AMD hooks
+RDOC 036560: [00:49:34]      nvapi_hooks.cpp( 145) - Log     - Registering nvidia hooks
+RDOC 036560: [00:49:34]      d3d12_hooks.cpp( 555) - Log     - Registering D3D12 hooks
+RDOC 036560: [00:49:34]       dxgi_hooks.cpp( 273) - Log     - Registering DXGI hooks
+RDOC 036560: [00:49:34]        egl_hooks.cpp(1088) - Log     - Registering EGL hooks
+RDOC 036560: [00:49:34]         gl_hooks.cpp( 285) - Log     - Registering OpenGL hooks
+RDOC 036560: [00:49:34]        wgl_hooks.cpp( 658) - Log     - Registering WGL hooks
+RDOC 036560: [00:49:34]         vk_layer.cpp( 110) - Log     - Registering Vulkan hooks
+RDOC 036560: [00:49:34]   win32_libentry.cpp( 816) - Log     - Capture DLL: RegisterHooks complete
+RDOC 036560: [00:49:34]   win32_libentry.cpp( 705) - Log     - Auto capture: 3 wall-clock trigger(s) armed, last at 90000 ms
+RDOC 043468: [00:49:34]    win32_process.cpp(1174) - Log     - Capture launch: injection completed for PID 36560, result Success, target control ID 38920: 
+RDOC 043468: [00:49:34]    win32_process.cpp(1189) - Log     - Capture launch: ResumeThread attempt 1 for PID 36560, previous suspend count 1
+RDOC 043468: [00:49:34]    win32_process.cpp(1189) - Log     - Capture launch: ResumeThread attempt 2 for PID 36560, previous suspend count 0
+RDOC 043468: [00:49:34]    win32_process.cpp(1207) - Log     - Capture launch: waiting for PID 36560 to exit
+RDOC 036560: [00:50:05]   win32_libentry.cpp( 635) - Log     - Auto capture: TriggerCapture(1) at 30000 ms after injection
+RDOC 043468: [00:50:34]    win32_process.cpp(1214) - Log     - Capture launch: PID 36560 exited with code 0xdeadc0de (3735929054)

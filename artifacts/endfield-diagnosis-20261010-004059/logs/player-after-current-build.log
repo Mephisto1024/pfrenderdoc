@@ -1,0 +1,805 @@
+[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
+Initialize engine version: 2021.3.34f5 (0)
+[Subsystems] Discovering subsystems at path D:/Hypergryph Launcher/games/Arknights Endfield/Endfield_Data/UnitySubsystems
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:307us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:349us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:360us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:369us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:457us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:466us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:471us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:477us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:485us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+[Error] [00-42-02][streamline][error][tid:66824][0s:014ms:491us]ota.cpp:329[parseServerManifest] Unexpected line in manifest file: p»c{
+GfxDevice: creating device client; threaded=1; jobified=0
+vulkan instance layer:, VK_LAYER_NV_optimus
+Disabled implicit layer: VK_LAYER_NV_optimus
+vulkan instance layer:, VK_LAYER_NV_present
+vulkan instance layer:, VK_LAYER_OBS_HOOK
+vulkan instance layer:, VK_LAYER_NV_nomad_release_public_2025_4_0
+vulkan instance layer:, VK_LAYER_NV_GPU_Trace_release_public_2025_4_0
+vulkan instance layer:, VK_LAYER_NV_ngfx_capture_release_public_2025_4_0
+vulkan instance layer:, VK_LAYER_NV_shader_debugger_release_public_2025_4_0
+vulkan instance layer:, VK_LAYER_EOS_Overlay
+vulkan instance layer:, VK_LAYER_RENDERDOC_Capture
+vulkan instance layer:, VK_LAYER_VALVE_steam_overlay
+vulkan instance layer:, VK_LAYER_VALVE_steam_fossilize
+vulkan instance layer:, VK_LAYER_RENDERTEST_Capture
+vulkan instance layer:, VK_LAYER_ROCKSTAR_GAMES_social_club
+vulkan instance layer:, VK_LAYER_INTEL_gvk_restore_point
+vulkan instance layer:, VK_LAYER_INTEL_gvk_state_tracker
+vulkan instance layer:, VK_LAYER_INTEL_gvk_virtual_swapchain
+vulkan instance extension:, VK_KHR_device_group_creation
+vulkan instance extension:, VK_KHR_display
+vulkan instance extension:, VK_KHR_external_fence_capabilities
+vulkan instance extension:, VK_KHR_external_memory_capabilities
+vulkan instance extension:, VK_KHR_external_semaphore_capabilities
+vulkan instance extension:, VK_KHR_get_display_properties2
+vulkan instance extension:, VK_KHR_get_physical_device_properties2
+vulkan instance extension:, VK_KHR_get_surface_capabilities2
+vulkan instance extension:, VK_KHR_surface
+vulkan instance extension:, VK_KHR_surface_maintenance1
+vulkan instance extension:, VK_KHR_surface_protected_capabilities
+vulkan instance extension:, VK_KHR_win32_surface
+vulkan instance extension:, VK_EXT_debug_report
+vulkan instance extension:, VK_EXT_debug_utils
+vulkan instance extension:, VK_EXT_direct_mode_display
+vulkan instance extension:, VK_EXT_surface_maintenance1
+vulkan instance extension:, VK_EXT_swapchain_colorspace
+vulkan instance extension:, VK_NV_external_memory_capabilities
+vulkan instance extension:, VK_KHR_portability_enumeration
+vulkan instance extension:, VK_LUNARG_direct_driver_loading
+[Vulkan][DebugUtils] DebugUtils label/name PFN is null, fallback to stub
+[Vulkan][DebugUtils] DebugUtils messenger PFN is null, fallback to stub
+[Vulkan init] Physical Device 000000007E63C540 [0]: "NVIDIA GeForce RTX 4070" deviceType=2 vendorID=10de deviceID=2786, apiVersion=1.4.351
+vulkan device extension:, VK_KHR_16bit_storage
+vulkan device extension:, VK_KHR_8bit_storage
+vulkan device extension:, VK_KHR_acceleration_structure
+vulkan device extension:, VK_KHR_bind_memory2
+vulkan device extension:, VK_KHR_buffer_device_address
+vulkan device extension:, VK_KHR_calibrated_timestamps
+vulkan device extension:, VK_KHR_compute_shader_derivatives
+vulkan device extension:, VK_KHR_cooperative_matrix
+vulkan device extension:, VK_KHR_copy_commands2
+vulkan device extension:, VK_KHR_copy_memory_indirect
+vulkan device extension:, VK_KHR_create_renderpass2
+vulkan device extension:, VK_KHR_dedicated_allocation
+vulkan device extension:, VK_KHR_deferred_host_operations
+vulkan device extension:, VK_KHR_depth_clamp_zero_one
+vulkan device extension:, VK_KHR_depth_stencil_resolve
+vulkan device extension:, VK_KHR_descriptor_update_template
+vulkan device extension:, VK_KHR_device_address_commands
+vulkan device extension:, VK_KHR_device_fault
+vulkan device extension:, VK_KHR_device_group
+vulkan device extension:, VK_KHR_draw_indirect_count
+vulkan device extension:, VK_KHR_driver_properties
+vulkan device extension:, VK_KHR_dynamic_rendering
+vulkan device extension:, VK_KHR_dynamic_rendering_local_read
+vulkan device extension:, VK_KHR_external_fence
+vulkan device extension:, VK_KHR_external_fence_win32
+vulkan device extension:, VK_KHR_external_memory
+vulkan device extension:, VK_KHR_external_memory_win32
+vulkan device extension:, VK_KHR_external_semaphore
+vulkan device extension:, VK_KHR_external_semaphore_win32
+vulkan device extension:, VK_KHR_format_feature_flags2
+vulkan device extension:, VK_KHR_fragment_shader_barycentric
+vulkan device extension:, VK_KHR_fragment_shading_rate
+vulkan device extension:, VK_KHR_get_memory_requirements2
+vulkan device extension:, VK_KHR_global_priority
+vulkan device extension:, VK_KHR_image_format_list
+vulkan device extension:, VK_KHR_imageless_framebuffer
+vulkan device extension:, VK_KHR_index_type_uint8
+vulkan device extension:, VK_KHR_internally_synchronized_queues
+vulkan device extension:, VK_KHR_line_rasterization
+vulkan device extension:, VK_KHR_load_store_op_none
+vulkan device extension:, VK_KHR_maintenance1
+vulkan device extension:, VK_KHR_maintenance10
+vulkan device extension:, VK_KHR_maintenance11
+vulkan device extension:, VK_KHR_maintenance2
+vulkan device extension:, VK_KHR_maintenance3
+vulkan device extension:, VK_KHR_maintenance4
+vulkan device extension:, VK_KHR_maintenance5
+vulkan device extension:, VK_KHR_maintenance6
+vulkan device extension:, VK_KHR_maintenance7
+vulkan device extension:, VK_KHR_maintenance8
+vulkan device extension:, VK_KHR_maintenance9
+vulkan device extension:, VK_KHR_map_memory2
+vulkan device extension:, VK_KHR_multiview
+vulkan device extension:, VK_KHR_opacity_micromap
+vulkan device extension:, VK_KHR_pipeline_binary
+vulkan device extension:, VK_KHR_pipeline_executable_properties
+vulkan device extension:, VK_KHR_pipeline_library
+vulkan device extension:, VK_KHR_present_id
+vulkan device extension:, VK_KHR_present_id2
+vulkan device extension:, VK_KHR_present_mode_fifo_latest_ready
+vulkan device extension:, VK_KHR_present_wait
+vulkan device extension:, VK_KHR_present_wait2
+vulkan device extension:, VK_KHR_push_descriptor
+vulkan device extension:, VK_KHR_ray_query
+vulkan device extension:, VK_KHR_ray_tracing_maintenance1
+vulkan device extension:, VK_KHR_ray_tracing_pipeline
+vulkan device extension:, VK_KHR_ray_tracing_position_fetch
+vulkan device extension:, VK_KHR_relaxed_block_layout
+vulkan device extension:, VK_KHR_robustness2
+vulkan device extension:, VK_KHR_sampler_mirror_clamp_to_edge
+vulkan device extension:, VK_KHR_sampler_ycbcr_conversion
+vulkan device extension:, VK_KHR_separate_depth_stencil_layouts
+vulkan device extension:, VK_KHR_shader_abort
+vulkan device extension:, VK_KHR_shader_atomic_int64
+vulkan device extension:, VK_KHR_shader_bfloat16
+vulkan device extension:, VK_KHR_shader_clock
+vulkan device extension:, VK_KHR_shader_constant_data
+vulkan device extension:, VK_KHR_shader_draw_parameters
+vulkan device extension:, VK_KHR_shader_expect_assume
+vulkan device extension:, VK_KHR_shader_float16_int8
+vulkan device extension:, VK_KHR_shader_float_controls
+vulkan device extension:, VK_KHR_shader_float_controls2
+vulkan device extension:, VK_KHR_shader_fma
+vulkan device extension:, VK_KHR_shader_integer_dot_product
+vulkan device extension:, VK_KHR_shader_maximal_reconvergence
+vulkan device extension:, VK_KHR_shader_non_semantic_info
+vulkan device extension:, VK_KHR_shader_quad_control
+vulkan device extension:, VK_KHR_shader_relaxed_extended_instruction
+vulkan device extension:, VK_KHR_shader_subgroup_extended_types
+vulkan device extension:, VK_KHR_shader_subgroup_rotate
+vulkan device extension:, VK_KHR_shader_subgroup_uniform_control_flow
+vulkan device extension:, VK_KHR_shader_terminate_invocation
+vulkan device extension:, VK_KHR_shader_untyped_pointers
+vulkan device extension:, VK_KHR_spirv_1_4
+vulkan device extension:, VK_KHR_storage_buffer_storage_class
+vulkan device extension:, VK_KHR_swapchain
+vulkan device extension:, VK_KHR_swapchain_maintenance1
+vulkan device extension:, VK_KHR_swapchain_mutable_format
+vulkan device extension:, VK_KHR_synchronization2
+vulkan device extension:, VK_KHR_timeline_semaphore
+vulkan device extension:, VK_KHR_unified_image_layouts
+vulkan device extension:, VK_KHR_uniform_buffer_standard_layout
+vulkan device extension:, VK_KHR_variable_pointers
+vulkan device extension:, VK_KHR_vertex_attribute_divisor
+vulkan device extension:, VK_KHR_video_decode_av1
+vulkan device extension:, VK_KHR_video_decode_h264
+vulkan device extension:, VK_KHR_video_decode_h265
+vulkan device extension:, VK_KHR_video_decode_queue
+vulkan device extension:, VK_KHR_video_decode_vp9
+vulkan device extension:, VK_KHR_video_encode_av1
+vulkan device extension:, VK_KHR_video_encode_h264
+vulkan device extension:, VK_KHR_video_encode_h265
+vulkan device extension:, VK_KHR_video_encode_intra_refresh
+vulkan device extension:, VK_KHR_video_encode_quantization_map
+vulkan device extension:, VK_KHR_video_encode_queue
+vulkan device extension:, VK_KHR_video_maintenance1
+vulkan device extension:, VK_KHR_video_maintenance2
+vulkan device extension:, VK_KHR_video_queue
+vulkan device extension:, VK_KHR_vulkan_memory_model
+vulkan device extension:, VK_KHR_win32_keyed_mutex
+vulkan device extension:, VK_KHR_workgroup_memory_explicit_layout
+vulkan device extension:, VK_KHR_zero_initialize_workgroup_memory
+vulkan device extension:, VK_EXT_4444_formats
+vulkan device extension:, VK_EXT_attachment_feedback_loop_dynamic_state
+vulkan device extension:, VK_EXT_attachment_feedback_loop_layout
+vulkan device extension:, VK_EXT_blend_operation_advanced
+vulkan device extension:, VK_EXT_border_color_swizzle
+vulkan device extension:, VK_EXT_buffer_device_address
+vulkan device extension:, VK_EXT_calibrated_timestamps
+vulkan device extension:, VK_EXT_color_write_enable
+vulkan device extension:, VK_EXT_conditional_rendering
+vulkan device extension:, VK_EXT_conservative_rasterization
+vulkan device extension:, VK_EXT_custom_border_color
+vulkan device extension:, VK_EXT_custom_resolve
+vulkan device extension:, VK_EXT_depth_bias_control
+vulkan device extension:, VK_EXT_depth_clamp_control
+vulkan device extension:, VK_EXT_depth_clamp_zero_one
+vulkan device extension:, VK_EXT_depth_clip_control
+vulkan device extension:, VK_EXT_depth_clip_enable
+vulkan device extension:, VK_EXT_depth_range_unrestricted
+vulkan device extension:, VK_EXT_descriptor_buffer
+vulkan device extension:, VK_EXT_descriptor_heap
+vulkan device extension:, VK_EXT_descriptor_indexing
+vulkan device extension:, VK_EXT_device_address_binding_report
+vulkan device extension:, VK_EXT_device_fault
+vulkan device extension:, VK_EXT_device_generated_commands
+vulkan device extension:, VK_EXT_device_memory_report
+vulkan device extension:, VK_EXT_discard_rectangles
+vulkan device extension:, VK_EXT_dynamic_rendering_unused_attachments
+vulkan device extension:, VK_EXT_extended_dynamic_state
+vulkan device extension:, VK_EXT_extended_dynamic_state2
+vulkan device extension:, VK_EXT_extended_dynamic_state3
+vulkan device extension:, VK_EXT_external_memory_host
+vulkan device extension:, VK_EXT_fragment_shader_interlock
+vulkan device extension:, VK_EXT_full_screen_exclusive
+vulkan device extension:, VK_EXT_global_priority
+vulkan device extension:, VK_EXT_global_priority_query
+vulkan device extension:, VK_EXT_graphics_pipeline_library
+vulkan device extension:, VK_EXT_hdr_metadata
+vulkan device extension:, VK_EXT_host_image_copy
+vulkan device extension:, VK_EXT_host_query_reset
+vulkan device extension:, VK_EXT_image_2d_view_of_3d
+vulkan device extension:, VK_EXT_image_robustness
+vulkan device extension:, VK_EXT_image_sliced_view_of_3d
+vulkan device extension:, VK_EXT_image_view_min_lod
+vulkan device extension:, VK_EXT_index_type_uint8
+vulkan device extension:, VK_EXT_inline_uniform_block
+vulkan device extension:, VK_EXT_legacy_vertex_attributes
+vulkan device extension:, VK_EXT_line_rasterization
+vulkan device extension:, VK_EXT_load_store_op_none
+vulkan device extension:, VK_EXT_memory_budget
+vulkan device extension:, VK_EXT_memory_decompression
+vulkan device extension:, VK_EXT_memory_priority
+vulkan device extension:, VK_EXT_mesh_shader
+vulkan device extension:, VK_EXT_multi_draw
+vulkan device extension:, VK_EXT_mutable_descriptor_type
+vulkan device extension:, VK_EXT_nested_command_buffer
+vulkan device extension:, VK_EXT_non_seamless_cube_map
+vulkan device extension:, VK_EXT_opacity_micromap
+vulkan device extension:, VK_EXT_pageable_device_local_memory
+vulkan device extension:, VK_EXT_pci_bus_info
+vulkan device extension:, VK_EXT_pipeline_creation_cache_control
+vulkan device extension:, VK_EXT_pipeline_creation_feedback
+vulkan device extension:, VK_EXT_pipeline_library_group_handles
+vulkan device extension:, VK_EXT_pipeline_robustness
+vulkan device extension:, VK_EXT_post_depth_coverage
+vulkan device extension:, VK_EXT_present_mode_fifo_latest_ready
+vulkan device extension:, VK_EXT_present_timing
+vulkan device extension:, VK_EXT_primitive_restart_index
+vulkan device extension:, VK_EXT_primitive_topology_list_restart
+vulkan device extension:, VK_EXT_primitives_generated_query
+vulkan device extension:, VK_EXT_private_data
+vulkan device extension:, VK_EXT_provoking_vertex
+vulkan device extension:, VK_EXT_queue_family_foreign
+vulkan device extension:, VK_EXT_ray_tracing_invocation_reorder
+vulkan device extension:, VK_EXT_robustness2
+vulkan device extension:, VK_EXT_sample_locations
+vulkan device extension:, VK_EXT_sampler_filter_minmax
+vulkan device extension:, VK_EXT_scalar_block_layout
+vulkan device extension:, VK_EXT_separate_stencil_usage
+vulkan device extension:, VK_EXT_shader_64bit_indexing
+vulkan device extension:, VK_EXT_shader_atomic_float
+vulkan device extension:, VK_EXT_shader_demote_to_helper_invocation
+vulkan device extension:, VK_EXT_shader_float8
+vulkan device extension:, VK_EXT_shader_image_atomic_int64
+vulkan device extension:, VK_EXT_shader_long_vector
+vulkan device extension:, VK_EXT_shader_module_identifier
+vulkan device extension:, VK_EXT_shader_object
+vulkan device extension:, VK_EXT_shader_replicated_composites
+vulkan device extension:, VK_EXT_shader_split_barrier
+vulkan device extension:, VK_EXT_shader_subgroup_ballot
+vulkan device extension:, VK_EXT_shader_subgroup_partitioned
+vulkan device extension:, VK_EXT_shader_subgroup_vote
+vulkan device extension:, VK_EXT_shader_uniform_buffer_unsized_array
+vulkan device extension:, VK_EXT_shader_viewport_index_layer
+vulkan device extension:, VK_EXT_subgroup_size_control
+vulkan device extension:, VK_EXT_swapchain_maintenance1
+vulkan device extension:, VK_EXT_texel_buffer_alignment
+vulkan device extension:, VK_EXT_tooling_info
+vulkan device extension:, VK_EXT_transform_feedback
+vulkan device extension:, VK_EXT_vertex_attribute_divisor
+vulkan device extension:, VK_EXT_vertex_attribute_robustness
+vulkan device extension:, VK_EXT_vertex_input_dynamic_state
+vulkan device extension:, VK_EXT_ycbcr_2plane_444_formats
+vulkan device extension:, VK_EXT_ycbcr_image_arrays
+vulkan device extension:, VK_EXT_zero_initialize_device_memory
+vulkan device extension:, VK_NV_acquire_winrt_display
+vulkan device extension:, VK_NV_clip_space_w_scaling
+vulkan device extension:, VK_NV_cluster_acceleration_structure
+vulkan device extension:, VK_NV_compute_occupancy_priority
+vulkan device extension:, VK_NV_compute_shader_derivatives
+vulkan device extension:, VK_NV_cooperative_matrix
+vulkan device extension:, VK_NV_cooperative_matrix2
+vulkan device extension:, VK_NV_cooperative_matrix_decode_vector
+vulkan device extension:, VK_NV_cooperative_vector
+vulkan device extension:, VK_NV_copy_memory_indirect
+vulkan device extension:, VK_NV_corner_sampled_image
+vulkan device extension:, VK_NV_coverage_reduction_mode
+vulkan device extension:, VK_NV_cuda_kernel_launch
+vulkan device extension:, VK_NV_dedicated_allocation
+vulkan device extension:, VK_NV_dedicated_allocation_image_aliasing
+vulkan device extension:, VK_NV_descriptor_pool_overallocation
+vulkan device extension:, VK_NV_device_diagnostic_checkpoints
+vulkan device extension:, VK_NV_device_diagnostics_config
+vulkan device extension:, VK_NV_device_generated_commands
+vulkan device extension:, VK_NV_device_generated_commands_compute
+vulkan device extension:, VK_NV_disk_cache_utils
+vulkan device extension:, VK_NV_external_compute_queue
+vulkan device extension:, VK_NV_external_memory
+vulkan device extension:, VK_NV_external_memory_win32
+vulkan device extension:, VK_NV_fill_rectangle
+vulkan device extension:, VK_NV_fragment_coverage_to_color
+vulkan device extension:, VK_NV_fragment_shader_barycentric
+vulkan device extension:, VK_NV_fragment_shading_rate_enums
+vulkan device extension:, VK_NV_framebuffer_mixed_samples
+vulkan device extension:, VK_NV_geometry_shader_passthrough
+vulkan device extension:, VK_NV_inherited_viewport_scissor
+vulkan device extension:, VK_NV_internal_handle
+vulkan device extension:, VK_NV_internal_nvpresent
+vulkan device extension:, VK_NV_linear_color_attachment
+vulkan device extension:, VK_NV_low_latency
+vulkan device extension:, VK_NV_low_latency2
+vulkan device extension:, VK_NV_memory_decompression
+vulkan device extension:, VK_NV_mesh_shader
+vulkan device extension:, VK_NV_optical_flow
+vulkan device extension:, VK_NV_partitioned_acceleration_structure
+vulkan device extension:, VK_NV_present_metering
+vulkan device extension:, VK_NV_push_constant_bank
+vulkan device extension:, VK_NV_raw_access_chains
+vulkan device extension:, VK_NV_ray_tracing
+vulkan device extension:, VK_NV_ray_tracing_invocation_reorder
+vulkan device extension:, VK_NV_ray_tracing_motion_blur
+vulkan device extension:, VK_NV_representative_fragment_test
+vulkan device extension:, VK_NV_sample_mask_override_coverage
+vulkan device extension:, VK_NV_scissor_exclusive
+vulkan device extension:, VK_NV_shader_atomic_float16_vector
+vulkan device extension:, VK_NV_shader_image_footprint
+vulkan device extension:, VK_NV_shader_sm_builtins
+vulkan device extension:, VK_NV_shader_subgroup_partitioned
+vulkan device extension:, VK_NV_shading_rate_image
+vulkan device extension:, VK_NV_viewport_array2
+vulkan device extension:, VK_NV_viewport_swizzle
+vulkan device extension:, VK_NV_win32_keyed_mutex
+vulkan device extension:, VK_NVX_binary_import
+vulkan device extension:, VK_NVX_image_view_handle
+vulkan device extension:, VK_NVX_multiview_per_view_attributes
+vulkan device extension:, VK_AMD_buffer_marker
+vulkan device extension:, VK_GOOGLE_hlsl_functionality1
+vulkan device extension:, VK_GOOGLE_user_type
+device extention: VK_EXT_swapchain_maintenance1
+device extention: VK_KHR_present_wait
+device extention: VK_KHR_present_id
+device extention: VK_KHR_fragment_shading_rate
+device extention: VK_NV_shader_subgroup_partitioned
+device extention: VK_EXT_memory_budget
+device extention: VK_KHR_swapchain
+[VmaAllocator] preferredLargeHeapBlockSize: 0
+HGPsoRecordManager::Init enablePsoWarmup:1 enablePsoRecord:0 enablePsoLog:0 enablePsoCacheWriteLock:1 enableComputeShaderPso:1 enableSkipSave:0
+[ZSTD] Using configured compression level: 1
+<RI> Initializing input.
+New input system (experimental) initialized
+Using XInput
+<RI> Input initialized.
+supported format: 44 (colorspace: 0)
+supported format: 50 (colorspace: 0)
+supported format: 37 (colorspace: 0)
+supported format: 43 (colorspace: 0)
+supported format: 97 (colorspace: 1000104002)
+supported format: 64 (colorspace: 1000104008)
+supported format: 64 (colorspace: 0)
+attempt: 0 useWideColorColorspace: 0 hdrProbe: 0)
+<RI> Initialized touch support.
+UnloadTime: 0.174100 ms
+supported format: 44 (colorspace: 0)
+supported format: 50 (colorspace: 0)
+supported format: 37 (colorspace: 0)
+supported format: 43 (colorspace: 0)
+supported format: 97 (colorspace: 1000104002)
+supported format: 64 (colorspace: 1000104008)
+supported format: 64 (colorspace: 0)
+attempt: 0 useWideColorColorspace: 0 hdrProbe: 0)
+supported format: 44 (colorspace: 0)
+supported format: 50 (colorspace: 0)
+supported format: 37 (colorspace: 0)
+supported format: 43 (colorspace: 0)
+supported format: 97 (colorspace: 1000104002)
+supported format: 64 (colorspace: 1000104008)
+supported format: 64 (colorspace: 0)
+attempt: 0 useWideColorColorspace: 0 hdrProbe: 0)
+Unloading 5 Unused Serialized files (Serialized files now loaded: 345)
+UnloadTime: 0.140400 ms
+Unloading 131 unused Assets to reduce memory usage. Loaded Objects now: 22322.
+Total: 10.868800 ms (FindLiveObjects: 0.625700 ms CreateObjectMapping: 0.431700 ms MarkObjects: 9.084700 ms  DeleteObjects: 0.726100 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 348)
+Unloading 45 unused Assets to reduce memory usage. Loaded Objects now: 25817.
+Total: 14.303700 ms (FindLiveObjects: 1.006900 ms CreateObjectMapping: 0.831300 ms MarkObjects: 12.358000 ms  DeleteObjects: 0.107000 ms)
+
+[Error] [Scope] [F:435][DLog]Failed to fallback to main scope : [ItemBag] Main
+UnityEngine.Logger:Log(LogType, Object, Object) (at <0x359b041>)
+UnityEngine.Debug:LogError(Object, Object) (at <0x359b106>)
+Beyond.Log.ConsoleLogger:LogToUnity(ELogLevel, String, Exception, Object) (at <0x2d44b7c>)
+Beyond.Log.ConsoleLogger:Log(FLogMessage&) (at <0x2d44c4b>)
+Beyond.Log.UnionLogger:Log(FLogMessage&) (at <0x2d44f07>)
+IFix.WrappersManagerImpl:IsPatched(Int32) (at <0x2d454b5>)
+Beyond.DLogger:_ApplyLog(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9ea5>)
+Beyond.DLogger:_LogWithFilter(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9d88>)
+Beyond.DLogger:_LogErrorWithFilter(ELogChannel, EColorTag, Object, String, String) (at <0x3cf9cb7>)
+Beyond.DLogger:LogError(ELogChannel, String) (at <0x3cf9c02>)
+Beyond.Gameplay.ScopedField`1:GetOrFallback(Scope, Nullable`1&) (at <0x3cfa0d0>)
+Beyond.Gameplay.SimpleConditionCheckPortableDeviceEquipped:GetResultWithoutListening() (at <0x45f04e8>)
+Beyond.Gameplay.CombinedConditionRuntime:GetResultWithoutListening() (at <0x324b95a>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c1dd>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.GeneralAbilitySystem:_StartTempAbilityAutoActivateListening() (at <0x3de1a59>)
+Beyond.Gameplay.GeneralAbilitySystem:OnInit() (at <0x3cf7ae8>)
+Beyond.Gameplay.ManagerCollection`3:Init() (at <0x3e6ed30>)
+Beyond.Gameplay.GameInstance:OnGameStart() (at <0x3e6ec48>)
+Beyond.GameStartState:OnEnter(GameState) (at <0x403923e>)
+Beyond.Gameplay.SimpleEnumStateMachine`1:_SwitchStateInternal(T) (at <0x3262893>)
+Beyond.<_DoPreload>d__6:MoveNext() (at <0x3b197dd>)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at <0x3ab37ef>)
+
+[Error] [Scope] [F:435][DLog]Failed to fallback to main scope : [ItemBag] Main
+UnityEngine.Logger:Log(LogType, Object, Object) (at <0x359b041>)
+UnityEngine.Debug:LogError(Object, Object) (at <0x359b106>)
+Beyond.Log.ConsoleLogger:LogToUnity(ELogLevel, String, Exception, Object) (at <0x2d44b7c>)
+Beyond.Log.ConsoleLogger:Log(FLogMessage&) (at <0x2d44c4b>)
+Beyond.Log.UnionLogger:Log(FLogMessage&) (at <0x2d44f07>)
+IFix.WrappersManagerImpl:IsPatched(Int32) (at <0x2d454b5>)
+Beyond.DLogger:_ApplyLog(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9ea5>)
+Beyond.DLogger:_LogWithFilter(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9d88>)
+Beyond.DLogger:_LogErrorWithFilter(ELogChannel, EColorTag, Object, String, String) (at <0x3cf9cb7>)
+Beyond.DLogger:LogError(ELogChannel, String) (at <0x3cf9c02>)
+Beyond.Gameplay.ScopedField`1:GetOrFallback(Scope, Nullable`1&) (at <0x3cfa0d0>)
+Beyond.Gameplay.SimpleConditionCheckPortableDeviceEquipped:GetResultWithoutListening() (at <0x45f04e8>)
+Beyond.Gameplay.CombinedConditionRuntime:GetResultWithoutListening() (at <0x324b95a>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c1dd>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.GeneralAbilitySystem:_StartTempAbilityAutoActivateListening() (at <0x3de1a59>)
+Beyond.Gameplay.GeneralAbilitySystem:OnInit() (at <0x3cf7ae8>)
+Beyond.Gameplay.ManagerCollection`3:Init() (at <0x3e6ed30>)
+Beyond.Gameplay.GameInstance:OnGameStart() (at <0x3e6ec48>)
+Beyond.GameStartState:OnEnter(GameState) (at <0x403923e>)
+Beyond.Gameplay.SimpleEnumStateMachine`1:_SwitchStateInternal(T) (at <0x3262893>)
+Beyond.<_DoPreload>d__6:MoveNext() (at <0x3b197dd>)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at <0x3ab37ef>)
+
+[Error] [Scope] [F:435][DLog]Failed to fallback to main scope : [ItemBag] Main
+UnityEngine.Logger:Log(LogType, Object, Object) (at <0x359b041>)
+UnityEngine.Debug:LogError(Object, Object) (at <0x359b106>)
+Beyond.Log.ConsoleLogger:LogToUnity(ELogLevel, String, Exception, Object) (at <0x2d44b7c>)
+Beyond.Log.ConsoleLogger:Log(FLogMessage&) (at <0x2d44c4b>)
+Beyond.Log.UnionLogger:Log(FLogMessage&) (at <0x2d44f07>)
+IFix.WrappersManagerImpl:IsPatched(Int32) (at <0x2d454b5>)
+Beyond.DLogger:_ApplyLog(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9ea5>)
+Beyond.DLogger:_LogWithFilter(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9d88>)
+Beyond.DLogger:_LogErrorWithFilter(ELogChannel, EColorTag, Object, String, String) (at <0x3cf9cb7>)
+Beyond.DLogger:LogError(ELogChannel, String) (at <0x3cf9c02>)
+Beyond.Gameplay.ScopedField`1:GetOrFallback(Scope, Nullable`1&) (at <0x3cfa0d0>)
+Beyond.Gameplay.SimpleConditionCheckPortableDeviceEquipped:GetResultWithoutListening() (at <0x45f04e8>)
+Beyond.Gameplay.CombinedConditionRuntime:GetResultWithoutListening() (at <0x324b95a>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c1dd>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.GeneralAbilitySystem:_StartTempAbilityAutoActivateListening() (at <0x3de1a59>)
+Beyond.Gameplay.GeneralAbilitySystem:OnInit() (at <0x3cf7ae8>)
+Beyond.Gameplay.ManagerCollection`3:Init() (at <0x3e6ed30>)
+Beyond.Gameplay.GameInstance:OnGameStart() (at <0x3e6ec48>)
+Beyond.GameStartState:OnEnter(GameState) (at <0x403923e>)
+Beyond.Gameplay.SimpleEnumStateMachine`1:_SwitchStateInternal(T) (at <0x3262893>)
+Beyond.<_DoPreload>d__6:MoveNext() (at <0x3b197dd>)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at <0x3ab37ef>)
+
+[Error] [Scope] [F:435][DLog]Failed to fallback to main scope : [ItemBag] Main
+UnityEngine.Logger:Log(LogType, Object, Object) (at <0x359b041>)
+UnityEngine.Debug:LogError(Object, Object) (at <0x359b106>)
+Beyond.Log.ConsoleLogger:LogToUnity(ELogLevel, String, Exception, Object) (at <0x2d44b7c>)
+Beyond.Log.ConsoleLogger:Log(FLogMessage&) (at <0x2d44c4b>)
+Beyond.Log.UnionLogger:Log(FLogMessage&) (at <0x2d44f07>)
+IFix.WrappersManagerImpl:IsPatched(Int32) (at <0x2d454b5>)
+Beyond.DLogger:_ApplyLog(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9ea5>)
+Beyond.DLogger:_LogWithFilter(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9d88>)
+Beyond.DLogger:_LogErrorWithFilter(ELogChannel, EColorTag, Object, String, String) (at <0x3cf9cb7>)
+Beyond.DLogger:LogError(ELogChannel, String) (at <0x3cf9c02>)
+Beyond.Gameplay.ScopedField`1:GetOrFallback(Scope, Nullable`1&) (at <0x3cfa0d0>)
+Beyond.Gameplay.SimpleConditionCheckPortableDeviceEquipped:GetResultWithoutListening() (at <0x45f04e8>)
+Beyond.Gameplay.SimpleConditionRuntime:StartListening(String) (at <0x3d147d4>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.GeneralAbilitySystem:_StartTempAbilityAutoActivateListening() (at <0x3de1a59>)
+Beyond.Gameplay.GeneralAbilitySystem:OnInit() (at <0x3cf7ae8>)
+Beyond.Gameplay.ManagerCollection`3:Init() (at <0x3e6ed30>)
+Beyond.Gameplay.GameInstance:OnGameStart() (at <0x3e6ec48>)
+Beyond.GameStartState:OnEnter(GameState) (at <0x403923e>)
+Beyond.Gameplay.SimpleEnumStateMachine`1:_SwitchStateInternal(T) (at <0x3262893>)
+Beyond.<_DoPreload>d__6:MoveNext() (at <0x3b197dd>)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at <0x3ab37ef>)
+
+[Error] [Scope] [F:435][DLog]Failed to fallback to main scope : [ItemBag] Main
+UnityEngine.Logger:Log(LogType, Object, Object) (at <0x359b041>)
+UnityEngine.Debug:LogError(Object, Object) (at <0x359b106>)
+Beyond.Log.ConsoleLogger:LogToUnity(ELogLevel, String, Exception, Object) (at <0x2d44b7c>)
+Beyond.Log.ConsoleLogger:Log(FLogMessage&) (at <0x2d44c4b>)
+Beyond.Log.UnionLogger:Log(FLogMessage&) (at <0x2d44f07>)
+IFix.WrappersManagerImpl:IsPatched(Int32) (at <0x2d454b5>)
+Beyond.DLogger:_ApplyLog(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9ea5>)
+Beyond.DLogger:_LogWithFilter(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9d88>)
+Beyond.DLogger:_LogErrorWithFilter(ELogChannel, EColorTag, Object, String, String) (at <0x3cf9cb7>)
+Beyond.DLogger:LogError(ELogChannel, String) (at <0x3cf9c02>)
+Beyond.Gameplay.ScopedField`1:GetOrFallback(Scope, Nullable`1&) (at <0x3cfa0d0>)
+Beyond.Gameplay.SimpleConditionCheckPortableDeviceEquipped:GetResultWithoutListening() (at <0x45f04e8>)
+Beyond.Gameplay.SimpleConditionRuntime:StartListening(String) (at <0x3d147d4>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.GeneralAbilitySystem:_StartTempAbilityAutoActivateListening() (at <0x3de1a59>)
+Beyond.Gameplay.GeneralAbilitySystem:OnInit() (at <0x3cf7ae8>)
+Beyond.Gameplay.ManagerCollection`3:Init() (at <0x3e6ed30>)
+Beyond.Gameplay.GameInstance:OnGameStart() (at <0x3e6ec48>)
+Beyond.GameStartState:OnEnter(GameState) (at <0x403923e>)
+Beyond.Gameplay.SimpleEnumStateMachine`1:_SwitchStateInternal(T) (at <0x3262893>)
+Beyond.<_DoPreload>d__6:MoveNext() (at <0x3b197dd>)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at <0x3ab37ef>)
+
+[Error] [Scope] [F:435][DLog]Failed to fallback to main scope : [ItemBag] Main
+UnityEngine.Logger:Log(LogType, Object, Object) (at <0x359b041>)
+UnityEngine.Debug:LogError(Object, Object) (at <0x359b106>)
+Beyond.Log.ConsoleLogger:LogToUnity(ELogLevel, String, Exception, Object) (at <0x2d44b7c>)
+Beyond.Log.ConsoleLogger:Log(FLogMessage&) (at <0x2d44c4b>)
+Beyond.Log.UnionLogger:Log(FLogMessage&) (at <0x2d44f07>)
+IFix.WrappersManagerImpl:IsPatched(Int32) (at <0x2d454b5>)
+Beyond.DLogger:_ApplyLog(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9ea5>)
+Beyond.DLogger:_LogWithFilter(ELogChannel, ELogLevel, EColorTag, Object, String, String) (at <0x3cf9d88>)
+Beyond.DLogger:_LogErrorWithFilter(ELogChannel, EColorTag, Object, String, String) (at <0x3cf9cb7>)
+Beyond.DLogger:LogError(ELogChannel, String) (at <0x3cf9c02>)
+Beyond.Gameplay.ScopedField`1:GetOrFallback(Scope, Nullable`1&) (at <0x3cfa0d0>)
+Beyond.Gameplay.SimpleConditionCheckPortableDeviceEquipped:GetResultWithoutListening() (at <0x45f04e8>)
+Beyond.Gameplay.SimpleConditionRuntime:StartListening(String) (at <0x3d147d4>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.CombinedConditionRuntime:StartListening(String) (at <0x324c28a>)
+Beyond.Gameplay.GeneralAbilitySystem:_StartTempAbilityAutoActivateListening() (at <0x3de1a59>)
+Beyond.Gameplay.GeneralAbilitySystem:OnInit() (at <0x3cf7ae8>)
+Beyond.Gameplay.ManagerCollection`3:Init() (at <0x3e6ed30>)
+Beyond.Gameplay.GameInstance:OnGameStart() (at <0x3e6ec48>)
+Beyond.GameStartState:OnEnter(GameState) (at <0x403923e>)
+Beyond.Gameplay.SimpleEnumStateMachine`1:_SwitchStateInternal(T) (at <0x3262893>)
+Beyond.<_DoPreload>d__6:MoveNext() (at <0x3b197dd>)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at <0x3ab37ef>)
+
+Setting up 6 worker threads for Enlighten.
+Memory Statistics:
+[ALLOC_TEMP_TLS] TLS Allocator
+  StackAllocators : 
+    [ALLOC_TEMP_MAIN]
+      Peak usage frame count: [0-1.0 KB]: 44 frames, [1.0 KB-2.0 KB]: 2 frames, [2.0 KB-4.0 KB]: 495 frames, [4.0 KB-8.0 KB]: 171 frames, [8.0 KB-16.0 KB]: 11 frames, [16.0 KB-32.0 KB]: 12 frames, [32.0 KB-64.0 KB]: 6 frames, [64.0 KB-128.0 KB]: 14 frames, [128.0 KB-256.0 KB]: 3 frames, [256.0 KB-0.5 MB]: 2 frames, [0.5 MB-1.0 MB]: 2 frames, [1.0 MB-2.0 MB]: 1 frames, [4.0 MB-8.0 MB]: 1 frames
+      Initial Block Size 4.0 MB
+      Current Block Size 7.6 MB
+      Peak Allocated Bytes 7.6 MB
+      Overflow Count 4
+    [ALLOC_TEMP_Loading.AsyncRead]
+      Initial Block Size 64.0 KB
+      Current Block Size 128.0 KB
+      Peak Allocated Bytes 127.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.PreloadManager]
+      Initial Block Size 256.0 KB
+      Current Block Size 0.5 MB
+      Peak Allocated Bytes 510.8 KB
+      Overflow Count 11
+    [ALLOC_TEMP_CrossFrameJob .Worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 25.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Sync Present Thread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_GfxHGPresentWaitThread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 5]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 21.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_CrossFrameJob .Worker 3]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 4]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 21.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 3]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 21.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_EnlightenWorker] x 6
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_CrossFrameJob .Worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 1]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 2.0 KB
+      Overflow Count 0
+    [ALLOC_TEMP_UnityGfxDeviceWorker]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 95.5 KB
+      Overflow Count 0
+    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 6
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 0 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 25.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.Worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 21.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.Worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 384 B
+      Overflow Count 0
+    [ALLOC_TEMP_HIDInput]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 10.8 KB
+      Overflow Count 0
+    [ALLOC_TEMP_CrossFrameJob .Worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_BatchDeleteObjects]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+[ALLOC_DEFAULT] Dual Thread Allocator
+  Peak main deferred allocation count 3363
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.0 MB
+      Failed Allocations. Bucket layout:
+        16B: 15 Subsections = 15360 buckets. Failed count: 170640
+        32B: 50 Subsections = 25600 buckets. Failed count: 173446
+        48B: 57 Subsections = 19456 buckets. Failed count: 148432
+        64B: 27 Subsections = 6912 buckets. Failed count: 80972
+        80B: 71 Subsections = 14540 buckets. Failed count: 87273
+        96B: 22 Subsections = 3754 buckets. Failed count: 38164
+        112B: 9 Subsections = 1316 buckets. Failed count: 36659
+        128B: 5 Subsections = 640 buckets. Failed count: 54523
+    [ALLOC_DEFAULT_MAIN]
+      Peak usage frame count: [32.0 MB-64.0 MB]: 378 frames, [64.0 MB-128.0 MB]: 1 frames, [128.0 MB-256.0 MB]: 20 frames, [256.0 MB-0.50 GB]: 365 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 8
+      Peak Allocated memory 332.7 MB
+      Peak Large allocation bytes 225.1 MB
+    [ALLOC_DEFAULT_THREAD]
+      Peak usage frame count: [8.0 MB-16.0 MB]: 3 frames, [16.0 MB-32.0 MB]: 10 frames, [32.0 MB-64.0 MB]: 34 frames, [64.0 MB-128.0 MB]: 717 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 6
+      Peak Allocated memory 104.4 MB
+      Peak Large allocation bytes 33.1 MB
+[HG_ALLOC_DEFAULT]
+  Peak usage frame count: [8.0 MB-16.0 MB]: 17 frames, [16.0 MB-32.0 MB]: 35 frames, [32.0 MB-64.0 MB]: 712 frames
+  Requested Block Size 16.0 MB
+  Peak Block count 4
+  Peak Allocated memory 50.8 MB
+  Peak Large allocation bytes 0 B
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.0 MB
+      Failed Allocations. Bucket layout:
+        16B: 15 Subsections = 15360 buckets. Failed count: 170640
+        32B: 50 Subsections = 25600 buckets. Failed count: 173446
+        48B: 57 Subsections = 19456 buckets. Failed count: 148432
+        64B: 27 Subsections = 6912 buckets. Failed count: 80972
+        80B: 71 Subsections = 14540 buckets. Failed count: 87273
+        96B: 22 Subsections = 3754 buckets. Failed count: 38164
+        112B: 9 Subsections = 1316 buckets. Failed count: 36659
+        128B: 5 Subsections = 640 buckets. Failed count: 54523
+[ALLOC_TEMP_JOB_1_FRAME]
+  Initial Block Size 2.0 MB
+  Used Block Count 2
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_2_FRAMES]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
+  Initial Block Size 2.0 MB
+  Used Block Count 2
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_ASYNC (Background)]
+  Initial Block Size 1.0 MB
+  Used Block Count 4
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_GFX] Dual Thread Allocator
+  Peak main deferred allocation count 12
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.0 MB
+      Failed Allocations. Bucket layout:
+        16B: 15 Subsections = 15360 buckets. Failed count: 170640
+        32B: 50 Subsections = 25600 buckets. Failed count: 173446
+        48B: 57 Subsections = 19456 buckets. Failed count: 148432
+        64B: 27 Subsections = 6912 buckets. Failed count: 80972
+        80B: 71 Subsections = 14540 buckets. Failed count: 87273
+        96B: 22 Subsections = 3754 buckets. Failed count: 38164
+        112B: 9 Subsections = 1316 buckets. Failed count: 36659
+        128B: 5 Subsections = 640 buckets. Failed count: 54523
+    [ALLOC_GFX_MAIN]
+      Peak usage frame count: [64.0 KB-128.0 KB]: 2 frames, [128.0 KB-256.0 KB]: 49 frames, [256.0 KB-0.5 MB]: 371 frames, [0.5 MB-1.0 MB]: 339 frames, [1.0 MB-2.0 MB]: 1 frames, [2.0 MB-4.0 MB]: 2 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 3.1 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_GFX_THREAD]
+      Peak usage frame count: [1.0 KB-2.0 KB]: 9 frames, [2.0 KB-4.0 KB]: 22 frames, [32.0 KB-64.0 KB]: 21 frames, [64.0 KB-128.0 KB]: 374 frames, [128.0 KB-256.0 KB]: 2 frames, [256.0 KB-0.5 MB]: 34 frames, [0.5 MB-1.0 MB]: 298 frames, [2.0 MB-4.0 MB]: 1 frames, [4.0 MB-8.0 MB]: 3 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 4.5 MB
+      Peak Large allocation bytes 0 B
+[ALLOC_CACHEOBJECTS] Dual Thread Allocator
+  Peak main deferred allocation count 3067
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.0 MB
+      Failed Allocations. Bucket layout:
+        16B: 15 Subsections = 15360 buckets. Failed count: 170640
+        32B: 50 Subsections = 25600 buckets. Failed count: 173446
+        48B: 57 Subsections = 19456 buckets. Failed count: 148432
+        64B: 27 Subsections = 6912 buckets. Failed count: 80972
+        80B: 71 Subsections = 14540 buckets. Failed count: 87273
+        96B: 22 Subsections = 3754 buckets. Failed count: 38164
+        112B: 9 Subsections = 1316 buckets. Failed count: 36659
+        128B: 5 Subsections = 640 buckets. Failed count: 54523
+    [ALLOC_CACHEOBJECTS_MAIN]
+      Peak usage frame count: [8.0 MB-16.0 MB]: 2 frames, [16.0 MB-32.0 MB]: 376 frames, [32.0 MB-64.0 MB]: 51 frames, [64.0 MB-128.0 MB]: 335 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 15
+      Peak Allocated memory 83.4 MB
+      Peak Large allocation bytes 30.1 MB
+    [ALLOC_CACHEOBJECTS_THREAD]
+      Peak usage frame count: [64.0 KB-128.0 KB]: 2 frames, [4.0 MB-8.0 MB]: 1 frames, [16.0 MB-32.0 MB]: 7 frames, [32.0 MB-64.0 MB]: 11 frames, [64.0 MB-128.0 MB]: 731 frames, [128.0 MB-256.0 MB]: 12 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 17
+      Peak Allocated memory 156.3 MB
+      Peak Large allocation bytes 107.1 MB
+[ALLOC_TYPETREE] Dual Thread Allocator
+  Peak main deferred allocation count 0
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 4.0 MB
+      Failed Allocations. Bucket layout:
+        16B: 15 Subsections = 15360 buckets. Failed count: 170640
+        32B: 50 Subsections = 25600 buckets. Failed count: 173446
+        48B: 57 Subsections = 19456 buckets. Failed count: 148432
+        64B: 27 Subsections = 6912 buckets. Failed count: 80972
+        80B: 71 Subsections = 14540 buckets. Failed count: 87273
+        96B: 22 Subsections = 3754 buckets. Failed count: 38164
+        112B: 9 Subsections = 1316 buckets. Failed count: 36659
+        128B: 5 Subsections = 640 buckets. Failed count: 54523
+    [ALLOC_TYPETREE_MAIN]
+      Peak usage frame count: [8.0 KB-16.0 KB]: 1 frames, [16.0 KB-32.0 KB]: 50 frames, [32.0 KB-64.0 KB]: 351 frames, [128.0 KB-256.0 KB]: 65 frames, [256.0 KB-0.5 MB]: 296 frames, [0.5 MB-1.0 MB]: 1 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 0.6 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_TYPETREE_THREAD]
+      Peak usage frame count: [256.0 KB-0.5 MB]: 764 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 452.7 KB
+      Peak Large allocation bytes 0 B
+[Critical] Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
